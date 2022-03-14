@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace chevere_master
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
+        }
+
+        private void InitializeMyControl()
+        {
+            textBox2.PasswordChar = '*';
         }
     }
 }

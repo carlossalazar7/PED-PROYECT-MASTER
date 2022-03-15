@@ -8,13 +8,12 @@ namespace chevere_master
 {
     internal class Conexion
     {
-        public string servidor, db, cadena;
+        public string servidor, db, cadena, usuario, password, puerto;
+
         public void conec()
         {
-            servidor = "localhost";
-            db = "proyecto_ped_master";
-            cadena = "server=" + servidor + ";database=" + db + "; integrated security = True";
-        }
+            cadena = "server=Localhost\\SQLEXPRESS; database=proyecto_ped_master; Integrated Security=yes";
+    }
 
     }
 }

@@ -32,8 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -52,6 +52,7 @@
             this.btnIngresar.TabIndex = 0;
             this.btnIngresar.Text = "Login";
             this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // label1
             // 
@@ -81,26 +82,27 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "¿Tienes pensado un nuevo sitio para conocer?";
             // 
-            // textBox1
+            // txtUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(923, 300);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(282, 26);
-            this.textBox1.TabIndex = 5;
+            this.txtUsuario.Location = new System.Drawing.Point(923, 300);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(282, 26);
+            this.txtUsuario.TabIndex = 5;
             // 
-            // textBox2
+            // txtPass
             // 
-            this.textBox2.Location = new System.Drawing.Point(923, 365);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(282, 26);
-            this.textBox2.TabIndex = 6;
+            this.txtPass.Location = new System.Drawing.Point(923, 365);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(282, 26);
+            this.txtPass.TabIndex = 6;
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // pictureBox3
             // 
             this.pictureBox3.ErrorImage = global::chevere_master.Properties.Resources.this_is_a_graphic_reation_of_a_pad_lock_username_and_password_icon_115534595184fsadfncq6;
             this.pictureBox3.Image = global::chevere_master.Properties.Resources.this_is_a_graphic_reation_of_a_pad_lock_username_and_password_icon_115534595184fsadfncq6;
             this.pictureBox3.InitialImage = global::chevere_master.Properties.Resources.this_is_a_graphic_reation_of_a_pad_lock_username_and_password_icon_115534595184fsadfncq6;
-            this.pictureBox3.Location = new System.Drawing.Point(867, 365);
+            this.pictureBox3.Location = new System.Drawing.Point(867, 355);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(50, 50);
@@ -138,8 +140,8 @@
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -163,8 +165,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;

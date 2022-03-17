@@ -14,10 +14,9 @@ namespace chevere_master
     public partial class Login : Form
     {
         //conexion bd
-        private SqlConnection connec;
         private SqlCommand command;
         private SqlDataAdapter adapt;
-        private string cadenaconn;
+        private static Conexion conexion = new Conexion();
 
         ///Variable  ver la contraseña
         private bool ok;
@@ -27,14 +26,6 @@ namespace chevere_master
             InitializeComponent();
             ////Vefinimos falso ver la contrasenia
             ok = true;
-
-            //abriendo conexion
-            Conexion conexion = new Conexion();
-            conexion.conec();
-
-            cadenaconn = conexion.cadena;
-
-            connec = new SqlConnection(cadenaconn);
         }
 
 
@@ -48,16 +39,17 @@ namespace chevere_master
             VerificarUsuario(this.txtUsuario.Text, this.txtPass.Text);
         }
 
-        public void VerificarUsuario(string usuario, string contraseña)
+        public void VerificarUsuario(string user, string password)
         {
+            string sql = "SELECT u.id, u.first_name, u.last_name, r.name   FROM users " +
+                    "u INNER JOIN roles r on  r.id = u.id_role  WHERE email = @usuario AND password= @contra";
             try
             {
-                connec.Open();
-                command = new SqlCommand("SELECT u.id, u.first_name, u.last_name, r.name   FROM users " +
-                    "u INNER JOIN roles r on  r.id = u.id_role  WHERE email = @usuario AND password= @contra", connec);
-
-                command.Parameters.AddWithValue("usuario", usuario);
-                command.Parameters.AddWithValue("contra", contraseña);
+                //abriendo conexion
+                conexion.Conectar();
+                command = new SqlCommand(sql, conexion.Conn);
+                command.Parameters.AddWithValue("usuario", user);
+                command.Parameters.AddWithValue("contra", password);
 
                 adapt = new SqlDataAdapter(command);
                 DataTable dt = new DataTable();
@@ -70,10 +62,10 @@ namespace chevere_master
                     if (dt.Rows[0][3].ToString() == "Administrador")
                     {
                         MessageBox.Show("bienvenido admin");
-                      //  User.Id = int.Parse(dt.Rows[0][2].ToString());
-                      //  User.FirstName = dt.Rows[0][0].ToString();
-                      //  MessageBox.Show($"nombre: {User.FirstName} id:{ User.Id } ");
-                      //  new frmAdmin().Show();
+                        //  User.Id = int.Parse(dt.Rows[0][2].ToString());
+                        //  User.FirstName = dt.Rows[0][0].ToString();
+                        //  MessageBox.Show($"nombre: {User.FirstName} id:{ User.Id } ");
+                        new Home().Show();
                     }
                     else if (dt.Rows[0][3].ToString() == "Usuario")
                     {
@@ -84,11 +76,8 @@ namespace chevere_master
                         ///    MessageBox.Show($"nombre: {User.Nombre_de_Usuario} id:{ User.Id_Usuario} ");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("¡Usuario y/o contraseña incorrecta!", "Error", MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                }
+                else txtMessage.Text = "¡Usuario y/o contraseña incorrecta!";
+
             }
             catch (Exception ex)
             {
@@ -96,8 +85,38 @@ namespace chevere_master
             }
             finally
             {
-                connec.Close();
+                conexion.Cerrar();
             }
+        }
+
+
+        private void btnVerContrasenia_Click(object sender, EventArgs e)
+        {
+            if (ok)
+            {
+                txtPass.UseSystemPasswordChar = false;
+                ok = false;
+            }
+            else
+            {
+                txtPass.UseSystemPasswordChar = true;
+                ok = true;
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            new Reset().Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -63,6 +63,26 @@ namespace chevere_master.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _495_4950508_show_password_show_password_icon_png_transparent_png {
+            get {
+                object obj = ResourceManager.GetObject("495-4950508_show-password-show-password-icon-png-transparent-png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close {
+            get {
+                object obj = ResourceManager.GetObject("close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap descarga {
             get {
                 object obj = ResourceManager.GetObject("descarga", resourceCulture);
@@ -87,6 +107,16 @@ namespace chevere_master.Properties {
             get {
                 object obj = ResourceManager.GetObject("this-is-a-graphic-reation-of-a-pad-lock-username-and-password-icon-115534595184fs" +
                         "adfncq6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Turismo_en_El_Salvador {
+            get {
+                object obj = ResourceManager.GetObject("Turismo-en-El-Salvador", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

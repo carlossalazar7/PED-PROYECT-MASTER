@@ -9,3 +9,6 @@ C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyec
 C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.CoreCompileInputs.cache
 C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.exe
 C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.pdb
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Home.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Reset.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.CreateAccount.resources

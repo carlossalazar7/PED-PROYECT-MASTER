@@ -34,9 +34,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtMessage = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnVerContrasenia = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVerContrasenia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,11 +73,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(919, 581);
+            this.label2.Location = new System.Drawing.Point(942, 562);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(171, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Recuperar Contraseña";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -96,6 +103,36 @@
             this.txtPass.Size = new System.Drawing.Size(282, 26);
             this.txtPass.TabIndex = 6;
             this.txtPass.UseSystemPasswordChar = true;
+            // 
+            // txtMessage
+            // 
+            this.txtMessage.AutoSize = true;
+            this.txtMessage.Location = new System.Drawing.Point(923, 420);
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.Size = new System.Drawing.Size(0, 20);
+            this.txtMessage.TabIndex = 9;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::chevere_master.Properties.Resources.close;
+            this.pictureBox4.Location = new System.Drawing.Point(1234, 13);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 12;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // btnVerContrasenia
+            // 
+            this.btnVerContrasenia.Image = global::chevere_master.Properties.Resources._495_4950508_show_password_show_password_icon_png_transparent_png;
+            this.btnVerContrasenia.Location = new System.Drawing.Point(1222, 365);
+            this.btnVerContrasenia.Name = "btnVerContrasenia";
+            this.btnVerContrasenia.Size = new System.Drawing.Size(28, 26);
+            this.btnVerContrasenia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnVerContrasenia.TabIndex = 11;
+            this.btnVerContrasenia.TabStop = false;
+            this.btnVerContrasenia.Click += new System.EventHandler(this.btnVerContrasenia_Click);
             // 
             // pictureBox3
             // 
@@ -128,16 +165,31 @@
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(750, 723);
+            this.pictureBox1.Size = new System.Drawing.Size(750, 725);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(867, 582);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(274, 20);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Aún sin cuenta?Crea tu cuenta ahora";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.btnVerContrasenia);
+            this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.txtPass);
@@ -151,6 +203,8 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVerContrasenia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -170,6 +224,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label txtMessage;
+        private System.Windows.Forms.PictureBox btnVerContrasenia;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label4;
     }
 }
 

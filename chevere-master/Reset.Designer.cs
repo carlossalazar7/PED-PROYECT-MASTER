@@ -40,6 +40,7 @@
             this.btnSavePassword = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -171,11 +172,22 @@
             this.lblPassword.Text = "Contraseña:";
             this.lblPassword.Visible = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(830, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(360, 37);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Recuperar Contraseña";
+            // 
             // Reset
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.btnSavePassword);
@@ -217,5 +229,6 @@
         private System.Windows.Forms.Button btnSavePassword;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label label2;
     }
 }

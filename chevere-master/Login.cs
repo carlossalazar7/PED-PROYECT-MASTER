@@ -111,12 +111,19 @@ namespace chevere_master
 
         private void label2_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
             new Reset().Show();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
+     
 
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new CreateAccount().Show();
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace chevere_master
 {
-    public partial class Form1 : Form
+    public partial class CreateAccount : Form
     {
-        public Form1()
+        public CreateAccount()
         {
             InitializeComponent();
         }

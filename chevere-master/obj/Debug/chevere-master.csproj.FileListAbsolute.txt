@@ -26,3 +26,5 @@ C:\Users\User\Documents\Xavi\Proyecto PED\Prueba 2\PED-PROYECT-MASTER\chevere-ma
 C:\Users\User\Documents\Xavi\Proyecto PED\Prueba 2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\Xavi\Proyecto PED\Prueba 2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.exe
 C:\Users\User\Documents\Xavi\Proyecto PED\Prueba 2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.pdb
+C:\Users\User\Documents\Xavi\Proyecto PED\Prueba 2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Menu.resources
+C:\Users\User\Documents\Xavi\Proyecto PED\Prueba 2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Info_rutas.resources

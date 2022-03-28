@@ -97,11 +97,13 @@ namespace chevere_master
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
             SelectButton(sender, colors.color1);
+            OpenFrm(new Menu());
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
             SelectButton(sender, colors.color2);
+            OpenFrm(new Info_rutas());
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
@@ -161,6 +163,7 @@ namespace chevere_master
             leftpanel.BackColor = colors.color1;
             leftpanel.Location = new Point(0, Home1.Location.Y);
             leftpanel.BringToFront();
+            OpenFrm(new Menu());
         }
     }
 }

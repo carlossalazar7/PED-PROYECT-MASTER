@@ -1,4 +1,6 @@
 
+Create database  proyecto_ped_master;
+
 use proyecto_ped_master;
 go
 
@@ -9,7 +11,7 @@ create table roles(
 go
 
 create table users(
-	 id int not null primary key,
+	 id int not null primary key IDENTITY(1,1),
 	 first_name varchar(100) not null,
 	 last_name varchar(100),
 	 password varchar(100),
@@ -26,6 +28,7 @@ create table users(
 );
 go
 
+
 create table climates(
 	id int not null primary key,
 	name varchar(255),
@@ -34,14 +37,14 @@ create table climates(
 go
 
 create table categories(
-	id int not null primary key,
+	id int not null  primary key,
 	name varchar(255),
 	description text
 );
 go
 
 create table sites(
-	id int not null primary key,
+	id int not null IDENTITY(1,1) primary key,
 	name varchar(255),
 	description text,
 	assessment int check (assessment<=5), --valoracion
@@ -53,13 +56,16 @@ create table sites(
 	visitado int,
 	etiqueta int,
 	tree_root int,
+	routesID int,
 	FOREIGN KEY (climate_id) REFERENCES climates(id),
-	FOREIGN KEY (category_id) REFERENCES categories(id)
+	FOREIGN KEY (category_id) REFERENCES categories(id),
+	FOREIGN KEY (routesID) REFERENCES routes (id)
 );
 go
 
+
 create table routes(
-	id int not null primary key,
+	id int not null IDENTITY(1,1) primary key,
 	name varchar(255),
 	description text,
 	picture text,
@@ -73,66 +79,19 @@ create table routes(
 go
 
 
-INSERT INTO [dbo].[roles]
-           ([id]
-           ,[name])
-     VALUES
-	 (
-           1,
-          'Administrador'
-	);
-
-INSERT INTO [dbo].[roles]
-           ([id]
-           ,[name])
-     VALUES
-	 (
-           2,
-          'Usuario'
-	)
-GO
-
-
-INSERT INTO [dbo].[users]
-           ([id]
-           ,[first_name]
-           ,[last_name]
-           ,[password]
-           ,[email]
-           ,[nit]
-           ,[dui]
-           ,[dirrection]
-           ,[age]
-           ,[nationality]
-           ,[birth_date]
-           ,[gender]
-           ,[id_role])
-     VALUES
-	 (
-           1,
-           'Carlos Eduardo',
-           'Peñate Salazar',
-           '123456',
-           'carlossalazar2228@gmail.com',
-           12345678923456,
-           12345678,
-           'San Salvador',
-           21,
-           'Salvadoreño',
-           SYSDATETIME(),
-           'M',
-           1)
-GO
-
---añadiendo la llave primaria de rutas en sitios 
-ALTER TABLE sites
-add routesID int
-GO
-
-alter table sites
-add constraint fk_routesCod foreign key (routesID)
-references routes (id)
+INSERT INTO [dbo].[roles] ([id], [name]) VALUES(1,'Administrador')
 go
+
+INSERT INTO [dbo].[roles]([id],[name]) VALUES ( 2,'Usuario')
+go
+
+
+INSERT INTO [dbo].[users] ([first_name], [last_name], [password], [email], [nit], [dui], [dirrection], [age], [nationality], [birth_date], [gender], [id_role])
+     VALUES ( 'Carlos Eduardo', 'Peñate Salazar', '123456', 'carlossalazar22282@gmail.com', 12345678923456, 12345678, 'San Salvador', 21, 'Salvadoreño', SYSDATETIME(),'M', 1)
+GO
+
+
+
 ---tablas de conexion de routes y sites con user,
 
 CREATE TABLE user_routes
@@ -160,3 +119,5 @@ Comment varchar(255),
 assessment int check (assessment<=5)
 )
 GO
+
+select*from users

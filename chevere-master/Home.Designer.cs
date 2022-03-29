@@ -57,8 +57,9 @@
             this.pnl_left.Controls.Add(this.Home1);
             this.pnl_left.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_left.Location = new System.Drawing.Point(0, 0);
+            this.pnl_left.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnl_left.Name = "pnl_left";
-            this.pnl_left.Size = new System.Drawing.Size(150, 644);
+            this.pnl_left.Size = new System.Drawing.Size(200, 793);
             this.pnl_left.TabIndex = 0;
             // 
             // Favorites
@@ -71,11 +72,11 @@
             this.Favorites.IconChar = FontAwesome.Sharp.IconChar.Star;
             this.Favorites.IconColor = System.Drawing.Color.White;
             this.Favorites.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Favorites.Location = new System.Drawing.Point(0, 480);
+            this.Favorites.Location = new System.Drawing.Point(0, 588);
             this.Favorites.Margin = new System.Windows.Forms.Padding(0);
             this.Favorites.Name = "Favorites";
-            this.Favorites.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.Favorites.Size = new System.Drawing.Size(150, 80);
+            this.Favorites.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.Favorites.Size = new System.Drawing.Size(200, 98);
             this.Favorites.TabIndex = 13;
             this.Favorites.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Favorites.UseVisualStyleBackColor = true;
@@ -91,11 +92,11 @@
             this.Maintenance.IconChar = FontAwesome.Sharp.IconChar.Hammer;
             this.Maintenance.IconColor = System.Drawing.Color.White;
             this.Maintenance.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Maintenance.Location = new System.Drawing.Point(0, 400);
+            this.Maintenance.Location = new System.Drawing.Point(0, 490);
             this.Maintenance.Margin = new System.Windows.Forms.Padding(0);
             this.Maintenance.Name = "Maintenance";
-            this.Maintenance.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.Maintenance.Size = new System.Drawing.Size(150, 80);
+            this.Maintenance.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.Maintenance.Size = new System.Drawing.Size(200, 98);
             this.Maintenance.TabIndex = 12;
             this.Maintenance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Maintenance.UseVisualStyleBackColor = true;
@@ -111,11 +112,11 @@
             this.UpdateInfo.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.UpdateInfo.IconColor = System.Drawing.Color.White;
             this.UpdateInfo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.UpdateInfo.Location = new System.Drawing.Point(0, 320);
+            this.UpdateInfo.Location = new System.Drawing.Point(0, 392);
             this.UpdateInfo.Margin = new System.Windows.Forms.Padding(0);
             this.UpdateInfo.Name = "UpdateInfo";
-            this.UpdateInfo.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.UpdateInfo.Size = new System.Drawing.Size(150, 80);
+            this.UpdateInfo.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.UpdateInfo.Size = new System.Drawing.Size(200, 98);
             this.UpdateInfo.TabIndex = 11;
             this.UpdateInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.UpdateInfo.UseVisualStyleBackColor = true;
@@ -131,11 +132,11 @@
             this.UserAdministration.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.UserAdministration.IconColor = System.Drawing.Color.White;
             this.UserAdministration.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.UserAdministration.Location = new System.Drawing.Point(0, 240);
+            this.UserAdministration.Location = new System.Drawing.Point(0, 294);
             this.UserAdministration.Margin = new System.Windows.Forms.Padding(0);
             this.UserAdministration.Name = "UserAdministration";
-            this.UserAdministration.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.UserAdministration.Size = new System.Drawing.Size(150, 80);
+            this.UserAdministration.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.UserAdministration.Size = new System.Drawing.Size(200, 98);
             this.UserAdministration.TabIndex = 10;
             this.UserAdministration.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.UserAdministration.UseVisualStyleBackColor = true;
@@ -151,11 +152,11 @@
             this.UserUpdateInfo.IconChar = FontAwesome.Sharp.IconChar.User;
             this.UserUpdateInfo.IconColor = System.Drawing.Color.White;
             this.UserUpdateInfo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.UserUpdateInfo.Location = new System.Drawing.Point(0, 160);
+            this.UserUpdateInfo.Location = new System.Drawing.Point(0, 196);
             this.UserUpdateInfo.Margin = new System.Windows.Forms.Padding(0);
             this.UserUpdateInfo.Name = "UserUpdateInfo";
-            this.UserUpdateInfo.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.UserUpdateInfo.Size = new System.Drawing.Size(150, 80);
+            this.UserUpdateInfo.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.UserUpdateInfo.Size = new System.Drawing.Size(200, 98);
             this.UserUpdateInfo.TabIndex = 8;
             this.UserUpdateInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.UserUpdateInfo.UseVisualStyleBackColor = true;
@@ -171,11 +172,11 @@
             this.RuteInfo.IconChar = FontAwesome.Sharp.IconChar.MapMarked;
             this.RuteInfo.IconColor = System.Drawing.Color.White;
             this.RuteInfo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.RuteInfo.Location = new System.Drawing.Point(0, 80);
+            this.RuteInfo.Location = new System.Drawing.Point(0, 98);
             this.RuteInfo.Margin = new System.Windows.Forms.Padding(0);
             this.RuteInfo.Name = "RuteInfo";
-            this.RuteInfo.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.RuteInfo.Size = new System.Drawing.Size(150, 80);
+            this.RuteInfo.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.RuteInfo.Size = new System.Drawing.Size(200, 98);
             this.RuteInfo.TabIndex = 7;
             this.RuteInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RuteInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -195,8 +196,8 @@
             this.Home1.Location = new System.Drawing.Point(0, 0);
             this.Home1.Margin = new System.Windows.Forms.Padding(0);
             this.Home1.Name = "Home1";
-            this.Home1.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.Home1.Size = new System.Drawing.Size(150, 80);
+            this.Home1.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.Home1.Size = new System.Drawing.Size(200, 98);
             this.Home1.TabIndex = 6;
             this.Home1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Home1.UseVisualStyleBackColor = true;
@@ -209,19 +210,21 @@
             this.pnl_Top.Controls.Add(this.lbl_FormInfo);
             this.pnl_Top.Controls.Add(this.IBtn_Cerrar);
             this.pnl_Top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_Top.Location = new System.Drawing.Point(150, 0);
+            this.pnl_Top.Location = new System.Drawing.Point(200, 0);
+            this.pnl_Top.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnl_Top.Name = "pnl_Top";
-            this.pnl_Top.Size = new System.Drawing.Size(862, 50);
+            this.pnl_Top.Size = new System.Drawing.Size(1149, 62);
             this.pnl_Top.TabIndex = 1;
             this.pnl_Top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_Top_MouseDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(414, 11);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(552, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 28);
+            this.label1.Size = new System.Drawing.Size(292, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "ChevereTouristRouts";
             // 
@@ -229,9 +232,10 @@
             // 
             this.lbl_FormInfo.AutoSize = true;
             this.lbl_FormInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_FormInfo.Location = new System.Drawing.Point(31, 14);
+            this.lbl_FormInfo.Location = new System.Drawing.Point(41, 17);
+            this.lbl_FormInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_FormInfo.Name = "lbl_FormInfo";
-            this.lbl_FormInfo.Size = new System.Drawing.Size(45, 20);
+            this.lbl_FormInfo.Size = new System.Drawing.Size(56, 25);
             this.lbl_FormInfo.TabIndex = 1;
             this.lbl_FormInfo.Text = "Logo";
             this.lbl_FormInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -243,10 +247,10 @@
             this.IBtn_Cerrar.IconColor = System.Drawing.Color.Black;
             this.IBtn_Cerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.IBtn_Cerrar.IconSize = 30;
-            this.IBtn_Cerrar.Location = new System.Drawing.Point(829, 9);
+            this.IBtn_Cerrar.Location = new System.Drawing.Point(1105, 11);
             this.IBtn_Cerrar.Margin = new System.Windows.Forms.Padding(0);
             this.IBtn_Cerrar.Name = "IBtn_Cerrar";
-            this.IBtn_Cerrar.Size = new System.Drawing.Size(31, 32);
+            this.IBtn_Cerrar.Size = new System.Drawing.Size(41, 39);
             this.IBtn_Cerrar.TabIndex = 0;
             this.IBtn_Cerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.IBtn_Cerrar.UseVisualStyleBackColor = true;
@@ -255,24 +259,25 @@
             // FormsPanel
             // 
             this.FormsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FormsPanel.Location = new System.Drawing.Point(150, 50);
+            this.FormsPanel.Location = new System.Drawing.Point(200, 62);
+            this.FormsPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FormsPanel.Name = "FormsPanel";
-            this.FormsPanel.Size = new System.Drawing.Size(862, 594);
+            this.FormsPanel.Size = new System.Drawing.Size(1149, 731);
             this.FormsPanel.TabIndex = 2;
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1012, 644);
+            this.ClientSize = new System.Drawing.Size(1349, 793);
             this.Controls.Add(this.FormsPanel);
             this.Controls.Add(this.pnl_Top);
             this.Controls.Add(this.pnl_left);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Home";
@@ -292,15 +297,15 @@
         private System.Windows.Forms.Panel pnl_left;
         private System.Windows.Forms.Panel pnl_Top;
         private FontAwesome.Sharp.IconButton IBtn_Cerrar;
-        private System.Windows.Forms.Panel FormsPanel;
-        private FontAwesome.Sharp.IconButton UserUpdateInfo;
         private FontAwesome.Sharp.IconButton RuteInfo;
         private FontAwesome.Sharp.IconButton Home1;
         private System.Windows.Forms.Label lbl_FormInfo;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton UserAdministration;
         private FontAwesome.Sharp.IconButton UpdateInfo;
-        private FontAwesome.Sharp.IconButton Maintenance;
         private FontAwesome.Sharp.IconButton Favorites;
+        public System.Windows.Forms.Panel FormsPanel;
+        public FontAwesome.Sharp.IconButton UserUpdateInfo;
+        public FontAwesome.Sharp.IconButton Maintenance;
     }
 }

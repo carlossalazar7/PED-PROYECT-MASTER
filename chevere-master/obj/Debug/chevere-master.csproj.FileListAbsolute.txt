@@ -48,3 +48,12 @@ C:\Users\User\Documents\Xavi\Proyecto PED\Prueba 2\PED-PROYECT-MASTER\chevere-ma
 >>>>>>> c9427edd2679736b29b5be01ab277061b620f63c
 C:\Users\viana\OneDrive\Escritorio\PES_PROYECTP\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Info_rutas.resources
 C:\Users\viana\OneDrive\Escritorio\PES_PROYECTP\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Menu.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Info_rutas.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Menu.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.CopyComplete
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\bin\Debug\AjaxMin.dll
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\bin\Debug\GMap.NET.Core.dll
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\bin\Debug\Gmap.net.dll
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\bin\Debug\Gmap.net.pdb

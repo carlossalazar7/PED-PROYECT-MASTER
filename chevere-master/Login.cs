@@ -62,7 +62,6 @@ namespace chevere_master
                     this.Visible = false;
                     if (dt.Rows[0][3].ToString() == "Administrador")
                     {
-                        MessageBox.Show("bienvenido admin");
                         //  User.Id = int.Parse(dt.Rows[0][2].ToString());
                         //  User.FirstName = dt.Rows[0][0].ToString();
                         //  MessageBox.Show($"nombre: {User.FirstName} id:{ User.Id } ");
@@ -82,7 +81,7 @@ namespace chevere_master
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "ERROR");
+                txtMessage.Text = ex.Message;
             }
             finally
             {
@@ -112,7 +111,7 @@ namespace chevere_master
 
         private void label2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -120,7 +119,7 @@ namespace chevere_master
             new Reset().Show();
         }
 
-     
+
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

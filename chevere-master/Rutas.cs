@@ -51,7 +51,7 @@ namespace chevere_master
             // set the size of the picture box
             pb2.Height = 140;
             pb2.Width = 200;
-            pb2.Location = new Point(350, 10);
+            pb2.Location = new Point(250, 10);
 
             //******************************************************
 
@@ -67,7 +67,7 @@ namespace chevere_master
             // set the size of the picture box
             pb3.Height = 140;
             pb3.Width = 200;
-            pb3.Location = new Point(730, 10);
+            pb3.Location = new Point(500, 10);
 
             // add the control to the container
             panel1.Controls.Add(pb);

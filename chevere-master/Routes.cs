@@ -13,8 +13,8 @@ namespace Clases
         private static int id;
         private static string name;
         private static int assessment;
-        private static int attribute1;
-        private static int attribute2;
+        private static double latitud;
+        private static double longitud;
         private static int attribute3;
         private static int attribute4;
         private static int attribute5;
@@ -39,15 +39,15 @@ namespace Clases
             set { assessment = value; if (assessment < 0 || assessment > 5) { throw new Exception("Error, la puntuacion no es valida"); } }
         }
 
-        public static int Attribute1
+        public static double Latidud
         {
-            get { return attribute1; }
-            set { attribute1 = value; }
+            get { return latitud; }
+            set { latitud = value; }
         }
-        public static int Attribute2
+        public static double Longitud
         {
-            get { return attribute2; }
-            set { attribute2 = value; }
+            get { return longitud; }
+            set { longitud = value; }
         }
         public static int Attribute3
         {
@@ -56,6 +56,7 @@ namespace Clases
         }
         public static int Attribute4
         {
+            get { return attribute4; }
             set { attribute4 = value; }
         }
         public static int Attribute5

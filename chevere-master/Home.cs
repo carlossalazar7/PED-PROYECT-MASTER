@@ -103,12 +103,13 @@ namespace chevere_master
         private void iconButton2_Click(object sender, EventArgs e)
         {
             SelectButton(sender, colors.color2);
-            OpenFrm(new Info_rutas());
+            OpenFrm(new Rutas());
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
             SelectButton(sender, colors.color3);
+            OpenFrm(new Rutas());
         }
 
         private void iconButton4_Click(object sender, EventArgs e)

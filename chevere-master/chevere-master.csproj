@@ -111,6 +111,12 @@
       <DependentUpon>Reset.cs</DependentUpon>
     </Compile>
     <Compile Include="Routes.cs" />
+    <Compile Include="Rutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rutas.Designer.cs">
+      <DependentUpon>Rutas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sites.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="CreateAccount.resx">
@@ -143,6 +149,9 @@
     </Compile>
     <EmbeddedResource Include="Reset.resx">
       <DependentUpon>Reset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rutas.resx">
+      <DependentUpon>Rutas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

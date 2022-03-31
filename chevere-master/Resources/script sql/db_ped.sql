@@ -121,3 +121,94 @@ assessment int check (assessment<=5)
 GO
 
 select*from users
+
+use proyecto_ped_master
+go
+
+-------------------------------
+
+ALTER TABLE sites
+ADD [latitude] decimal(18, 15);
+go
+
+ALTER TABLE sites
+ADD longitude decimal(18, 15);
+go
+
+
+-------------------------------
+
+USE [proyecto_ped_master]
+GO
+
+INSERT INTO [dbo].[climates]
+           (
+		   id,
+		   [name]
+           ,[description])
+     VALUES
+           (1,
+
+           'Nublado',
+           'día nublado'),
+		   (2,
+           'Soliado',
+           'día soliado')
+GO
+
+-------------------------------
+
+USE [proyecto_ped_master]
+GO
+
+INSERT INTO [dbo].[categories]
+           ([id]
+           ,[name]
+           ,[description])
+     VALUES
+           (
+		   1,
+           'Pueblo',
+		   'rutas turisticas de pueblos'
+           )
+GO
+
+-------------------------------
+
+USE [proyecto_ped_master]
+GO
+
+INSERT INTO [dbo].[sites]
+           ([id]
+           ,[name]
+           ,[description]
+           ,[assessment]
+           ,[picture]
+           ,[climate_id]
+           ,[category_id]
+           ,[visitado]
+           ,[etiqueta]
+           ,[tree_root]
+           ,[routesID]
+           ,[latitude]
+           ,[longitude])
+     VALUES
+           (2,
+            'Ahuachapan',
+           'Ut eu esse dolor sit laboris adipisicing ullamco. Sint qui excepteur labore esse reprehenderit velit quis exercitation exercitation do cupidatat nulla. Est dolore nisi incididunt deserunt ullamco quis voluptate dolor. Est proident mollit ad ut in deserunt sit sint.',
+           5,
+           'C:/Users/carlos/OneDrive/Escritorio/Programación con Estructura de Datos/proyecto/prototipo/descarga.jpeg',
+           1,
+           1,
+           1,
+           1,
+           1,
+           1,
+           13.9259486,
+          -89.8411382)
+GO
+
+
+
+
+

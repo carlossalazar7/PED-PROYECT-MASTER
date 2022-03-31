@@ -92,8 +92,6 @@ namespace chevere_master
             marker7.ToolTipMode = MarkerTooltipMode.Always;
             marker7.ToolTipText = String.Format("Nahuizalco");
 
-
-
             //ahora agregamos  el mapa  y el marcador  al map control
             gMapControl1.Overlays.Add(markerOverlay);
         }

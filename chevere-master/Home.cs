@@ -126,6 +126,7 @@ namespace chevere_master
         private void UpdateInfo_Click(object sender, EventArgs e)
         {
             SelectButton(sender, colors.color6);
+            OpenFrm(new Actualizar_info());
         }
 
         private void Maintenance_Click(object sender, EventArgs e)

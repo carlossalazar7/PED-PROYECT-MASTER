@@ -16,5 +16,11 @@ namespace chevere_master
         {
             InitializeComponent();
         }
+
+
+        public void verificar()
+        {
+
+        }
     }
 }

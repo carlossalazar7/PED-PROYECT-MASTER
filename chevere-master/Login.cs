@@ -17,7 +17,7 @@ namespace chevere_master
         //conexion bd
         private SqlCommand command;
         private SqlDataAdapter adapt;
-        private static Conexion conexion = new Conexion();
+        private Conexion conexion = new Conexion();
 
         ///Variable  ver la contraseña
         private bool ok;

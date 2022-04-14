@@ -33,23 +33,23 @@ namespace chevere_master
             // 
             // FormsPanel
             // 
-            this.FormsPanel.Size = new System.Drawing.Size(898, 555);
+            this.FormsPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             // 
             // UserUpdateInfo
             // 
             this.UserUpdateInfo.FlatAppearance.BorderSize = 0;
-            this.UserUpdateInfo.Location = new System.Drawing.Point(0, 0);
+            this.UserUpdateInfo.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
             // 
             // Maintenance
             // 
             this.Maintenance.FlatAppearance.BorderSize = 0;
-            this.Maintenance.Location = new System.Drawing.Point(0, 98);
+            this.Maintenance.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
             // 
             // FrmUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1098, 617);
+            this.ClientSize = new System.Drawing.Size(1012, 644);
             this.Name = "FrmUsuario";
             this.Text = "FrmUsuario";
             this.ResumeLayout(false);

@@ -11,8 +11,8 @@ namespace chevere_master
         private int id;
         private string firstName;
         private string lastName;
-        private string email;
-        private string password;
+        private static string email;
+        private static string password;
         private int nit;
         private int dui;
         private string dirrection;

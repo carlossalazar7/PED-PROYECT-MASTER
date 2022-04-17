@@ -18,6 +18,7 @@ namespace chevere_master
         private SqlCommand command;
         private SqlDataAdapter adapt;
         private Conexion conexion = new Conexion();
+        public static string user, password;
 
         ///Variable  ver la contraseña
         private bool ok;
@@ -38,6 +39,8 @@ namespace chevere_master
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             VerificarUsuario(this.txtUsuario.Text, this.txtPass.Text);
+            user = txtUsuario.Text;
+            password = txtPass.Text;
         }
 
         public void VerificarUsuario(string user, string password)
@@ -144,6 +147,11 @@ namespace chevere_master
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

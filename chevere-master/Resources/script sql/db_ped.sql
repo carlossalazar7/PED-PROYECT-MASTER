@@ -120,7 +120,9 @@ assessment int check (assessment<=5)
 )
 GO
 
-select*from users
+select first_name, last_name, password, email
+from users
+where email = 'carlossalazar22282@gmail.com'
 
 use proyecto_ped_master
 go
@@ -207,6 +209,15 @@ INSERT INTO [dbo].[sites]
            13.9259486,
           -89.8411382)
 GO
+
+UPDATE users
+SET first_name='Carlos Eduardo', password='filo'
+WHERE email='carlossalazar22282@gmail.com'
+GO
+
+select first_name, last_name, password, email
+from users
+where email = 'carlossalazar22282@gmail.com'
 
 
 

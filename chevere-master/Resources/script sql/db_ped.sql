@@ -136,42 +136,6 @@ ADD longitude decimal(18, 15);
 go
 
 
--------------------------------
-
-USE [proyecto_ped_master]
-GO
-
-INSERT INTO [dbo].[climates]
-           (
-		   id,
-		   [name]
-           ,[description])
-     VALUES
-           (1,
-
-           'Nublado',
-           'día nublado'),
-		   (2,
-           'Soliado',
-           'día soliado')
-GO
-
--------------------------------
-
-USE [proyecto_ped_master]
-GO
-
-INSERT INTO [dbo].[categories]
-           ([id]
-           ,[name]
-           ,[description])
-     VALUES
-           (
-		   1,
-           'Pueblo',
-		   'rutas turisticas de pueblos'
-           )
-GO
 
 -------------------------------
 

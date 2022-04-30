@@ -103,7 +103,7 @@ namespace chevere_master
         private void iconButton2_Click(object sender, EventArgs e)
         {
             SelectButton(sender, colors.color2);
-            OpenFrm(new Rutas());
+            OpenFrm(new Info_rutas());
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
@@ -126,6 +126,7 @@ namespace chevere_master
         private void UpdateInfo_Click(object sender, EventArgs e)
         {
             SelectButton(sender, colors.color6);
+            OpenFrm(new Actualizar_info());
         }
 
         private void Maintenance_Click(object sender, EventArgs e)
@@ -165,6 +166,16 @@ namespace chevere_master
             leftpanel.Location = new Point(0, Home1.Location.Y);
             leftpanel.BringToFront();
             OpenFrm(new Menu());
+        }
+
+        private void Home1_MouseHover(object sender, EventArgs e)
+        {
+            tt_Info.SetToolTip(Home1, "Inicio");
+        }
+
+        private void UpdateInfo_MouseHover(object sender, EventArgs e)
+        {
+            tt_Info.SetToolTip(UpdateInfo, "Actualizar información");
         }
     }
 }

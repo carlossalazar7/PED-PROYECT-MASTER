@@ -120,7 +120,9 @@ assessment int check (assessment<=5)
 )
 GO
 
-select*from users
+select first_name, last_name, password, email
+from users
+where email = 'carlossalazar22282@gmail.com'
 
 use proyecto_ped_master
 go
@@ -171,6 +173,48 @@ INSERT INTO [dbo].[sites]
            13.9259486,
           -89.8411382)
 GO
+
+UPDATE users
+SET first_name='Carlos Eduardo', password='filo'
+WHERE email='carlossalazar22282@gmail.com'
+GO
+
+select first_name, last_name, password, email
+from users
+where email = 'carlossalazar22282@gmail.com'
+GO
+
+Select *
+FROM sites
+GO
+
+USE proyecto_ped_master
+Go
+
+SET IDENTITY_INSERT routes ON
+GO
+
+INSERT INTO [dbo].[routes]
+(
+[id],
+[name],
+[description],
+[assessment]
+)
+VALUES
+(
+2,
+'Concepcion de ataco',
+'Concepcion de ataco es un herrmoso lugar para hacer turismo, se tiene una diversidad de sitios para poder disfrutar de su gastronomia, comodos alojamientos y muchos sitios nuevos que conocer',
+4
+)
+GO
+
+SELECT name,description,assessment
+FROM routes
+GO
+
+
 
 
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -17,6 +18,10 @@ namespace chevere_master
 {
     public partial class Info_rutas : Form
     {
+        private SqlCommand command;
+        private SqlDataAdapter adapt;
+        private Conexion conexion = new Conexion();
+
         GMarkerGoogle marker, marker2, marker3, marker4, marker5, marker6, marker7;
         GMapOverlay markerOverlay;
 
@@ -26,6 +31,7 @@ namespace chevere_master
         public Info_rutas()
         {
             InitializeComponent();
+            ini();
         }
 
         private void Info_rutas_Load(object sender, EventArgs e)
@@ -98,6 +104,24 @@ namespace chevere_master
 
         private void label2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void ini() //Inicializador de la ruta, muestra la primera ruta en pantalla
+        {
+            conexion.Conectar();
+            string sql = "SELECT name,description,assessment FROM routes";
+            command = new SqlCommand(sql, conexion.Conn);
+            command.Parameters.AddWithValue("mail", Login.user);
+
+            adapt = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            adapt.Fill(dt);
+
+            lbl_name.Text = dt.Rows[0][0].ToString();
+            lbl_description.Text = dt.Rows[0][1].ToString();
+
+            conexion.Cerrar();
 
         }
     }

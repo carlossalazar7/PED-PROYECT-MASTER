@@ -54,10 +54,10 @@
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(104)))), ((int)(((byte)(213)))));
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(744, 330);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnIngresar.Location = new System.Drawing.Point(558, 268);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(275, 46);
+            this.btnIngresar.Size = new System.Drawing.Size(206, 37);
             this.btnIngresar.TabIndex = 0;
             this.btnIngresar.Text = "Login";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -66,54 +66,57 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Noto Sans SemBd", 22.2F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(701, 114);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(526, 93);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(291, 51);
+            this.label1.Size = new System.Drawing.Size(229, 36);
             this.label1.TabIndex = 2;
             this.label1.Text = "Hola de nuevo!";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(708, 170);
+            this.label3.Location = new System.Drawing.Point(531, 138);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(306, 17);
+            this.label3.Size = new System.Drawing.Size(230, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "¿Tienes pensado un nuevo sitio para conocer?";
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(763, 217);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsuario.Location = new System.Drawing.Point(572, 176);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(249, 22);
+            this.txtUsuario.Size = new System.Drawing.Size(188, 20);
             this.txtUsuario.TabIndex = 5;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(763, 270);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPass.Location = new System.Drawing.Point(572, 219);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(249, 22);
+            this.txtPass.Size = new System.Drawing.Size(188, 20);
             this.txtPass.TabIndex = 6;
             this.txtPass.UseSystemPasswordChar = true;
             // 
             // txtMessage
             // 
             this.txtMessage.AutoSize = true;
-            this.txtMessage.Location = new System.Drawing.Point(763, 313);
+            this.txtMessage.Location = new System.Drawing.Point(572, 254);
+            this.txtMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(0, 17);
+            this.txtMessage.Size = new System.Drawing.Size(0, 13);
             this.txtMessage.TabIndex = 9;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::chevere_master.Properties.Resources.close;
-            this.pictureBox4.Location = new System.Drawing.Point(418, 11);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox4.Location = new System.Drawing.Point(314, 9);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox4.Size = new System.Drawing.Size(30, 32);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 12;
             this.pictureBox4.TabStop = false;
@@ -122,10 +125,10 @@
             // btnVerContrasenia
             // 
             this.btnVerContrasenia.Image = global::chevere_master.Properties.Resources._495_4950508_show_password_show_password_icon_png_transparent_png;
-            this.btnVerContrasenia.Location = new System.Drawing.Point(1032, 270);
-            this.btnVerContrasenia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVerContrasenia.Location = new System.Drawing.Point(774, 219);
+            this.btnVerContrasenia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVerContrasenia.Name = "btnVerContrasenia";
-            this.btnVerContrasenia.Size = new System.Drawing.Size(27, 22);
+            this.btnVerContrasenia.Size = new System.Drawing.Size(20, 18);
             this.btnVerContrasenia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnVerContrasenia.TabIndex = 11;
             this.btnVerContrasenia.TabStop = false;
@@ -136,10 +139,10 @@
             this.pictureBox3.ErrorImage = global::chevere_master.Properties.Resources.this_is_a_graphic_reation_of_a_pad_lock_username_and_password_icon_115534595184fsadfncq6;
             this.pictureBox3.Image = global::chevere_master.Properties.Resources.this_is_a_graphic_reation_of_a_pad_lock_username_and_password_icon_115534595184fsadfncq6;
             this.pictureBox3.InitialImage = global::chevere_master.Properties.Resources.this_is_a_graphic_reation_of_a_pad_lock_username_and_password_icon_115534595184fsadfncq6;
-            this.pictureBox3.Location = new System.Drawing.Point(715, 262);
+            this.pictureBox3.Location = new System.Drawing.Point(536, 213);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(44, 39);
+            this.pictureBox3.Size = new System.Drawing.Size(33, 32);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
@@ -148,10 +151,10 @@
             // 
             this.pictureBox2.ErrorImage = global::chevere_master.Properties.Resources.descarga;
             this.pictureBox2.Image = global::chevere_master.Properties.Resources.descarga;
-            this.pictureBox2.Location = new System.Drawing.Point(715, 206);
+            this.pictureBox2.Location = new System.Drawing.Point(536, 167);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(44, 39);
+            this.pictureBox2.Size = new System.Drawing.Size(33, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
@@ -162,7 +165,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(667, 579);
+            this.pictureBox1.Size = new System.Drawing.Size(500, 470);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -170,9 +173,10 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(795, 402);
+            this.linkLabel1.Location = new System.Drawing.Point(596, 327);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(152, 17);
+            this.linkLabel1.Size = new System.Drawing.Size(114, 13);
             this.linkLabel1.TabIndex = 14;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Recuperar Contraseña";
@@ -181,9 +185,10 @@
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(757, 425);
+            this.linkLabel2.Location = new System.Drawing.Point(568, 345);
+            this.linkLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(244, 17);
+            this.linkLabel2.Size = new System.Drawing.Size(184, 13);
             this.linkLabel2.TabIndex = 15;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Aún sin cuenta?Crea tu cuenta ahora";
@@ -192,19 +197,19 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Location = new System.Drawing.Point(669, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel1.Location = new System.Drawing.Point(502, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(467, 56);
+            this.panel1.Size = new System.Drawing.Size(350, 46);
             this.panel1.TabIndex = 16;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1139, 576);
+            this.ClientSize = new System.Drawing.Size(854, 468);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
@@ -219,10 +224,11 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnIngresar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVerContrasenia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

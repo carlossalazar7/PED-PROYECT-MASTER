@@ -23,10 +23,26 @@ namespace chevere_master
         private Conexion conexion = new Conexion();
 
         GMarkerGoogle marker, marker2, marker3, marker4, marker5, marker6, marker7;
-        GMapOverlay markerOverlay;
+        GMapOverlay routes;
+        
+        Bitmap bitmap = (Bitmap)Image.FromFile("img/img3.jpg");
 
-        double LatInicial = 13.9259486;
-        double LongInicial = -89.8411382;
+        PointLatLng 
+            punto1 = new PointLatLng(13.9259486, -89.8411382),
+            punto2 = new PointLatLng(13.8683828, -89.8584498),
+            punto3 = new PointLatLng(13.8626493, -89.8103242),
+            punto4 = new PointLatLng(13.8431922, -89.7535668),
+            punto5 = new PointLatLng(13.8302042, -89.7591162), 
+            punto6 = new PointLatLng(13.7896338, -89.7638154),
+            punto7 = new PointLatLng(13.7804785, -89.7474662);
+
+        private void map_OnMarkerClick(GMapMarker item, MouseEventArgs e)
+        {
+           lbl_name.Text= item.ToolTipText;
+            pictureBox1.Image = bitmap;
+        }
+
+        
 
         public frmTouristRouts()
         {
@@ -37,37 +53,39 @@ namespace chevere_master
         private void Info_rutas_Load(object sender, EventArgs e)
         {
             //configuración inicial 
-            gMapControl1.DragButton = MouseButtons.Left;
-            gMapControl1.CanDragMap = true;
-            gMapControl1.MapProvider = GMapProviders.GoogleMap;
-            gMapControl1.Position = new PointLatLng(LatInicial, LongInicial);
-            gMapControl1.MinZoom = 0;
-            gMapControl1.MaxZoom = 24;
-            gMapControl1.Zoom = 10;
-            gMapControl1.AutoScroll = true;
+            map.DragButton = MouseButtons.Left;
+            map.CanDragMap = true;
+            map.MapProvider = GMapProviders.GoogleMap;
+            map.Position = punto1;
+            map.MinZoom = 0;
+            map.MaxZoom = 24;
+            map.Zoom = 10;
+            map.AutoScroll = true;
 
             //marcadores
-            markerOverlay = new GMapOverlay("Ahuachapán");
-            marker = new GMarkerGoogle(new PointLatLng(13.9259486, -89.8411382), GMarkerGoogleType.green);
-            markerOverlay.Markers.Add(marker); //agregamos al mapa
+          
 
-            marker2 = new GMarkerGoogle(new PointLatLng(13.8683828, -89.8584498), GMarkerGoogleType.green);
-            markerOverlay.Markers.Add(marker2);
+            routes = new GMapOverlay("Ruta 1");
+            marker = new GMarkerGoogle(punto1, GMarkerGoogleType.red_pushpin);
+            routes.Markers.Add(marker); //agregamos al mapa
 
-            marker3 = new GMarkerGoogle(new PointLatLng(13.8626493, -89.8103242), GMarkerGoogleType.green);
-            markerOverlay.Markers.Add(marker3);
+            marker2 = new GMarkerGoogle(punto2, GMarkerGoogleType.red_pushpin);
+            routes.Markers.Add(marker2);
 
-            marker4 = new GMarkerGoogle(new PointLatLng(13.9259486, -89.8411382), GMarkerGoogleType.green);
-            markerOverlay.Markers.Add(marker4);
+            marker3 = new GMarkerGoogle(punto3, GMarkerGoogleType.red_pushpin);
+            routes.Markers.Add(marker3);
 
-            marker5 = new GMarkerGoogle(new PointLatLng(13.8302042, -89.7591162), GMarkerGoogleType.green);
-            markerOverlay.Markers.Add(marker5);
+            marker4 = new GMarkerGoogle(punto4, GMarkerGoogleType.red_pushpin);
+            routes.Markers.Add(marker4);
 
-            marker6 = new GMarkerGoogle(new PointLatLng(13.7896338, -89.7638154), GMarkerGoogleType.green);
-            markerOverlay.Markers.Add(marker6);
+            marker5 = new GMarkerGoogle(punto5, GMarkerGoogleType.red_pushpin);
+            routes.Markers.Add(marker5);
 
-            marker7 = new GMarkerGoogle(new PointLatLng(13.9259486, -89.7474662), GMarkerGoogleType.green);
-            markerOverlay.Markers.Add(marker7);
+            marker6 = new GMarkerGoogle(punto6, GMarkerGoogleType.red_pushpin);
+            routes.Markers.Add(marker6);
+
+            marker7 = new GMarkerGoogle(punto7, GMarkerGoogleType.red_pushpin);
+            routes.Markers.Add(marker7);
 
 
             //agregamos un tooltip  de tipo texto a los marcadores
@@ -99,8 +117,26 @@ namespace chevere_master
             marker7.ToolTipText = String.Format("Nahuizalco");
 
             //ahora agregamos  el mapa  y el marcador  al map control
-            gMapControl1.Overlays.Add(markerOverlay);
+            List<PointLatLng> points = new List<PointLatLng>();
+            points.Add(punto1);
+            points.Add(punto2);
+            points.Add(punto3);
+            points.Add(punto4);
+            points.Add(punto5);
+            points.Add(punto6);
+            points.Add(punto7);
+
+            GMapRoute routess = new GMapRoute(points, "Ruta Turística Las Flores")
+            {
+                Stroke = new Pen(Color.Green, 5)
+            };
+            routes.Routes.Add(routess);
+            map.Overlays.Add(routes);
+
+            txtdistancia.Text = routess.Distance + " km";
+
         }
+
 
         private void label2_Click(object sender, EventArgs e)
         {

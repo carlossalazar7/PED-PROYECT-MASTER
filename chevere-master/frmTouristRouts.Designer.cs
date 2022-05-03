@@ -30,8 +30,9 @@ namespace chevere_master
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTouristRouts));
-            this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            this.map = new GMap.NET.WindowsForms.GMapControl();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtdistancia = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -49,7 +50,6 @@ namespace chevere_master
             this.lbl_description = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -60,40 +60,50 @@ namespace chevere_master
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // gMapControl1
+            // map
             // 
-            this.gMapControl1.Bearing = 0F;
-            this.gMapControl1.CanDragMap = true;
-            this.gMapControl1.EmptyTileColor = System.Drawing.Color.Navy;
-            this.gMapControl1.GrayScaleMode = false;
-            this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
-            this.gMapControl1.LevelsKeepInMemmory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(20, 28);
-            this.gMapControl1.MarkersEnabled = true;
-            this.gMapControl1.MaxZoom = 2;
-            this.gMapControl1.MinZoom = 2;
-            this.gMapControl1.MouseWheelZoomEnabled = true;
-            this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
-            this.gMapControl1.Name = "gMapControl1";
-            this.gMapControl1.NegativeMode = false;
-            this.gMapControl1.PolygonsEnabled = true;
-            this.gMapControl1.RetryLoadTile = 0;
-            this.gMapControl1.RoutesEnabled = true;
-            this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
-            this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
-            this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(739, 608);
-            this.gMapControl1.TabIndex = 0;
-            this.gMapControl1.Zoom = 0D;
+            this.map.Bearing = 0F;
+            this.map.CanDragMap = true;
+            this.map.EmptyTileColor = System.Drawing.Color.Navy;
+            this.map.GrayScaleMode = false;
+            this.map.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.map.LevelsKeepInMemmory = 5;
+            this.map.Location = new System.Drawing.Point(20, 28);
+            this.map.MarkersEnabled = true;
+            this.map.MaxZoom = 2;
+            this.map.MinZoom = 2;
+            this.map.MouseWheelZoomEnabled = true;
+            this.map.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.map.Name = "map";
+            this.map.NegativeMode = false;
+            this.map.PolygonsEnabled = true;
+            this.map.RetryLoadTile = 0;
+            this.map.RoutesEnabled = true;
+            this.map.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.map.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.map.ShowTileGridLines = false;
+            this.map.Size = new System.Drawing.Size(739, 608);
+            this.map.TabIndex = 0;
+            this.map.Zoom = 0D;
+            this.map.OnMarkerClick += new GMap.NET.WindowsForms.MarkerClick(this.map_OnMarkerClick);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.gMapControl1);
+            this.panel1.Controls.Add(this.txtdistancia);
+            this.panel1.Controls.Add(this.map);
             this.panel1.Location = new System.Drawing.Point(518, 68);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(774, 712);
             this.panel1.TabIndex = 1;
+            // 
+            // txtdistancia
+            // 
+            this.txtdistancia.AutoSize = true;
+            this.txtdistancia.Location = new System.Drawing.Point(29, 665);
+            this.txtdistancia.Name = "txtdistancia";
+            this.txtdistancia.Size = new System.Drawing.Size(0, 20);
+            this.txtdistancia.TabIndex = 1;
             // 
             // panel2
             // 
@@ -133,7 +143,7 @@ namespace chevere_master
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(112, 158);
+            this.pictureBox1.Location = new System.Drawing.Point(112, 114);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(352, 205);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -152,15 +162,15 @@ namespace chevere_master
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.lbl_description);
-            this.panel3.Location = new System.Drawing.Point(112, 369);
+            this.panel3.Location = new System.Drawing.Point(112, 337);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(352, 369);
+            this.panel3.Size = new System.Drawing.Size(352, 401);
             this.panel3.TabIndex = 19;
             // 
             // label9
             // 
             this.label9.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label9.Location = new System.Drawing.Point(80, 318);
+            this.label9.Location = new System.Drawing.Point(55, 339);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(204, 28);
             this.label9.TabIndex = 11;
@@ -168,7 +178,7 @@ namespace chevere_master
             // 
             // label12
             // 
-            this.label12.Location = new System.Drawing.Point(100, 298);
+            this.label12.Location = new System.Drawing.Point(55, 311);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(240, 22);
             this.label12.TabIndex = 10;
@@ -178,7 +188,7 @@ namespace chevere_master
             // label10
             // 
             this.label10.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label10.Location = new System.Drawing.Point(78, 249);
+            this.label10.Location = new System.Drawing.Point(52, 274);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(272, 28);
             this.label10.TabIndex = 8;
@@ -186,7 +196,7 @@ namespace chevere_master
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(100, 229);
+            this.label8.Location = new System.Drawing.Point(55, 242);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(240, 32);
             this.label8.TabIndex = 6;
@@ -200,7 +210,7 @@ namespace chevere_master
             this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.LocationArrow;
             this.iconPictureBox2.IconColor = System.Drawing.SystemColors.Highlight;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.Location = new System.Drawing.Point(40, 298);
+            this.iconPictureBox2.Location = new System.Drawing.Point(17, 311);
             this.iconPictureBox2.Name = "iconPictureBox2";
             this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
             this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -214,7 +224,7 @@ namespace chevere_master
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.LocationArrow;
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.HotTrack;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.Location = new System.Drawing.Point(40, 229);
+            this.iconPictureBox1.Location = new System.Drawing.Point(17, 242);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
             this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -224,7 +234,7 @@ namespace chevere_master
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(116, 165);
+            this.label7.Location = new System.Drawing.Point(93, 178);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 20);
             this.label7.TabIndex = 3;
@@ -234,7 +244,7 @@ namespace chevere_master
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(111, 142);
+            this.label6.Location = new System.Drawing.Point(93, 158);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(122, 20);
             this.label6.TabIndex = 2;
@@ -243,7 +253,7 @@ namespace chevere_master
             // pictureBox2
             // 
             this.pictureBox2.Image = global::chevere_master.Properties.Resources.descarga;
-            this.pictureBox2.Location = new System.Drawing.Point(30, 142);
+            this.pictureBox2.Location = new System.Drawing.Point(17, 142);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(70, 69);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -278,21 +288,8 @@ namespace chevere_master
             this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_name.Location = new System.Drawing.Point(166, 68);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(200, 25);
+            this.lbl_name.Size = new System.Drawing.Size(0, 25);
             this.lbl_name.TabIndex = 21;
-            this.lbl_name.Text = "Concepción de Ataco";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Perpetua Titling MT", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.SlateBlue;
-            this.label4.Location = new System.Drawing.Point(165, 158);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(231, 33);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Ataco\' Place";
             // 
             // frmTouristRouts
             // 
@@ -300,7 +297,6 @@ namespace chevere_master
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1304, 863);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel3);
@@ -314,6 +310,7 @@ namespace chevere_master
             this.Text = "Info_rutas";
             this.Load += new System.EventHandler(this.Info_rutas_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -329,7 +326,7 @@ namespace chevere_master
         }
 
         #endregion
-        private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        private GMap.NET.WindowsForms.GMapControl map;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -338,7 +335,6 @@ namespace chevere_master
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_name;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
@@ -349,5 +345,6 @@ namespace chevere_master
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbl_description;
+        private System.Windows.Forms.Label txtdistancia;
     }
 }

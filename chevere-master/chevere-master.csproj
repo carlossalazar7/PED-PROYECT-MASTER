@@ -72,41 +72,53 @@
       <DependentUpon>Actualizar_info.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexion.cs" />
-    <Compile Include="CreateAccount.cs">
+    <Compile Include="FrmCreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateAccount.Designer.cs">
-      <DependentUpon>CreateAccount.cs</DependentUpon>
+    <Compile Include="FrmCreateAccount.Designer.cs">
+      <DependentUpon>FrmCreateAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmUsuario.cs">
+    <Compile Include="frmExternalGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmUsuario.Designer.cs">
-      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    <Compile Include="frmExternalGUI.Designer.cs">
+      <DependentUpon>frmExternalGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
+    <Compile Include="frmFavoriteRouts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
+    <Compile Include="frmFavoriteRouts.Designer.cs">
+      <DependentUpon>frmFavoriteRouts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Info_rutas.cs">
+    <Compile Include="FrmMenuUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Info_rutas.Designer.cs">
-      <DependentUpon>Info_rutas.cs</DependentUpon>
+    <Compile Include="FrmMenuUsuario.Designer.cs">
+      <DependentUpon>FrmMenuUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="frmMenu_GUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="frmMenu_GUI.Designer.cs">
+      <DependentUpon>frmMenu_GUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="frmTouristRouts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="frmTouristRouts.Designer.cs">
+      <DependentUpon>frmTouristRouts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogIn.Designer.cs">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChildMenu_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChildMenu_GUI.Designer.cs">
+      <DependentUpon>frmChildMenu_GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,23 +140,29 @@
     <EmbeddedResource Include="Actualizar_info.resx">
       <DependentUpon>Actualizar_info.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateAccount.resx">
-      <DependentUpon>CreateAccount.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCreateAccount.resx">
+      <DependentUpon>FrmCreateAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmUsuario.resx">
-      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="frmExternalGUI.resx">
+      <DependentUpon>frmExternalGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
+    <EmbeddedResource Include="frmFavoriteRouts.resx">
+      <DependentUpon>frmFavoriteRouts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Info_rutas.resx">
-      <DependentUpon>Info_rutas.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMenuUsuario.resx">
+      <DependentUpon>FrmMenuUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="frmMenu_GUI.resx">
+      <DependentUpon>frmMenu_GUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="frmTouristRouts.resx">
+      <DependentUpon>frmTouristRouts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogIn.resx">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChildMenu_GUI.resx">
+      <DependentUpon>frmChildMenu_GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -180,6 +198,9 @@
     <None Include="Resources\495-4950508_show-password-show-password-icon-png-transparent-png.png" />
     <None Include="Resources\close.png" />
     <None Include="Resources\home.png" />
+    <None Include="Resources\Iocno.png" />
+    <None Include="Resources\Icon.png" />
+    <None Include="Resources\Flags.jpg" />
     <Content Include="Resources\script sql\db_ped.sql" />
     <None Include="Resources\this-is-a-graphic-reation-of-a-pad-lock-username-and-password-icon-115534595184fsadfncq6.png" />
     <None Include="Resources\descarga.png" />

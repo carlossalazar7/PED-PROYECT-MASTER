@@ -80,7 +80,7 @@ namespace chevere_master
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             new Rutas().Hide();
-            new Info_rutas().Show();
+            new frmTouristRouts().Show();
         }
 
 

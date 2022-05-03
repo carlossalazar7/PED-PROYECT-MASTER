@@ -10,15 +10,12 @@ using System.Windows.Forms;
 
 namespace chevere_master
 {
-    public partial class Menu : Form
+    public partial class FrmMenuUsuario : frmMenu_GUI
     {
-        public Menu()
+        
+        public FrmMenuUsuario()
         {
             InitializeComponent();
-        }
-
-        private void lbl_init_text_Click(object sender, EventArgs e)
-        {
 
         }
     }

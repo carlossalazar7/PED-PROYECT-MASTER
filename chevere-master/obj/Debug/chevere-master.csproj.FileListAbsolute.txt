@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\User\Downloads\Clases\Ciclo 1 2022\Xavi\PED\T\Fase 3\PED-PROYECT-MASTER\chevere-master\bin\Debug\chevere-master.exe.config
 C:\Users\User\Downloads\Clases\Ciclo 1 2022\Xavi\PED\T\Fase 3\PED-PROYECT-MASTER\chevere-master\bin\Debug\chevere-master.exe
 C:\Users\User\Downloads\Clases\Ciclo 1 2022\Xavi\PED\T\Fase 3\PED-PROYECT-MASTER\chevere-master\bin\Debug\chevere-master.pdb
@@ -48,3 +49,33 @@ C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyec
 C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.pdb
 C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\bin\Debug\chevere-master.pdb
 C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.AssemblyReference.cache
+=======
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\bin\Debug\chevere-master.exe.config
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\bin\Debug\chevere-master.exe
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\bin\Debug\chevere-master.pdb
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\bin\Debug\AjaxMin.dll
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\bin\Debug\GMap.NET.Core.dll
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\bin\Debug\Gmap.net.dll
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\bin\Debug\Gmap.net.pdb
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.AssemblyReference.cache
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.SuggestedBindingRedirects.cache
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Actualizar_info.resources
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.FrmCreateAccount.resources
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmExternalGUI.resources
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmFavoriteRouts.resources
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.FrmMenuUsuario.resources
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmMenu_GUI.resources
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmTouristRouts.resources
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmLogIn.resources
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmChildMenu_GUI.resources
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Properties.Resources.resources
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Reset.resources
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Rutas.resources
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.GenerateResource.cache
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.CoreCompileInputs.cache
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.CopyComplete
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.exe
+C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.pdb
+>>>>>>> a5916de7ac98e11e719d9490a0c2d037a8560a38

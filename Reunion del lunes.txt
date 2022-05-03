@@ -1,0 +1,24 @@
+
+
+Asignaciones
+
+Javier y Carlos => tener el Query ordenado y comentariado.
+
+Melissa => Cargar Nombre y Ciudad, arreglar formulario crear cuenta.
+
+Maria => Validar campos de inicio de sesion y creacion de cuenta.
+
+Carlos =>Terminar el formulario recuperar contraseña, (agregar la GUI adecuada,) validar.
+
+Javier => Heredar de GUI menu a admin y user, revisar todas variables y nombre
+correcto de cada objeto en el proyecto.
+
+Alexander => Crear el Grafo del proyecto, revisar la integracion correcta con 
+la base de datos, y su llenado en admin.
+
+Viernes hasta 12:00 pm hacer sus partes.
+
+Domingo 4:00 pm nos reunimos.
+
+Recordatorio importante la defensa final del proyecto es jueves 12, 3:00 pm. 
+

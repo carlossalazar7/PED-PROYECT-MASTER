@@ -1,7 +1,6 @@
-﻿
-namespace chevere_master
+﻿namespace chevere_master
 {
-    partial class FrmUsuario
+    partial class frmFavoriteRouts
     {
         /// <summary>
         /// Required designer variable.
@@ -31,27 +30,13 @@ namespace chevere_master
         {
             this.SuspendLayout();
             // 
-            // FormsPanel
+            // frmFavoriteRouts
             // 
-            this.FormsPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            // 
-            // UserUpdateInfo
-            // 
-            this.UserUpdateInfo.FlatAppearance.BorderSize = 0;
-            this.UserUpdateInfo.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
-            // 
-            // Maintenance
-            // 
-            this.Maintenance.FlatAppearance.BorderSize = 0;
-            this.Maintenance.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
-            // 
-            // FrmUsuario
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1012, 644);
-            this.Name = "FrmUsuario";
-            this.Text = "FrmUsuario";
+            this.ClientSize = new System.Drawing.Size(1082, 707);
+            this.Name = "frmFavoriteRouts";
+            this.Text = "frmFavoriteRouts";
             this.ResumeLayout(false);
 
         }

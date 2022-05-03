@@ -58,7 +58,7 @@ namespace chevere_master
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new CreateAccount().Show();
+            new FrmCreateAccount().Show();
         }
 
         private void btnSavePassword_Click(object sender, EventArgs e)
@@ -70,10 +70,11 @@ namespace chevere_master
             {
                 txtMessage.Text = "Contraseña actualizada";
                 txtMessage.ForeColor = Color.Green;
-                new Login().Show();
+                new frmLogIn().Show();
             }
 
             else MessageBox.Show("Error al momento de actualizar la contraseña");
+
 
         }
 

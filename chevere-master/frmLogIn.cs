@@ -61,21 +61,13 @@ namespace chevere_master
                     this.Visible = false;
                     if (dt.Rows[0][3].ToString() == "Administrador")
                     {
-                        //  User.Id = int.Parse(dt.Rows[0][2].ToString());
-                        //  User.FirstName = dt.Rows[0][0].ToString();
-                        //  MessageBox.Show($"nombre: {User.FirstName} id:{ User.Id } ");
                         new frmMenu_GUI().Show();
                         this.Hide();
                     }
                     else if (dt.Rows[0][3].ToString() == "Usuario")
                     {
-                        MessageBox.Show("bienvenido cliente");
                         new FrmMenuUsuario().Show();
                         this.Hide();
-                        // User.Id = int.Parse(dt.Rows[0][2].ToString());
-                        //  User.FirstName = dt.Rows[0][0].ToString();
-                        //    new frmUsuarios().Show();
-                        ///    MessageBox.Show($"nombre: {User.Nombre_de_Usuario} id:{ User.Id_Usuario} ");
                     }
                 }
                 else txtMessage.Text = "¡Usuario y/o contraseña incorrecta!";
@@ -104,7 +96,7 @@ namespace chevere_master
                 txtPass.UseSystemPasswordChar = true;
                 ok = true;
             }
-        }   
+        }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -115,7 +107,7 @@ namespace chevere_master
 
         private void linklblPassBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            new Reset().Show();
+            new frmReset().Show();
             this.Hide();
         }
 
@@ -128,7 +120,5 @@ namespace chevere_master
         }
 
 
-
-    
     }
 }

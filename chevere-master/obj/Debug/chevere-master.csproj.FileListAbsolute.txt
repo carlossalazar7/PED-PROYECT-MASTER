@@ -26,3 +26,29 @@ C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master
 C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.CopyComplete
 C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.exe
 C:\Users\danie\Downloads\WorkingOn_\GUI_Update\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.pdb
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\bin\Debug\chevere-master.exe.config
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\bin\Debug\chevere-master.exe
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\bin\Debug\AjaxMin.dll
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\bin\Debug\GMap.NET.Core.dll
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\bin\Debug\Gmap.net.dll
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\bin\Debug\Gmap.net.pdb
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.SuggestedBindingRedirects.cache
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Actualizar_info.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.FrmCreateAccount.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmExternalGUI.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmFavoriteRouts.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.FrmMenuUsuario.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmMenu_GUI.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmTouristRouts.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmLogIn.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmChildMenu_GUI.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Properties.Resources.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Reset.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Rutas.resources
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.GenerateResource.cache
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.CoreCompileInputs.cache
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.CopyComplete
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.exe
+C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.pdb

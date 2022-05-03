@@ -1,6 +1,6 @@
 ﻿namespace chevere_master
 {
-    partial class Reset
+    partial class frmReset
     {
         /// <summary>
         /// Required designer variable.

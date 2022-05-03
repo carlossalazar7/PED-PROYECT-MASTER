@@ -17,7 +17,7 @@ namespace chevere_master
         private SqlCommand command;
         private SqlDataAdapter adapt;
         private static Conexion conexion = new Conexion();
-
+        private User usuario = new User();
         public Reset()
         {
             InitializeComponent();
@@ -32,25 +32,14 @@ namespace chevere_master
         {
             try
             {
-
-                string sql = "SELECT u.id, u.first_name, u.last_name, r.name   FROM users u INNER JOIN roles r on  r.id = u.id_role  WHERE email = @usuario";
-
-                //abriendo conexion
-                conexion.Conectar();
-                command = new SqlCommand(sql, conexion.Conn);
-                command.Parameters.AddWithValue("usuario", txtCorreo.Text);
-
-                adapt = new SqlDataAdapter(command);
-                DataTable dt = new DataTable();
-                adapt.Fill(dt);
                 //validar si devuelve un registro
-                if (dt.Rows.Count == 1)
+                if (usuario.SeachUser(txtCorreo.Text).Rows.Count == 1)
                 {
                     txtMessage.Text = "Ingresa tu nueva contraseña: ";
                     btnSavePassword.Visible = true;
                     txtPassword.Visible = true;
                     lblPassword.Visible = true;
-                 }
+                }
                 else
                 {
                     txtMessage.Text = "Parece que no tienes cuenta, crea tu cuenta ahora";
@@ -74,7 +63,19 @@ namespace chevere_master
 
         private void btnSavePassword_Click(object sender, EventArgs e)
         {
-            new Login().Show();
+            //call update password
+
+            bool resultado = usuario.ChangePassword(txtCorreo.Text, txtPassword.Text);
+             if (resultado)
+            {
+                txtMessage.Text = "Contraseña actualizada";
+                txtMessage.ForeColor = Color.Green;
+                new Login().Show();
+            }
+
+            else MessageBox.Show("Error al momento de actualizar la contraseña");
+
         }
+
     }
 }

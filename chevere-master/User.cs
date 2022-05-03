@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace chevere_master
 {
@@ -22,7 +25,12 @@ namespace chevere_master
         private string gender;
         private int id_role;
 
-        public  int Id
+        private SqlDataAdapter dataAdapter;
+        private SqlDataReader dataReader;
+        private SqlCommand command;
+
+        Conexion conexion = new Conexion();
+        public int Id
         {
             get { return id; }
             set { id = value; }
@@ -43,7 +51,7 @@ namespace chevere_master
         }
         public string Password
         {
-           get => password; set => password = value ;
+            get => password; set => password = value;
         }
         public int Nit
         {
@@ -77,5 +85,53 @@ namespace chevere_master
         {
             get => id_role; set => id_role = value;
         }
+
+        public DataTable SeachUser(string usuario)
+        {
+            string sql = "SELECT u.id, u.first_name, u.last_name, r.name   FROM users u INNER JOIN roles r on  r.id = u.id_role  WHERE email = @usuario";
+
+            //abriendo conexion
+            conexion.Conectar();
+            command = new SqlCommand(sql, conexion.Conn);
+            command.Parameters.AddWithValue("usuario", usuario);
+
+
+            dataAdapter = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            return dt;
+        }
+
+        public bool ChangePassword(string email, string password)
+        {
+            string sql = "UPDATE users SET password = @password WHERE email = @email";
+            int rowsAffected = 0;
+            try
+            {
+                //abriendo conexion
+                conexion.Conectar();
+                command = new SqlCommand(sql, conexion.Conn);
+                command.Parameters.AddWithValue("password", password);
+                command.Parameters.AddWithValue("email", email);
+                rowsAffected = command.ExecuteNonQuery();
+
+                if (rowsAffected != 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar usuario en la BD: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                rowsAffected = 0;
+                return false;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+            
+        }
     }
 }
+

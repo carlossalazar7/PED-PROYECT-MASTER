@@ -1,7 +1,7 @@
 ﻿
 namespace chevere_master
 {
-    partial class Info_rutas
+    partial class frmTouristRouts
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace chevere_master
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Info_rutas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTouristRouts));
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();

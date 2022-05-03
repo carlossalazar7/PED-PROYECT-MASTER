@@ -69,12 +69,12 @@ namespace chevere_master
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new CreateAccount().Show();
+            new FrmCreateAccount().Show();
         }
 
         private void btnSavePassword_Click(object sender, EventArgs e)
         {
-            new Login().Show();
+            new frmLogIn().Show();
         }
     }
 }

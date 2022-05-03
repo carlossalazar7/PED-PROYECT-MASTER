@@ -145,8 +145,8 @@ USE [proyecto_ped_master]
 GO
 
 INSERT INTO [dbo].[sites]
-           ([id]
-           ,[name]
+           (
+            [name]
            ,[description]
            ,[assessment]
            ,[picture]
@@ -159,7 +159,7 @@ INSERT INTO [dbo].[sites]
            ,[latitude]
            ,[longitude])
      VALUES
-           (2,
+           (
             'Ahuachapan',
            'Ut eu esse dolor sit laboris adipisicing ullamco. Sint qui excepteur labore esse reprehenderit velit quis exercitation exercitation do cupidatat nulla. Est dolore nisi incididunt deserunt ullamco quis voluptate dolor. Est proident mollit ad ut in deserunt sit sint.',
            5,
@@ -173,6 +173,8 @@ INSERT INTO [dbo].[sites]
            13.9259486,
           -89.8411382)
 GO
+
+
 
 UPDATE users
 SET first_name='Carlos Eduardo', password='filo'
@@ -192,6 +194,9 @@ USE proyecto_ped_master
 Go
 
 SET IDENTITY_INSERT routes ON
+GO
+
+SET IDENTITY_INSERT sites ON
 GO
 
 INSERT INTO [dbo].[routes]
@@ -217,6 +222,6 @@ GO
 
 
 
-
+select*from users
 
 

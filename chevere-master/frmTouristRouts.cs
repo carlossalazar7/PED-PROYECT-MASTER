@@ -16,7 +16,7 @@ using GMap.NET.WindowsForms.Markers;
 
 namespace chevere_master
 {
-    public partial class Info_rutas : Form
+    public partial class frmTouristRouts : Form
     {
         private SqlCommand command;
         private SqlDataAdapter adapt;
@@ -28,7 +28,7 @@ namespace chevere_master
         double LatInicial = 13.9259486;
         double LongInicial = -89.8411382;
 
-        public Info_rutas()
+        public frmTouristRouts()
         {
             InitializeComponent();
             ini();
@@ -112,7 +112,7 @@ namespace chevere_master
             conexion.Conectar();
             string sql = "SELECT name,description,assessment FROM routes";
             command = new SqlCommand(sql, conexion.Conn);
-            command.Parameters.AddWithValue("mail", Login.user);
+            command.Parameters.AddWithValue("mail", frmLogIn.user);
 
             adapt = new SqlDataAdapter(command);
             DataTable dt = new DataTable();

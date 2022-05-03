@@ -52,7 +52,7 @@ namespace chevere_master
             conexion.Conectar();
             string sql = "select first_name, last_name, password, email FROM users WHERE email=@mail";
             command = new SqlCommand(sql, conexion.Conn);
-            command.Parameters.AddWithValue("mail", Login.user);
+            command.Parameters.AddWithValue("mail", frmLogIn.user);
 
             adapt = new SqlDataAdapter(command);
             DataTable dt = new DataTable();

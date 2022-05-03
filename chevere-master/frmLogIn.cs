@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 
 namespace chevere_master
 {
-    public partial class Login : Form
+    public partial class frmLogIn : frmExternalGUI
     {
         //conexion bd
         private SqlCommand command;
@@ -20,10 +20,13 @@ namespace chevere_master
         private Conexion conexion = new Conexion();
         public static string user, password;
 
+        //Forms
+        FrmCreateAccount frmCreatAcc;
+
         ///Variable  ver la contraseña
         private bool ok;
 
-        public Login()
+        public frmLogIn()
         {
             InitializeComponent();
             ////Definimos falso ver la contrasenia
@@ -34,13 +37,6 @@ namespace chevere_master
         private void InitializeMyControl()
         {
             txtPass.PasswordChar = '*';
-        }
-
-        private void btnIngresar_Click(object sender, EventArgs e)
-        {
-            VerificarUsuario(this.txtUsuario.Text, this.txtPass.Text);
-            user = txtUsuario.Text;
-            password = txtPass.Text;
         }
 
         public void VerificarUsuario(string user, string password)
@@ -68,13 +64,13 @@ namespace chevere_master
                         //  User.Id = int.Parse(dt.Rows[0][2].ToString());
                         //  User.FirstName = dt.Rows[0][0].ToString();
                         //  MessageBox.Show($"nombre: {User.FirstName} id:{ User.Id } ");
-                        new Home().Show();
+                        new frmMenu_GUI().Show();
                         this.Hide();
                     }
                     else if (dt.Rows[0][3].ToString() == "Usuario")
                     {
                         MessageBox.Show("bienvenido cliente");
-                        new FrmUsuario().Show();
+                        new FrmMenuUsuario().Show();
                         this.Hide();
                         // User.Id = int.Parse(dt.Rows[0][2].ToString());
                         //  User.FirstName = dt.Rows[0][0].ToString();
@@ -108,50 +104,31 @@ namespace chevere_master
                 txtPass.UseSystemPasswordChar = true;
                 ok = true;
             }
-        }
+        }   
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Close();
+            frmCreatAcc = new FrmCreateAccount();
+            frmCreatAcc.Show();
+            this.Hide();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linklblPassBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new Reset().Show();
             this.Hide();
         }
 
-
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private new void btnSiguiente_Click(object sender, EventArgs e)
         {
+            VerificarUsuario(this.txtUsuario.Text, this.txtPass.Text);
+            user = txtUsuario.Text;
+            password = txtPass.Text;
 
-            new CreateAccount().Show();
-            this.Hide();
         }
 
-        // procesimieto para movimiento de las ventanas
 
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
 
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lPararm);
-
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
+    
     }
 }

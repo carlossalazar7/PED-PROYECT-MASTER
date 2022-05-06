@@ -126,7 +126,7 @@ namespace chevere_master
                     errorProvider1.Clear();
                     bool valid = validarEmail(txtemail.Text); //Validacion de email
 
-                    if (valid == true && cmb_Country.Text!="" && cmb_departamento.Text !="" && rbtn_Femenino.Checked == true || rbtn_Masculino.Checked == true)
+                    if (valid == true && cmb_Country.Text!="" && cmb_departamento.Text !="" && rbtn_Femenino.Checked == true || rbtn_Masculino.Checked == true && GetEdadUser(DtpBirthDate.Value) >= 18)
                     {
                         errorProvider1.Clear();
                         try
@@ -330,6 +330,10 @@ namespace chevere_master
             if(rbtn_Femenino.Checked == false && rbtn_Masculino.Checked == false)
             {
                 errorProvider1.SetError(rbtn_Femenino, "Por favor marcar un genero");
+            }
+            if(GetEdadUser(DtpBirthDate.Value) < 18)
+            {
+                errorProvider1.SetError(DtpBirthDate, "Solo se admiten mayores de 18 años");
             }
         }
 

@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace chevere_master
 {
-    public partial class Actualizar_info : Form
+    public partial class FrmActualizar_info : Form
     {
         User usuario = new User();
         private SqlCommand command;
         private SqlDataAdapter adapt;
         private Conexion conexion = new Conexion();
-        public Actualizar_info()
+        public FrmActualizar_info()
         {
             InitializeComponent();
             ini();
@@ -39,6 +39,7 @@ namespace chevere_master
                 usuario.LastName = txb_ApellidoNuevo.Text;
                 alter();
                 ini();
+                MessageBox.Show("Se ha actualizado con exito");
             }
             else
             {
@@ -83,8 +84,9 @@ namespace chevere_master
         private void alter()
         {
             conexion.Conectar();
-            string sql = "UPDATE users SET first_name=@first_name, password=@pass, last_name=@lastN WHERE email='carlossalazar22282@gmail.com'";
+            string sql = "UPDATE users SET first_name=@first_name, password=@pass, last_name=@lastN WHERE email=@mail";
             command = new SqlCommand(sql, conexion.Conn);
+            command.Parameters.AddWithValue("mail", frmLogIn.user);
             command.Parameters.AddWithValue("first_name", usuario.FirstName);
             command.Parameters.AddWithValue("pass", usuario.Password);
             command.Parameters.AddWithValue("lastN", usuario.LastName);

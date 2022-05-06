@@ -113,9 +113,10 @@ namespace chevere_master
 
         private new void btnSiguiente_Click(object sender, EventArgs e)
         {
-            VerificarUsuario(this.txtUsuario.Text, this.txtPass.Text);
             user = txtUsuario.Text;
             password = txtPass.Text;
+            VerificarUsuario(this.txtUsuario.Text, this.txtPass.Text);
+            
 
         }
 

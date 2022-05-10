@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,14 +21,19 @@ namespace chevere_master
         private Panel leftBorderBtn;   //Panel para aplicar un borde izquierdo al boton.
         protected Form currentChildForm;   // Se guarda al formulario mostrado en el panel
         protected frmChildMenu_GUI frmHome;
-                                
+
+        private SqlCommand command;
+        private SqlDataAdapter adapt;
+        private Conexion conexion = new Conexion();
+
 
 
         public frmMenu_GUI()
         {
             InitializeComponent();
+            names();
             leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(10, 80);
+            leftBorderBtn.Size = new Size(10, 64);
             panelMenu.Controls.Add(leftBorderBtn);
             //Form
             this.Text = String.Empty;
@@ -139,7 +145,7 @@ namespace chevere_master
         private void btnAccount_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorsRGB.color3);
-            //OpenChildForm(new frmAccount());
+            OpenChildForm(new FrmActualizar_info());
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -163,7 +169,13 @@ namespace chevere_master
         private void btnLogout_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorsRGB.color7);
-            OpenChildForm(new frmLogIn());
+            DialogResult resultado = MessageBox.Show("Seguro que desea salir?","Salir", MessageBoxButtons.YesNo);
+
+            if (resultado == DialogResult.Yes)
+            {
+                new frmLogIn().Show();
+                this.Close();
+            }
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -204,6 +216,26 @@ namespace chevere_master
             WindowState = FormWindowState.Minimized;
         }
 
-      
+        private void names()
+        {
+            conexion.Conectar();
+            string sql = "SELECT users.first_name, Country.name From users INNER JOIN Country ON users.country_id = Country.id where email = @mail";
+            command = new SqlCommand(sql, conexion.Conn);
+            command.Parameters.AddWithValue("mail", frmLogIn.user);
+
+            adapt = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            adapt.Fill(dt);
+
+            lbl_Username.Text = dt.Rows[0][0].ToString();
+            lbl_Country.Text = dt.Rows[0][1].ToString();
+
+
+            conexion.Cerrar();
+        }
+
+
+
+
     }
 }

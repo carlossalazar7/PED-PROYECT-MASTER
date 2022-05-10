@@ -26,13 +26,31 @@ create table users(
 	 dui char(9),
 	 dirrection varchar(255),
 	 age int,
-	 nationality varchar(255),
+	 country_id int not null,
 	 birth_date date,
 	 gender char(1) check(gender = 'F'or gender = 'M'),
 	 id_role int not null,
-	 FOREIGN KEY (id_role) REFERENCES roles(id)
+	 FOREIGN KEY (id_role) REFERENCES roles(id),
+	 FOREIGN KEY (country_id) REFERENCES Country(id)
 );
 go
+
+CREATE TABLE Country
+(
+id int NOT NULL primary key,
+name varchar(255) not null,
+)
+GO
+
+CREATE TABLE States
+(
+id int not null primary key,
+name varchar(255) not null,
+id_Country int not null,
+FOREIGN KEY(id_Country) REFERENCES Country(id)
+
+)
+GO
 
 
 create table climates(
@@ -121,16 +139,31 @@ INSERT INTO [dbo].[roles]([id],[name]) VALUES ( 2,'Usuario') --Inserción de rol 
 go
 
 -- Inserción de administrador en la tabla usuarios
-INSERT INTO [dbo].[users] ([first_name], [last_name], [password], [email], [nit], [dui], [dirrection], [age], [nationality], [birth_date], [gender], [id_role])
-     VALUES ( 'Carlos Eduardo', 'Peñate Salazar', '123456', 'carlossalazar22282@gmail.com', 12345678923456, 12345678, 'San Salvador', 21, 'Salvadoreño', SYSDATETIME(),'M', 1)
+INSERT INTO [dbo].[users] ([first_name], [last_name], [password], [email], [nit], [dui], [dirrection], [age], [country_id], [birth_date], [gender], [id_role])
+     VALUES ( 'Carlos Eduardo', 'Peñate Salazar', '123456', 'carlossalazar22282@gmail.com', 12345678923456, 12345678, 'San Salvador', 21, 1, SYSDATETIME(),'M', 1)
+GO
+
+INSERT INTO [dbo].[users] ([first_name], [last_name], [password], [email], [nit], [dui], [dirrection], [age], [country_id], [birth_date], [gender], [id_role])
+     VALUES ( 'Javier Ernesto ', 'Perez Joaquin', '123456', 'perezxavier918@gmail.com', 12345678923456, 12345678, 'San Salvador', 21, 1, SYSDATETIME(),'M', 2)
 GO
 
 --Select para verificar la correcta inserción
 use proyecto_ped_master
 go
-select first_name, last_name, password, email
+
+select *
 from users
-where email = 'carlossalazar22282@gmail.com'
+GO
+
+SELECT users.first_name, Country.name AS Pais
+From users
+INNER JOIN Country
+ON users.country_id = Country.id
+GO
+
+DELETE 
+FROM users
+GO
 
 
 
@@ -349,7 +382,220 @@ GO
 
 -------------------------------
 
+--Insercion de paises
 
+-------------------------------
+
+INSERT INTO Country([id],[name])
+VALUES
+(1, 'El Salvador')
+
+INSERT INTO Country([id],[name])
+VALUES
+(2, 'España'),
+(3, 'Costa Rica'),
+(4, 'Panama'),
+(5, 'Guatemala'),
+(6, 'Honduras'),
+(7, 'Puerto Rico'),
+(8, 'Argentina'),
+(9, 'Nicaragua'),
+(10, 'Colombia')
+
+SELECT COUNT(*)
+FROM Country
+GO
+
+Delete from Country
+
+SELECT *
+FROM Country
+GO
+
+Use proyecto_ped_master
+GO
+
+-------------------------------
+
+--Insercion de departamentos/Estados/municipios
+
+-------------------------------
+INSERT INTO States([id],[id_Country],[name])
+VALUES
+(1, 1, 'Ahuachapán'),
+(2, 1, 'Santa Ana'),
+(3, 1, 'Sonsonate'),
+(4, 1, 'La Libertad'),
+(5, 1, 'Chalatenango'),
+(6, 1, 'Cuscatlán'),
+(7, 1, 'San Salvador'),
+(8, 1, 'La Paz'),
+(9, 1, 'Cabañas'),
+(10, 1, 'San Vicente'),
+(11, 1, 'Usulután'),
+(12, 1, 'San Miguel'),
+(13, 1, 'Morazán'),
+(14, 1, 'La Unión'),
+(15, 2, 'Madrid'),
+(16, 2, 'Barcelona'),
+(17, 2, 'Valencia'),
+(18, 2, 'Sevilla'),
+(19, 2, 'Zaragoza'),
+(20, 2, 'Malaga'),
+(21, 2, 'Murcia'),
+(22, 2, 'Palma de Mallorca'),
+(23, 2, 'Las palmas de G.C.'),
+(24, 2, 'Bilbao'),
+(25, 2, 'Alicante'),
+(26, 2, 'Córdoba'),
+(27, 2, 'Valladolid'),
+(28, 2, 'Vigo'),
+(29, 2, 'Gijón'),
+(30, 2, 'Hospitalet de Llobregat'),
+(31, 2, 'Victoria'),
+(32, 2, 'La Coruña'),
+(33, 2, 'Elche'),
+(34, 2, 'Granada'),
+(35,3,'Guanacuaste'),
+(36,3,'San Jose'),
+(37,3,'Heredia'),
+(38,3,'Alajuela'),
+(39,3,'Puntarenas'),
+(40,3,'Limón'),
+(41,3,'Cartago'),
+(42,4,'Panamá'),
+(43,4,'Colón'),
+(44,4,'Darién'),
+(45,4,'Coclé'),
+(46,4,'Veraguas'),
+(47,4,'Bocas del Toro'),
+(48,4,'Herrera'),
+(49,4,'Los Santos'),
+(50,4,'Chiriquí'),
+(51,5,'Alta Verapaz'),
+(52,5,'Baja Verapaz'),
+(53,5,'Chimaltenago'),
+(54,5,'Chiquimula'),
+(55,5,'Guatemala'),
+(56,5,'El Progreso'),
+(57,5,'Escuintla'),
+(58,5,'Huehuetenango'),
+(59,5,'Izabal'),
+(60,5,'Jalapa'),
+(61,5,'Jutiapa'),
+(62,5,'Petén'),
+(63,5,'Quetzaltenango'),
+(64,5,'Quiché'),
+(65,5,'Retalhuleo'),
+(66,5,'Sacatepequez'),
+(67,5,'San Marcos'),
+(68,5,'Santa Rosa'),
+(69,5,'Sololá'),
+(70,5,'Suchitepequez'),
+(71,5,'Totonicapán'),
+(72,5,'Zacapa'),
+(73,6,'Atlántida'),
+(74,6,'Choluteca'),
+(75,6,'Colón'),
+(76,6,'Comayagua'),
+(77,6,'Copán'),
+(78,6,'Cortés'),
+(79,6,'El Paraíso'),
+(80,6,'Francisco Morazán'),
+(81,6,'Gracias a Dios'),
+(82,6,'Intibucá'),
+(83,6,'Islas de la Bahía'),
+(84,6,'La Paz'),
+(85,6,'Lempira'),
+(86,6,'Ocotepeque'),
+(87,6,'Olancho'),
+(88,6,'Santa Bárbara'),
+(89,6,'Valle'),
+(90,6,'Yoro'),
+(91,7,'San Juan'),
+(92,7,'Bayamon'),
+(93,7,'Arecibo'),
+(94,7,'Mayagüez'),
+(95,7,'Ponce'),
+(96,7,'Guayama'),
+(97,7,'Humacao'),
+(98,7,'Carolína'),
+(99,8,'Buenos Aires'),
+(100,8,'Catamarca'),
+(101,8,'Chaco'),
+(102,8,'Chubut'),
+(103,8,'Córdoba'),
+(104,8,'Corrientes'),
+(105,8,'Entre Ríos'),
+(106,8,'Formosa'),
+(107,8,'Jujuy'),
+(108,8,'La Pampa'),
+(109,8,'La Rioja'),
+(110,8,'Mendoza'),
+(111,8,'Misiones'),
+(112,8,'Neuquén'),
+(113,8,'Río Negro'),
+(114,8,'Salta'),
+(115,8,'San Juan'),
+(116,8,'San Luis'),
+(117,8,'Santa Cruz'),
+(118,8,'Santa Fe'),
+(119,8,'Santiago del Estero'),
+(120,8,'Tierra del Fuego, Antártida e Islas del tlántico Sur'),
+(121,8,'Tucumán'),
+(122,9,'Boaco'),
+(123,9,'Carazo'),
+(124,9,'Chinandega'),
+(125,9,'Chontales'),
+(126,9,'Costa Caribe del Norte'),
+(127,9,'Costa Caribe del Sur'),
+(128,9,'Estelí'),
+(129,9,'Granada'),
+(130,9,'Jinotega'),
+(131,9,'León'),
+(132,9,'Madriz'),
+(133,9,'Managua'),
+(134,9,'Masaya'),
+(135,9,'Matagalpa'),
+(136,9,'Nueva Segovia'),
+(137,9,'Río San Juan'),
+(138,9,'Rivas'),
+(139,10,'Amazonas'),
+(140,10,'Antioquia'),
+(141,10,'Arauca'),
+(142,10,'Atlántico'),
+(143,10,'Bogotá'),
+(144,10,'Bolívar'),
+(145,10,'Boyacá'),
+(146,10,'Caldas'),
+(147,10,'Caquetá'),
+(148,10,'Casanare'),
+(149,10,'Cauca'),
+(150,10,'Cesar'),
+(151,10,'Chocó'),
+(152,10,'Córdova'),
+(153,10,'Cundinamarca'),
+(154,10,'Guainía'),
+(155,10,'Guaviare'),
+(156,10,'Hulia'),
+(157,10,'La Guajira'),
+(158,10,'Magdalena'),
+(159,10,'Meta'),
+(160,10,'Nariño'),
+(161,10,'Norte de Santander'),
+(162,10,'Putumayo'),
+(163,10,'Quindio'),
+(164,10,'Risaralda'),
+(165,10,'San Andres y Providencia'),
+(166,10,'Santander'),
+(167,10,'Sucre'),
+(168,10,'Tolima'),
+(169,10,'Valle del Cauca'),
+(170,10,'Vaupés'),
+(171,10,'Vichada')
+GO
+
+DELETE FROM States
 
 
 

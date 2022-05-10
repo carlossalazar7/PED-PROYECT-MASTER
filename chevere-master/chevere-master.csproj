@@ -88,11 +88,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actualizar_info.cs">
+    <Compile Include="FrmActualizar_info.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Actualizar_info.Designer.cs">
-      <DependentUpon>Actualizar_info.cs</DependentUpon>
+    <Compile Include="FrmActualizar_info.Designer.cs">
+      <DependentUpon>FrmActualizar_info.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="FrmCreateAccount.cs">
@@ -152,16 +152,16 @@
       <DependentUpon>frmReset.cs</DependentUpon>
     </Compile>
     <Compile Include="Routes.cs" />
-    <Compile Include="Rutas.cs">
+    <Compile Include="frmRutaFavoritas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rutas.Designer.cs">
-      <DependentUpon>Rutas.cs</DependentUpon>
+    <Compile Include="frmRutaFavoritas.Designer.cs">
+      <DependentUpon>frmRutaFavoritas.cs</DependentUpon>
     </Compile>
     <Compile Include="Sites.cs" />
     <Compile Include="User.cs" />
-    <EmbeddedResource Include="Actualizar_info.resx">
-      <DependentUpon>Actualizar_info.cs</DependentUpon>
+    <EmbeddedResource Include="FrmActualizar_info.resx">
+      <DependentUpon>FrmActualizar_info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCreateAccount.resx">
       <DependentUpon>FrmCreateAccount.cs</DependentUpon>
@@ -200,8 +200,8 @@
     <EmbeddedResource Include="frmReset.resx">
       <DependentUpon>frmReset.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rutas.resx">
-      <DependentUpon>Rutas.cs</DependentUpon>
+    <EmbeddedResource Include="frmRutaFavoritas.resx">
+      <DependentUpon>frmRutaFavoritas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

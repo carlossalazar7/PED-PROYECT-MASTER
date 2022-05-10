@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace chevere_master
 {
-    public partial class Rutas : Form
+    public partial class frmRutaFavoritas : Form
     {
-        public Rutas()
+        public frmRutaFavoritas()
         {
             InitializeComponent();
         }
@@ -79,7 +79,7 @@ namespace chevere_master
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            new Rutas().Hide();
+            new frmRutaFavoritas().Hide();
             new frmTouristRouts().Show();
         }
 

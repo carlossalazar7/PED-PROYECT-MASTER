@@ -10,10 +10,10 @@ namespace chevere_master
     internal class Conexion
     {
 
-        private static string cadena = "server=Localhost\\SQLEXPRESS; database=proyecto_ped_master; Integrated Security=yes";
         //private static string cadena = "server=Localhost\\SQLEXPRESS; database=proyecto_ped_master; Integrated Security=yes";
+        private static string cadena = "server=Localhost; database=proyecto_ped_master; Integrated Security=yes";
 
-        
+
         private SqlConnection conn = new SqlConnection(cadena);
         public SqlConnection Conn { get => conn; }
         public void Conectar()

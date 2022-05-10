@@ -1,7 +1,7 @@
 ﻿
 namespace chevere_master
 {
-    partial class Actualizar_info
+    partial class FrmActualizar_info
     {
         /// <summary>
         /// Required designer variable.

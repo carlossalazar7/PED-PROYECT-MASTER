@@ -1,6 +1,6 @@
 ﻿namespace chevere_master
 {
-    partial class Rutas
+    partial class frmRutaFavoritas
     {
         /// <summary>
         /// Required designer variable.

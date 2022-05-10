@@ -40,7 +40,7 @@ namespace chevere_master
             // 
             // currentChildForm
             // 
-            this.currentChildForm.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.currentChildForm.Margin = new System.Windows.Forms.Padding(4);
             this.currentChildForm.Text = "";
             this.currentChildForm.Visible = false;
             // 
@@ -59,6 +59,7 @@ namespace chevere_master
             // btnAccount
             // 
             this.btnAccount.FlatAppearance.BorderSize = 0;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // btnFavoriteRouts
             // 
@@ -72,6 +73,18 @@ namespace chevere_master
             // 
             this.btnCheckUsers.FlatAppearance.BorderSize = 0;
             // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(83, 55);
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(83, 9);
+            // 
+            // iconUser
+            // 
+            this.iconUser.Click += new System.EventHandler(this.iconUser_Click);
+            // 
             // btnMinimize
             // 
             this.btnMinimize.FlatAppearance.BorderSize = 0;
@@ -84,13 +97,21 @@ namespace chevere_master
             // 
             this.btnMaximizise.FlatAppearance.BorderSize = 0;
             // 
+            // lbl_Conutry
+            // 
+            this.lbl_Country.Location = new System.Drawing.Point(84, 79);
+            // 
+            // lbl_Username
+            // 
+            this.lbl_Username.Location = new System.Drawing.Point(84, 35);
+            // 
             // FrmMenuUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1349, 793);
+            this.ClientSize = new System.Drawing.Size(1012, 644);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmMenuUsuario";
             this.Text = "FrmUsuario";
             this.panelMenu.ResumeLayout(false);

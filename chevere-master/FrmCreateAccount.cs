@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Net.Mail;
 
 namespace chevere_master
 {
@@ -16,13 +17,18 @@ namespace chevere_master
     {
         //conexion bd
         private static Conexion conexion = new Conexion();
+        private SqlCommand command;
+        private SqlDataAdapter adapt;
+        string p; //Almacena el nombre de el pais
+        char g; //Almacena la letra de el genero
+        int id = 1; // Almacena el id de la nacionalidad
         //Variables a usar
         private string PersonalDoc;
 
         public FrmCreateAccount()
         {
             InitializeComponent();
-            
+            ini();
         }
 
 
@@ -113,58 +119,248 @@ namespace chevere_master
 
         private void btnSiguiente_Click_1(object sender, EventArgs e)
         {
+            if(txtname.Text!="" && txtapelli.Text != "")
+            {
+                if (txtpassword.Text == txtPasswordConfirmed.Text && txtpassword.Text != "" && txtpassword.TextLength >=6 && txtemail.Text != "")
+                {
+                    errorProvider1.Clear();
+                    bool valid = validarEmail(txtemail.Text); //Validacion de email
+
+                    if (valid == true && cmb_Country.Text!="" && cmb_departamento.Text !="" && rbtn_Femenino.Checked == true || rbtn_Masculino.Checked == true && GetEdadUser(DtpBirthDate.Value) >= 18)
+                    {
+                        errorProvider1.Clear();
+                        try
+                        {
+                            //Se conecta a la base de datos
+                            conexion.Conectar();
+                            string RegistrarUsuario;
+                            RegistrarUsuario = "INSERT INTO [dbo].[users]([first_name],[last_name],[password],[email],[nit],[dui],[dirrection],[age],[country_id],[birth_date],[gender],[id_role])";
+                            RegistrarUsuario += "VALUES  (@Nombre, @Apelli, @contra, @correo, @nit, @dui,  @direccion, @edad, @country_id, @fechaNacimiento, @genero, @id_role)";
+                            //Creamos el comando de SQL
+                            SqlCommand InsertInto = new SqlCommand(RegistrarUsuario, conexion.Conn);
+                            //Le damos parametros al comando, y a sus respectivas variables los valores.
+                            InsertInto.Parameters.Add(new SqlParameter("@Nombre", SqlDbType.VarChar, 100));
+                            InsertInto.Parameters["@Nombre"].Value = txtname.Text;
+                            InsertInto.Parameters.Add(new SqlParameter("@Apelli", SqlDbType.VarChar, 100));
+                            InsertInto.Parameters["@Apelli"].Value = txtapelli.Text;
+                            InsertInto.Parameters.Add(new SqlParameter("@contra", SqlDbType.VarChar, 100));
+                            InsertInto.Parameters["@contra"].Value = txtpassword.Text;
+                            InsertInto.Parameters.Add(new SqlParameter("@correo", SqlDbType.VarChar, 255));
+                            InsertInto.Parameters["@correo"].Value = txtemail.Text;
+                            InsertInto.Parameters.Add(new SqlParameter("@direccion", SqlDbType.VarChar, 255));
+                            InsertInto.Parameters["@direccion"].Value = cmb_departamento.Text;
+
+                            InsertInto.Parameters.Add(new SqlParameter("@country_id", SqlDbType.Int, 4));
+                            InsertInto.Parameters["@country_id"].Value = id;
+
+                            InsertInto.Parameters.Add(new SqlParameter("@edad", SqlDbType.Int, 4));
+                            InsertInto.Parameters["@edad"].Value = GetEdadUser(DtpBirthDate.Value);
+                            InsertInto.Parameters.Add(new SqlParameter("@fechaNacimiento", SqlDbType.DateTime));
+                            InsertInto.Parameters["@fechaNacimiento"].Value = DtpBirthDate.Value;//.ToString("yy/mm/dd");
+                            InsertInto.Parameters.Add(new SqlParameter("@genero", SqlDbType.Char, 1));
+                            InsertInto.Parameters["@genero"].Value = g;
+                            InsertInto.Parameters.Add(new SqlParameter("@id_role", SqlDbType.Int, 4));
+                            InsertInto.Parameters["@id_role"].Value = 2;
+                            //Para el tipo de documento personal que brindo.
+                            InsertInto.Parameters.Add(new SqlParameter("@nit", SqlDbType.Char, 14));
+                            InsertInto.Parameters.Add(new SqlParameter("@dui", SqlDbType.Char, 9));
+                            //InsertInto.Parameters.Add(new SqlParameter("@pasaporte", SqlDbType.VarChar, 255)); //Comentariado temporalmente
+
+                            InsertInto.Parameters["@nit"].Value = PersonalInfo("NIT");
+                            InsertInto.Parameters["@dui"].Value = PersonalInfo("DUI");
+                            //InsertInto.Parameters["@pasaporte"].Value = PersonalInfo("Pasaporte"); //Comenteriado temporalmente
+                            //Ejecutamos el Query
+                            InsertInto.ExecuteNonQuery();
+                            FrmMenuUsuario WelcomeUser = new FrmMenuUsuario();
+                            this.Close();
+                            WelcomeUser.Show();
+
+                        }
+                        catch (Exception error)
+                        {
+                            MessageBox.Show("Error: " + error.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            conexion.Cerrar();
+                        }
+                    }
+                    else
+                    {
+                        validcountry();
+                    }
+                }
+                else
+                {
+                    validLoginInfo();
+                }
+            }
+            else
+            {
+                errorProvider1.SetError(txtname, "No se admiten campos vacios");
+            }
+
+        }
+
+        private void ini()
+        {
+            
+            conexion.Conectar();
+            cmb_Country.Items.Clear();
+            string info = "select * FROM Country";
+            command = new SqlCommand(info, conexion.Conn);
+            adapt = new SqlDataAdapter(command);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            adapt.Fill(ds);
+            SqlDataReader dr;
+            dr = command.ExecuteReader();
+
+            while (dr.Read())
+            {
+                string name = dr["name"].ToString();
+                cmb_Country.Items.Add(name);
+            }
+
+            conexion.Cerrar();
+            
+            
+
+        }
+
+        private void cmb_Country_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            p = cmb_Country.Text;
+            conexion.Conectar();
+            string info = "select id FROM Country where name=@name";
+            command = new SqlCommand(info, conexion.Conn);
+            command.Parameters.AddWithValue("name", p);
+            adapt = new SqlDataAdapter(command);
+            DataTable dit = new DataTable();
+            adapt.Fill(dit);
+
+            id = Convert.ToInt32(dit.Rows[0][0]);
+
+            cmb_departamento.Items.Clear();
+            string query = "select * FROM States where id_Country=@id";
+            command = new SqlCommand(query, conexion.Conn);
+            command.Parameters.AddWithValue("id", id);
+            adapt = new SqlDataAdapter(command);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            adapt.Fill(ds);
+            SqlDataReader dr;
+            dr = command.ExecuteReader();
+
+            while (dr.Read())
+            {
+                string name = dr["name"].ToString();
+                cmb_departamento.Items.Add(name);
+            }
+
+            conexion.Cerrar();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void rbtn_Masculino_CheckedChanged(object sender, EventArgs e)
+        {
+            g = Convert.ToChar(rbtn_Masculino.Text);
+        }
+
+        private void rbtn_Femenino_CheckedChanged(object sender, EventArgs e)
+        {
+            g = Convert.ToChar(rbtn_Femenino.Text);
+        }
+
+        static bool validarEmail(string email)
+        {
             try
             {
-                //Se conecta a la base de datos
-                conexion.Conectar();
-                string RegistrarUsuario;
-                RegistrarUsuario = "INSERT INTO [dbo].[users]([first_name],[last_name],[password],[email],[nit],[dui],[dirrection],[age],[nationality],[birth_date],[gender],[id_role])";
-                RegistrarUsuario += "VALUES  (@Nombre, @Apelli, @contra, @correo, @nit, @dui,  @direccion, @edad, @pasaporte, @fechaNacimiento, @genero, @id_role)";
-                //Creamos el comando de SQL
-                SqlCommand InsertInto = new SqlCommand(RegistrarUsuario, conexion.Conn);
-                //Le damos parametros al comando, y a sus respectivas variables los valores.
-                InsertInto.Parameters.Add(new SqlParameter("@Nombre", SqlDbType.VarChar, 100));
-                InsertInto.Parameters["@Nombre"].Value = txtname.Text;
-                InsertInto.Parameters.Add(new SqlParameter("@Apelli", SqlDbType.VarChar, 100));
-                InsertInto.Parameters["@Apelli"].Value = txtapelli.Text;
-                InsertInto.Parameters.Add(new SqlParameter("@contra", SqlDbType.VarChar, 100));
-                InsertInto.Parameters["@contra"].Value = txtpassword.Text;
-                InsertInto.Parameters.Add(new SqlParameter("@correo", SqlDbType.VarChar, 255));
-                InsertInto.Parameters["@correo"].Value = txtemail.Text;
-                InsertInto.Parameters.Add(new SqlParameter("@direccion", SqlDbType.VarChar, 255));
-                //InsertInto.Parameters["@direccion"].Value = txtaddress.Text;
-                InsertInto.Parameters.Add(new SqlParameter("@edad", SqlDbType.Int, 4));
-                InsertInto.Parameters["@edad"].Value = GetEdadUser(DtpBirthDate.Value);
-                InsertInto.Parameters.Add(new SqlParameter("@fechaNacimiento", SqlDbType.DateTime));
-                InsertInto.Parameters["@fechaNacimiento"].Value = DtpBirthDate.Value;//.ToString("yy/mm/dd");
-                InsertInto.Parameters.Add(new SqlParameter("@genero", SqlDbType.Char, 1));
-                InsertInto.Parameters["@genero"].Value = cmbgen.Text;
-                InsertInto.Parameters.Add(new SqlParameter("@id_role", SqlDbType.Int, 4));
-                InsertInto.Parameters["@id_role"].Value = 2;
-                //Para el tipo de documento personal que brindo.
-                InsertInto.Parameters.Add(new SqlParameter("@nit", SqlDbType.Char, 14));
-                InsertInto.Parameters.Add(new SqlParameter("@dui", SqlDbType.Char, 9));
-                InsertInto.Parameters.Add(new SqlParameter("@pasaporte", SqlDbType.VarChar, 255));
-
-                InsertInto.Parameters["@nit"].Value = PersonalInfo("NIT");
-                InsertInto.Parameters["@dui"].Value = PersonalInfo("DUI");
-                InsertInto.Parameters["@pasaporte"].Value = PersonalInfo("Pasaporte");
-                //Ejecutamos el Query
-                InsertInto.ExecuteNonQuery();
-                FrmMenuUsuario WelcomeUser = new FrmMenuUsuario();
-                this.Close();
-                WelcomeUser.Show();
-
+                new MailAddress(email);
+                return true;
             }
-            catch (Exception error)
+            catch (FormatException)
             {
-                MessageBox.Show("Error: " + error.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            finally
-            {
-                conexion.Cerrar();
-            }
+        }
 
+
+        private void validLoginInfo()
+        {
+            errorProvider1.Clear();
+            if (txtemail.Text == "")
+            {
+                errorProvider1.SetError(txtemail, "Campo vacio");
+            }
+            if (txtpassword.TextLength < 6)
+            {
+                errorProvider1.SetError(txtpassword, "Se requieren al menos 6 letras para aceptar la contraseña");
+            }
+            if (txtPasswordConfirmed.Text == "")
+            {
+                errorProvider1.SetError(txtPasswordConfirmed, "Campo vacio");
+            }
+            if(txtPasswordConfirmed.Text != txtpassword.Text  )
+            {
+                errorProvider1.SetError(txtPasswordConfirmed, "Campo no coincide");
+            }
+        }
+
+        private void validcountry()
+        {
+            errorProvider1.Clear();
+            bool val = validarEmail(txtemail.Text);
+            if(val == false)
+            {
+                errorProvider1.SetError(txtemail, "Mail invalido");
+            }
+            if (cmb_Country.Text == "")
+            {
+                errorProvider1.SetError(cmb_Country, "Pais no valido");
+            }
+            if (cmb_departamento.Text == "")
+            {
+                errorProvider1.SetError(cmb_departamento, "Departamento invalido");
+            }
+            if(rbtn_Femenino.Checked == false && rbtn_Masculino.Checked == false)
+            {
+                errorProvider1.SetError(rbtn_Femenino, "Por favor marcar un genero");
+            }
+            if(GetEdadUser(DtpBirthDate.Value) < 18)
+            {
+                errorProvider1.SetError(DtpBirthDate, "Solo se admiten mayores de 18 años");
+            }
+        }
+
+        private void txtname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtapelli_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void rbtn_Nit_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbx_NIT_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

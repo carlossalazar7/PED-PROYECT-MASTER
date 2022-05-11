@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCreateAccount));
             this.txtapelli = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,6 +56,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.Aprobación = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelImagen.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,10 +66,12 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Aprobación)).BeginInit();
             this.SuspendLayout();
             // 
             // panelImagen
             // 
+            this.panelImagen.Margin = new System.Windows.Forms.Padding(3);
             this.panelImagen.Size = new System.Drawing.Size(385, 569);
             // 
             // panel1
@@ -79,19 +83,22 @@
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.Location = new System.Drawing.Point(488, 15);
+            this.btnClose.Location = new System.Drawing.Point(693, 15);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Padding = new System.Windows.Forms.Padding(6, 0, 11, 0);
             // 
             // btnMaximizise
             // 
             this.btnMaximizise.FlatAppearance.BorderSize = 0;
-            this.btnMaximizise.Location = new System.Drawing.Point(445, 16);
+            this.btnMaximizise.Location = new System.Drawing.Point(650, 16);
+            this.btnMaximizise.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMaximizise.Padding = new System.Windows.Forms.Padding(6, 0, 11, 0);
             // 
             // btnMinimize
             // 
             this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.Location = new System.Drawing.Point(403, 15);
+            this.btnMinimize.Location = new System.Drawing.Point(608, 15);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMinimize.Padding = new System.Windows.Forms.Padding(6, 0, 11, 0);
             // 
             // pictureBox1
@@ -99,6 +106,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::chevere_master.Properties.Resources.Flags;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3);
             this.pictureBox1.Size = new System.Drawing.Size(385, 569);
             // 
             // panel2
@@ -107,6 +115,7 @@
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(385, 57);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3);
             this.panel2.Size = new System.Drawing.Size(590, 512);
             this.panel2.Controls.SetChildIndex(this.label5, 0);
             this.panel2.Controls.SetChildIndex(this.groupBox2, 0);
@@ -116,22 +125,31 @@
             // 
             // lblTitleChildForm
             // 
+            this.lblTitleChildForm.Location = new System.Drawing.Point(74, 16);
+            this.lblTitleChildForm.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.lblTitleChildForm.Text = "Sign up";
+            // 
+            // IconCurrentChildForm
+            // 
+            this.IconCurrentChildForm.Location = new System.Drawing.Point(19, 9);
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(245, 3);
+            this.btnHome.Location = new System.Drawing.Point(207, 5);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(3);
             // 
             // btnAtras
             // 
             this.btnAtras.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAtras.Location = new System.Drawing.Point(103, 455);
+            this.btnAtras.Location = new System.Drawing.Point(125, 477);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // btnSiguiente
             // 
             this.btnSiguiente.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSiguiente.Location = new System.Drawing.Point(385, 455);
+            this.btnSiguiente.Location = new System.Drawing.Point(333, 477);
+            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click_1);
             // 
             // txtapelli
@@ -242,9 +260,6 @@
             // 
             this.cmb_departamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_departamento.FormattingEnabled = true;
-            this.cmb_departamento.Items.AddRange(new object[] {
-            "M",
-            "F"});
             this.cmb_departamento.Location = new System.Drawing.Point(216, 170);
             this.cmb_departamento.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_departamento.Name = "cmb_departamento";
@@ -381,6 +396,7 @@
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(166, 23);
             this.txtpassword.TabIndex = 4;
+            this.txtpassword.Leave += new System.EventHandler(this.txtpassword_Leave);
             // 
             // txtPasswordConfirmed
             // 
@@ -389,6 +405,7 @@
             this.txtPasswordConfirmed.Name = "txtPasswordConfirmed";
             this.txtPasswordConfirmed.Size = new System.Drawing.Size(166, 23);
             this.txtPasswordConfirmed.TabIndex = 3;
+            this.txtPasswordConfirmed.Leave += new System.EventHandler(this.txtPasswordConfirmed_Leave);
             // 
             // label11
             // 
@@ -420,6 +437,11 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Correo:";
             // 
+            // Aprobación
+            // 
+            this.Aprobación.ContainerControl = this;
+            this.Aprobación.Icon = ((System.Drawing.Icon)(resources.GetObject("Aprobación.Icon")));
+            // 
             // FrmCreateAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -427,6 +449,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(975, 569);
             this.ControlBox = false;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmCreateAccount";
@@ -446,6 +469,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Aprobación)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -477,5 +501,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cmb_Country;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider Aprobación;
     }
 }

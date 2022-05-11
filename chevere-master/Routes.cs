@@ -15,9 +15,11 @@ namespace Clases
         private  int assessment;
         private  double latitud;
         private  double longitud;
-        private  int attribute3;
-        private  int attribute4;
-        private  int attribute5;
+
+        public Sites nsitio;
+        public float distancia;
+
+
 
 
         //Propiedades
@@ -49,20 +51,12 @@ namespace Clases
             get { return longitud; }
             set { longitud = value; }
         }
-        public  int Attribute3
+        
+
+        public Routes(Sites destino, float peso)
         {
-            get { return attribute3; }
-            set { attribute3 = value; }
-        }
-        public  int Attribute4
-        {
-            get { return attribute4; }
-            set { attribute4 = value; }
-        }
-        public  int Attribute5
-        {
-            get { return attribute5; }
-            set { attribute5 = value; }
+            this.nsitio = destino;
+            this.distancia = peso;
         }
     }
 }

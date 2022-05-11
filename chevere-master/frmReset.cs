@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace chevere_master
 {
-    public partial class frmReset : Form
+    public partial class frmReset : frmExternalGUI
     {
         //conexion bd
         private SqlCommand command;
@@ -36,7 +36,7 @@ namespace chevere_master
                 if (usuario.SeachUser(txtCorreo.Text).Rows.Count == 1)
                 {
                     txtMessage.Text = "Ingresa tu nueva contraseña: ";
-                    btnSavePassword.Visible = true;
+                    btnSiguiente.Visible = true;
                     txtPassword.Visible = true;
                     lblPassword.Visible = true;
                 }
@@ -56,14 +56,27 @@ namespace chevere_master
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new FrmCreateAccount().Show();
-        }
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    new FrmCreateAccount().Show();
+        //}
 
-        private void btnSavePassword_Click(object sender, EventArgs e)
-        {
-            //call update password
+        //private void btnSavePassword_Click(object sender, EventArgs e)
+        //{
+        //    //call update password
+        //    bool resultado = usuario.ChangePassword(txtCorreo.Text, txtPassword.Text);
+        //    if (resultado)
+        //    {
+        //        txtMessage.Text = "Contraseña actualizada";
+        //        txtMessage.ForeColor = Color.Green;
+        //        new frmLogIn().Show();
+        //        this.Hide();
+        //    }
+        //    else MessageBox.Show("Error al momento de actualizar la contraseña");
+        //}
+
+        private void btnSiguiente_Click_1(object sender, EventArgs e)
+        { //call update password
             bool resultado = usuario.ChangePassword(txtCorreo.Text, txtPassword.Text);
             if (resultado)
             {
@@ -75,5 +88,19 @@ namespace chevere_master
             else MessageBox.Show("Error al momento de actualizar la contraseña");
         }
 
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            frmLogIn FormLog = new frmLogIn();
+            FormLog.Show();
+            this.Close();
+        }
+
+        private void btnCrearCuenta_Click(object sender, EventArgs e)
+        {
+            new FrmCreateAccount().Show();
+
+        }
+
+      
     }
 }

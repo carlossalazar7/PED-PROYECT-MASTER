@@ -24,3 +24,29 @@ C:\Users\User\Documents\Xavi\Proyecto PED\Ultima fase\PED-PROYECT-MASTER\chevere
 C:\Users\User\Documents\Xavi\Proyecto PED\Ultima fase\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.AssemblyReference.cache
 C:\Users\User\Documents\Xavi\Proyecto PED\Ultima fase\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.FrmActualizar_info.resources
 C:\Users\User\Documents\Xavi\Proyecto PED\Ultima fase\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmRutaFavoritas.resources
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\bin\Debug\chevere-master.exe.config
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\bin\Debug\chevere-master.exe
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\bin\Debug\chevere-master.pdb
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\bin\Debug\AjaxMin.dll
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\bin\Debug\GMap.NET.Core.dll
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\bin\Debug\Gmap.net.dll
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\bin\Debug\Gmap.net.pdb
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.AssemblyReference.cache
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.FrmActualizar_info.resources
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.FrmCreateAccount.resources
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmExternalGUI.resources
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmFavoriteRouts.resources
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.FrmMenuUsuario.resources
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmMenu_GUI.resources
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmTouristRouts.resources
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmLogIn.resources
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmChildMenu_GUI.resources
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.Properties.Resources.resources
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmReset.resources
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere_master.frmRutaFavoritas.resources
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.GenerateResource.cache
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.exe
+C:\Users\User\Documents\DiatomicGames\T\Ultima fase proyecto PED\PED-PROYECT-MASTER\chevere-master\obj\Debug\chevere-master.pdb

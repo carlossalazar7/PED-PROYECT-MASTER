@@ -159,6 +159,7 @@
       <DependentUpon>frmRutaFavoritas.cs</DependentUpon>
     </Compile>
     <Compile Include="Sites.cs" />
+    <Compile Include="TouristRouts.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="FrmActualizar_info.resx">
       <DependentUpon>FrmActualizar_info.cs</DependentUpon>

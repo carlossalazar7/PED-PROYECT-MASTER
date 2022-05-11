@@ -31,7 +31,7 @@ namespace chevere_master
         public frmMenu_GUI()
         {
             InitializeComponent();
-            names();
+            
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(10, 64);
             panelMenu.Controls.Add(leftBorderBtn);
@@ -219,23 +219,32 @@ namespace chevere_master
         private void names()
         {
             conexion.Conectar();
-            string sql = "SELECT users.first_name, Country.name From users INNER JOIN Country ON users.country_id = Country.id where email = @mail";
-            command = new SqlCommand(sql, conexion.Conn);
-            command.Parameters.AddWithValue("mail", frmLogIn.user);
+            try
+            {
 
-            adapt = new SqlDataAdapter(command);
-            DataTable dt = new DataTable();
-            adapt.Fill(dt);
+                string sql = "SELECT users.first_name, Country.name From users INNER JOIN Country ON users.country_id = Country.id where email = @mail";
+                command = new SqlCommand(sql, conexion.Conn);
+                command.Parameters.AddWithValue("mail", frmLogIn.user);
 
-            lbl_Username.Text = dt.Rows[0][0].ToString();
-            lbl_Country.Text = dt.Rows[0][1].ToString();
+                adapt = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                adapt.Fill(dt);
 
-
-            conexion.Cerrar();
+                lbl_Username.Text = dt.Rows[0][0].ToString();
+                lbl_Country.Text = dt.Rows[0][1].ToString();
+            }
+            catch (Exception error)
+            {
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
         }
 
-
-
-
+        private void frmMenu_GUI_Load(object sender, EventArgs e)
+        {
+            names();
+        }
     }
 }

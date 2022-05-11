@@ -7,20 +7,24 @@ using System.Data.SqlClient;
 
 namespace Clases
 {
+    //This class will be our nodes for the Routs Graphs
     internal class Sites
     {
-        //Variables
+        //Atributos
         private  int id;
         private  string name;
         private  string description;
         private  int assessment;
-        private  int latitude;
-        private  int longitude;
+        private  float latitude;
+        private  float longitude;
         private  int climate_id;
         private  int category_id;
-        private  int visitado; // Revisar: puede ser bool o int?
+        private  int visitado; 
         private  int etiqueta;
-        private  int tree_root;
+
+        // {[()]}
+        public List<Routes> ListaAdyacencia; //Lista de adyacencia de cada sitio turistico.
+
 
         //Propiedades
 
@@ -45,12 +49,12 @@ namespace Clases
             get { return assessment; }
             set { assessment = value; if (assessment < 0 || assessment > 5) { throw new Exception("Error, la puntuacion no es valida"); } }
         }
-        public  int Latitude
+        public  float Latitude
         {
             get { return latitude; }
             set { latitude = value; }
         }
-        public  int Longitude
+        public  float Longitude
         {
             get { return longitude; }
             set { longitude = value; }
@@ -75,11 +79,20 @@ namespace Clases
             get { return etiqueta; }
             set { etiqueta = value; }
         }
-        public int Tree_root
+
+        //Methods
+        public Sites(string nombre,  string _description, float _latitude, float _longitude)
         {
-            get { return tree_root; }
-            set { tree_root = value; }
+
+            this.name = nombre;
+            this.ListaAdyacencia = new List<Routes>();
+            this.description = _description;
+            this.latitude = _latitude;
+            this.longitude = _longitude;
+
         }
+        public Sites() : this("", "",(float)0.0,(float)0.0) { }
+
 
     }
 }

@@ -1,0 +1,13 @@
+
+Javi y melissa
+ Funciones User {agregar comentario, gustar}
+ User {dejar los paneles con texto y homogeneos al menu}
+ Creat{validar todo lo crear cuenta, campos ocultar contra}
+
+Carlos y yo
+ Funciones de Admin 
+ CrearRuta, cargar grafo, agregar sitios al BD, Agregar datagridview,
+ para ver users.
+ *Carlos =>Terminar el formulario recuperar contraseña, (agregar la GUI adecuada,) validar.
+		
+

@@ -56,25 +56,6 @@ namespace chevere_master
             }
         }
 
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    new FrmCreateAccount().Show();
-        //}
-
-        //private void btnSavePassword_Click(object sender, EventArgs e)
-        //{
-        //    //call update password
-        //    bool resultado = usuario.ChangePassword(txtCorreo.Text, txtPassword.Text);
-        //    if (resultado)
-        //    {
-        //        txtMessage.Text = "Contraseña actualizada";
-        //        txtMessage.ForeColor = Color.Green;
-        //        new frmLogIn().Show();
-        //        this.Hide();
-        //    }
-        //    else MessageBox.Show("Error al momento de actualizar la contraseña");
-        //}
-
         private void btnSiguiente_Click_1(object sender, EventArgs e)
         { //call update password
             bool resultado = usuario.ChangePassword(txtCorreo.Text, txtPassword.Text);
@@ -101,6 +82,9 @@ namespace chevere_master
 
         }
 
-      
+        private void lblTitleChildForm_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

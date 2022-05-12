@@ -98,7 +98,7 @@ namespace chevere_master
                         points.Add(new PointLatLng(Convert.ToDouble(dataReader["latitude"].ToString()), Convert.ToDouble(dataReader["longitude"].ToString())));
 
 
-
+                        string clima = dataReader["climate_id"].ToString();
                         //llenar los vertices del grafo
                         sitio.Id = (int)dataReader["id"];
                         sitio.Name = dataReader["name"].ToString();
@@ -109,7 +109,8 @@ namespace chevere_master
                         sitio.Latitude = (decimal)dataReader["latitude"];
                         //sitio.Longitude = (float)dataReader["longitude"]; //Este era float
                         sitio.Longitude = (decimal)dataReader["longitude"];
-                        sitio.Climate_id = (int)dataReader["climate_id"];
+                        //sitio.Climate_id = (int)dataReader["climate_id"]; // Este da error
+                        sitio.Climate_id = Convert.ToInt32(clima);
                         sitio.Category_id = (int)dataReader["category_id"];
                         sitio.Visitado = (int)dataReader["visitado"];
                         sitio.Etiqueta = (int)dataReader["etiqueta"];

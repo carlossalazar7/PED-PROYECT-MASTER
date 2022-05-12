@@ -102,11 +102,13 @@ namespace chevere_master
                         //llenar los vertices del grafo
                         sitio.Id = (int)dataReader["id"];
                         sitio.Name = dataReader["name"].ToString();
-                        sitio.Description = dataReader["descripcion"].ToString();
+                        sitio.Description = dataReader["description"].ToString();
                         sitio.Assessment = (int)dataReader["assessment"];
                         sitio.Picture = dataReader["picture"].ToString();
-                        sitio.Latitude = (float)dataReader["latitude"];
-                        sitio.Longitude = (float)dataReader["longitude"];
+                        //sitio.Latitude = (float)dataReader["latitude"]; //Este genera error
+                        sitio.Latitude = (decimal)dataReader["latitude"];
+                        //sitio.Longitude = (float)dataReader["longitude"]; //Este era float
+                        sitio.Longitude = (decimal)dataReader["longitude"];
                         sitio.Climate_id = (int)dataReader["climate_id"];
                         sitio.Category_id = (int)dataReader["category_id"];
                         sitio.Visitado = (int)dataReader["visitado"];
@@ -180,6 +182,14 @@ namespace chevere_master
                 try
                 {
                     conexion.Conectar();
+
+                    string delete;
+                    delete = "DELETE FROM user_routes WHERE User_id = @id";
+                    SqlCommand DeleteFrom = new SqlCommand(delete, conexion.Conn);
+                    DeleteFrom.Parameters.AddWithValue("@id", getidUser());
+                    DeleteFrom.ExecuteNonQuery();
+
+
                     string insertar;
                     insertar = "Insert INTO [dbo].[user_routes]([User_id],[Routes_id],[Comment],[assessment])";
                     insertar += "VALUES (@user_id, @Routes_id, @Comment, @assessment)";
@@ -232,56 +242,36 @@ namespace chevere_master
 
         private void actualizarGrid()
         {
-            conexion.Conectar();
 
-            string sql = "SELECT U.first_name, UR.Comment, UR.assessment FROM user_routes UR INNER JOIN users U ON UR.User_id =U.id WHERE U.email = @mail";
-            command = new SqlCommand(sql, conexion.Conn);
-            command.Parameters.AddWithValue("@mail", frmLogIn.user);
-            adapt = new SqlDataAdapter(command);
-            DataTable dit = new DataTable();
-            adapt.Fill(dit);
-                
-
-                int n = dgw_Comentarios.Rows.Add();
-
-                dgw_Comentarios.Rows[n].Cells[0].Value = dit.Rows[0][0].ToString();
-                dgw_Comentarios.Rows[n].Cells[1].Value = dit.Rows[0][1].ToString();
-                dgw_Comentarios.Rows[n].Cells[2].Value = dit.Rows[0][2].ToString();
-
-
-            conexion.Cerrar();
+            iniGrid();
+            
         }
 
         private void iniGrid()
         {
-            conexion.Conectar();
-            string sql = "SELECT * FROM user_routes";
-            command = new SqlCommand(sql, conexion.Conn);
-            adapt = new SqlDataAdapter(command);
-            DataTable dit = new DataTable();
-            adapt.Fill(dit);
-
-            string sql1 = "SELECT COUNT(*) FROM user_routes";
-            SqlCommand Count = new SqlCommand(sql1, conexion.Conn);
-            SqlDataAdapter adaptCount = new SqlDataAdapter(Count);
-            DataTable dc = new DataTable();
-            adaptCount.Fill(dc);
-
-
-            int f = Convert.ToInt32(dc.Rows[0][0]);
-
-            for(int i=0; i > 2; i++)
+            try
             {
-                int n = dgw_Comentarios.Rows.Add();
+                conexion.Conectar();
+                string mostrar = "SELECT U.first_name AS Usuario, UR.Comment AS Commentario, UR.assessment AS Puntuación FROM user_routes UR INNER JOIN users U ON UR.User_id =U.id";
+                SqlCommand Select = new SqlCommand(mostrar, conexion.Conn);
+                SqlDataAdapter fill = new SqlDataAdapter(Select);
+                DataTable d2t = new DataTable();
+                fill.Fill(d2t);
 
-                dgw_Comentarios.Rows[i].Cells[0].Value = dit.Rows[i][0].ToString();
-                dgw_Comentarios.Rows[i].Cells[1].Value = dit.Rows[i][1].ToString();
-                dgw_Comentarios.Rows[i].Cells[2].Value = dit.Rows[i][2].ToString();
+                dgw_Comentarios.DataSource = d2t;
+                dgw_Comentarios.AutoResizeColumns();
+
+
+                
             }
-
-
-
-            conexion.Cerrar();
+            catch
+            {
+                MessageBox.Show("No se ha podido mostrar tu comentario, Intentalo de nuevo mas tarde", "Error", MessageBoxButtons.OK);
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
         }
     }
 }

@@ -17,8 +17,8 @@ namespace Clases
         private string name;
         private string description;
         private int assessment;
-        private float latitude;
-        private float longitude;
+        private decimal latitude; //Este era float
+        private decimal longitude; // Este era float
         private int climate_id;
         private int category_id;
         private int visitado;
@@ -60,12 +60,12 @@ namespace Clases
             get { return assessment; }
             set { assessment = value; if (assessment < 0 || assessment > 5) { throw new Exception("Error, la puntuacion no es valida"); } }
         }
-        public float Latitude
+        public decimal Latitude  //Este era float
         {
             get { return latitude; }
             set { latitude = value; }
         }
-        public float Longitude
+        public decimal Longitude //Este era float
         {
             get { return longitude; }
             set { longitude = value; }
@@ -102,7 +102,7 @@ namespace Clases
 
 
         //Methods
-        public Sites(string nombre, string _description, float _latitude, float _longitude)
+        public Sites(string nombre, string _description, decimal _latitude, decimal _longitude) //latitude y longitud eran float
         {
 
 
@@ -116,7 +116,7 @@ namespace Clases
 
 
         }
-        public Sites() : this("", "", (float)0.0, (float)0.0) { }
+        public Sites() : this("", "", (decimal)0.0, (decimal)0.0) { } //Los dos decimal eran float
 
 
 

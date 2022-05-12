@@ -22,7 +22,7 @@ namespace Clases
         
 
         //Construye un sitio a partir de sus parametros bases y lo agrega a la lista de sitios.
-        public Sites AgregarSitio(string nombre, string descrip, float latitud, float longitud)
+        public Sites AgregarSitio(string nombre, string descrip, decimal latitud, decimal longitud) //lat y long eran float
         {
             Sites nodo = new Sites(nombre, descrip, latitud,longitud);
             nodos.Add(nodo);

@@ -53,14 +53,11 @@ namespace chevere_master
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
             this.pnl_Comentario = new System.Windows.Forms.Panel();
-            this.txb_Comentario = new System.Windows.Forms.TextBox();
-            this.cbx_Puntuación = new System.Windows.Forms.ComboBox();
-            this.btn_Comentar = new FontAwesome.Sharp.IconButton();
-            this.lbl_Puntuación = new System.Windows.Forms.Label();
             this.dgw_Comentarios = new System.Windows.Forms.DataGridView();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Puntuación = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_Puntuación = new System.Windows.Forms.Label();
+            this.btn_Comentar = new FontAwesome.Sharp.IconButton();
+            this.cbx_Puntuación = new System.Windows.Forms.ComboBox();
+            this.txb_Comentario = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -82,7 +79,7 @@ namespace chevere_master
             this.map.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.map.LevelsKeepInMemmory = 5;
             this.map.Location = new System.Drawing.Point(32, 6);
-            this.map.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.map.Margin = new System.Windows.Forms.Padding(2);
             this.map.MarkersEnabled = true;
             this.map.MaxZoom = 2;
             this.map.MinZoom = 2;
@@ -107,7 +104,7 @@ namespace chevere_master
             this.panel1.Controls.Add(this.txtdistancia);
             this.panel1.Controls.Add(this.map);
             this.panel1.Location = new System.Drawing.Point(287, 43);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(516, 353);
             this.panel1.TabIndex = 1;
@@ -149,7 +146,7 @@ namespace chevere_master
             // 
             this.pictureBox4.Image = global::chevere_master.Properties.Resources.close;
             this.pictureBox4.Location = new System.Drawing.Point(523, 6);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(23, 22);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -161,7 +158,7 @@ namespace chevere_master
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(28, 103);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(235, 133);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -181,7 +178,7 @@ namespace chevere_master
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.lbl_description);
             this.panel3.Location = new System.Drawing.Point(28, 248);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(235, 261);
             this.panel3.TabIndex = 19;
@@ -235,7 +232,7 @@ namespace chevere_master
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox2.IconSize = 21;
             this.iconPictureBox2.Location = new System.Drawing.Point(11, 202);
-            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.iconPictureBox2.Name = "iconPictureBox2";
             this.iconPictureBox2.Size = new System.Drawing.Size(21, 21);
             this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -251,7 +248,7 @@ namespace chevere_master
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 21;
             this.iconPictureBox1.Location = new System.Drawing.Point(11, 157);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(21, 21);
             this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -283,7 +280,7 @@ namespace chevere_master
             // 
             this.pictureBox2.Image = global::chevere_master.Properties.Resources.descarga;
             this.pictureBox2.Location = new System.Drawing.Point(11, 92);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(47, 45);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -337,27 +334,46 @@ namespace chevere_master
             this.pnl_Comentario.Size = new System.Drawing.Size(525, 167);
             this.pnl_Comentario.TabIndex = 22;
             // 
-            // txb_Comentario
+            // dgw_Comentarios
             // 
-            this.txb_Comentario.Location = new System.Drawing.Point(95, 15);
-            this.txb_Comentario.Multiline = true;
-            this.txb_Comentario.Name = "txb_Comentario";
-            this.txb_Comentario.Size = new System.Drawing.Size(337, 45);
-            this.txb_Comentario.TabIndex = 1;
+            this.dgw_Comentarios.BackgroundColor = System.Drawing.Color.White;
+            this.dgw_Comentarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgw_Comentarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgw_Comentarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgw_Comentarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgw_Comentarios.EnableHeadersVisualStyles = false;
+            this.dgw_Comentarios.GridColor = System.Drawing.Color.White;
+            this.dgw_Comentarios.Location = new System.Drawing.Point(3, 66);
+            this.dgw_Comentarios.Name = "dgw_Comentarios";
+            this.dgw_Comentarios.ReadOnly = true;
+            this.dgw_Comentarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Outlook", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgw_Comentarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgw_Comentarios.RowHeadersVisible = false;
+            this.dgw_Comentarios.Size = new System.Drawing.Size(505, 150);
+            this.dgw_Comentarios.TabIndex = 5;
             // 
-            // cbx_Puntuación
+            // lbl_Puntuación
             // 
-            this.cbx_Puntuación.FormattingEnabled = true;
-            this.cbx_Puntuación.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.cbx_Puntuación.Location = new System.Drawing.Point(434, 39);
-            this.cbx_Puntuación.Name = "cbx_Puntuación";
-            this.cbx_Puntuación.Size = new System.Drawing.Size(74, 21);
-            this.cbx_Puntuación.TabIndex = 2;
+            this.lbl_Puntuación.AutoSize = true;
+            this.lbl_Puntuación.Location = new System.Drawing.Point(440, 18);
+            this.lbl_Puntuación.Name = "lbl_Puntuación";
+            this.lbl_Puntuación.Size = new System.Drawing.Size(61, 13);
+            this.lbl_Puntuación.TabIndex = 4;
+            this.lbl_Puntuación.Text = "Puntuación";
             // 
             // btn_Comentar
             // 
@@ -378,71 +394,27 @@ namespace chevere_master
             this.btn_Comentar.UseVisualStyleBackColor = false;
             this.btn_Comentar.Click += new System.EventHandler(this.btn_Comentar_Click);
             // 
-            // lbl_Puntuación
+            // cbx_Puntuación
             // 
-            this.lbl_Puntuación.AutoSize = true;
-            this.lbl_Puntuación.Location = new System.Drawing.Point(440, 18);
-            this.lbl_Puntuación.Name = "lbl_Puntuación";
-            this.lbl_Puntuación.Size = new System.Drawing.Size(61, 13);
-            this.lbl_Puntuación.TabIndex = 4;
-            this.lbl_Puntuación.Text = "Puntuación";
+            this.cbx_Puntuación.FormattingEnabled = true;
+            this.cbx_Puntuación.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cbx_Puntuación.Location = new System.Drawing.Point(434, 39);
+            this.cbx_Puntuación.Name = "cbx_Puntuación";
+            this.cbx_Puntuación.Size = new System.Drawing.Size(74, 21);
+            this.cbx_Puntuación.TabIndex = 2;
             // 
-            // dgw_Comentarios
+            // txb_Comentario
             // 
-            this.dgw_Comentarios.BackgroundColor = System.Drawing.Color.White;
-            this.dgw_Comentarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgw_Comentarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgw_Comentarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgw_Comentarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgw_Comentarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Usuario,
-            this.Comentario,
-            this.Puntuación});
-            this.dgw_Comentarios.EnableHeadersVisualStyles = false;
-            this.dgw_Comentarios.GridColor = System.Drawing.Color.White;
-            this.dgw_Comentarios.Location = new System.Drawing.Point(3, 66);
-            this.dgw_Comentarios.Name = "dgw_Comentarios";
-            this.dgw_Comentarios.ReadOnly = true;
-            this.dgw_Comentarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Outlook", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgw_Comentarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgw_Comentarios.RowHeadersVisible = false;
-            this.dgw_Comentarios.Size = new System.Drawing.Size(505, 150);
-            this.dgw_Comentarios.TabIndex = 5;
-            // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            this.Usuario.Width = 145;
-            // 
-            // Comentario
-            // 
-            this.Comentario.HeaderText = "Comentario";
-            this.Comentario.Name = "Comentario";
-            this.Comentario.ReadOnly = true;
-            this.Comentario.Width = 250;
-            // 
-            // Puntuación
-            // 
-            this.Puntuación.HeaderText = "Puntuación";
-            this.Puntuación.Name = "Puntuación";
-            this.Puntuación.ReadOnly = true;
-            this.Puntuación.Width = 70;
+            this.txb_Comentario.Location = new System.Drawing.Point(95, 15);
+            this.txb_Comentario.Multiline = true;
+            this.txb_Comentario.Name = "txb_Comentario";
+            this.txb_Comentario.Size = new System.Drawing.Size(337, 45);
+            this.txb_Comentario.TabIndex = 1;
             // 
             // frmTouristRouts
             // 
@@ -507,9 +479,6 @@ namespace chevere_master
         private System.Windows.Forms.TextBox txb_Comentario;
         private FontAwesome.Sharp.IconButton btn_Comentar;
         private System.Windows.Forms.DataGridView dgw_Comentarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Comentario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Puntuación;
         private System.Windows.Forms.Label lbl_Puntuación;
     }
 }

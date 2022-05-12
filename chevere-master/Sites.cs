@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
+
+
 namespace Clases
 {
     //This class will be our nodes for the Routs Graphs
@@ -23,11 +25,15 @@ namespace Clases
         private int etiqueta;
         private String picture;
 
+
         // {[()]}
         public List<Routes> ListaAdyacencia; //Lista de adyacencia de cada sitio turistico.
 
 
+
+
         //Propiedades
+
 
         public int Id
         {
@@ -81,21 +87,27 @@ namespace Clases
             set { etiqueta = value; }
         }
 
+
         public string Picture
         {
             get => picture;
             set => picture = value;
         }
 
+
         //Methods
         public Sites(string nombre, string _description, float _latitude, float _longitude)
         {
+
+
 
             this.name = nombre;
             this.ListaAdyacencia = new List<Routes>();
             this.description = _description;
             this.latitude = _latitude;
             this.longitude = _longitude;
+
+
 
         }
         public Sites() : this("", "", (float)0.0, (float)0.0) { }

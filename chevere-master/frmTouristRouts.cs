@@ -24,6 +24,7 @@ namespace chevere_master
         private SqlDataAdapter adapt;
         private Conexion conexion = new Conexion();
 
+
         GMapOverlay routes;
 
         Bitmap bitmap = (Bitmap)Image.FromFile("img/img3.jpg");
@@ -31,6 +32,7 @@ namespace chevere_master
         Bitmap bitmap3 = (Bitmap)Image.FromFile("img/img3.jpg");
         Bitmap bitmap4 = (Bitmap)Image.FromFile("img/img3.jpg");
         TouristRouts grafo = new TouristRouts();
+
 
         private void map_OnMarkerClick(GMapMarker item, MouseEventArgs e)
         {
@@ -52,7 +54,9 @@ namespace chevere_master
         private void Info_rutas_Load(object sender, EventArgs e)
         {
             var markers = new GMapOverlay("markers");
-            //configuración inicial 
+
+            //configuración inicial
+
             map.DragButton = MouseButtons.Left;
             map.CanDragMap = true;
             map.MapProvider = GMapProviders.GoogleMap;
@@ -66,7 +70,8 @@ namespace chevere_master
             //cargar todas las rutas en el mapa
             try
             {
-                string sql = "select *  from sites where routesID = 1 order by id desc";
+            string sql = "select * from sites where routesID = 1 order by id desc";
+
                 //variables de conexion
                 Conexion conexion = new Conexion();
                 SqlDataAdapter dataAdapter;
@@ -85,11 +90,13 @@ namespace chevere_master
                         marker1.ToolTipMode = MarkerTooltipMode.Always;
                         marker1.ToolTipText = String.Format(dataReader["name"].ToString());
 
+
                         routes.Markers.Add(marker1);
                         map.Overlays.Add(routes);
 
                         //ahora agregamos  el mapa  y el marcador  al map control
                         points.Add(new PointLatLng(Convert.ToDouble(dataReader["latitude"].ToString()), Convert.ToDouble(dataReader["longitude"].ToString())));
+
 
                         //llenar los vertices del grafo
                         sitio.Id = (int)dataReader["id"];
@@ -120,12 +127,16 @@ namespace chevere_master
 
             }
 
+
+
             GMapRoute routess = new GMapRoute(points, "Ruta Turística Las Flores")
             {
                 Stroke = new Pen(Color.Green, 5)
             };
             routes.Routes.Add(routess);
             map.Overlays.Add(routes);
+
+
 
             txtdistancia.Text = routess.Distance + " km";
 

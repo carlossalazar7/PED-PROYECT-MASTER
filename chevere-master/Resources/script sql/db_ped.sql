@@ -4,6 +4,12 @@ Create database  proyecto_ped_master;
 use proyecto_ped_master;
 go
 
+use master;
+go
+
+DROP DATABASE proyecto_ped_master
+Go
+
 -------------------------------------------------------------------------------------------------------
 
 --Creacion de tablas
@@ -73,8 +79,8 @@ create table sites(
 	description text,
 	assessment int check (assessment<=5), --valoracion
 	picture text,
-	latitude decimal(18, 15),
-	longitude decimal(18, 15),
+	latitude decimal(18, 7),
+	longitude decimal(18, 7),
 	climate_id int,
 	category_id int,
 	visitado int,
@@ -130,6 +136,8 @@ assessment int check (assessment<=5)
 )
 GO
 
+
+
 -------------------------------------------------------------------------------------------------------
 
 INSERT INTO [dbo].[roles] ([id], [name]) VALUES(1,'Administrador') --Inserción de rol administrador
@@ -152,7 +160,7 @@ use proyecto_ped_master
 go
 
 select *
-from users
+from sites
 GO
 
 SELECT users.first_name, Country.name AS Pais
@@ -162,7 +170,12 @@ ON users.country_id = Country.id
 GO
 
 DELETE 
-FROM users
+FROM sites
+GO
+
+SELECT COUNT(*)
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'sites'
 GO
 
 
@@ -170,6 +183,40 @@ GO
 -------------------------------------------------------------------------------------------------------
 
 USE [proyecto_ped_master]
+GO
+
+-------------------------------
+
+--Inserción de comentarios
+
+-------------------------------
+
+USE proyecto_ped_master
+GO
+
+Select *
+From user_routes
+GO
+
+SELECT COUNT(*)
+FROM user_routes
+GO
+
+UPDATE user_routes 
+SET Comment = 'Poto', assessment = 3
+WHERE User_id = 21
+GO
+
+delete from user_routes
+GO
+
+SELECT id
+FROM users
+GO
+
+INSERT INTO [dbo].[user_routes]([User_id],[Routes_id],[Comment],[assessment])
+VALUES
+(20,1,'Interesante sitio para visitar',4)
 GO
 
 
@@ -413,8 +460,7 @@ GO
 Delete from Country
 
 SELECT *
-FROM Country
-GO
+FROM users
 
 select*from sites;
 
@@ -601,7 +647,6 @@ VALUES
 (171,10,'Vichada')
 GO
 
-DELETE FROM States
 
 
 

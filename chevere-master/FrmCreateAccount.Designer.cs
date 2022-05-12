@@ -57,6 +57,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.Aprobación = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btn_Ver = new FontAwesome.Sharp.IconButton();
             this.panelImagen.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,21 +84,21 @@
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.Location = new System.Drawing.Point(693, 15);
+            this.btnClose.Location = new System.Drawing.Point(655, 15);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Padding = new System.Windows.Forms.Padding(6, 0, 11, 0);
             // 
             // btnMaximizise
             // 
             this.btnMaximizise.FlatAppearance.BorderSize = 0;
-            this.btnMaximizise.Location = new System.Drawing.Point(650, 16);
+            this.btnMaximizise.Location = new System.Drawing.Point(612, 16);
             this.btnMaximizise.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMaximizise.Padding = new System.Windows.Forms.Padding(6, 0, 11, 0);
             // 
             // btnMinimize
             // 
             this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.Location = new System.Drawing.Point(608, 15);
+            this.btnMinimize.Location = new System.Drawing.Point(570, 15);
             this.btnMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMinimize.Padding = new System.Windows.Forms.Padding(6, 0, 11, 0);
             // 
@@ -135,20 +136,20 @@
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(207, 5);
+            this.btnHome.Location = new System.Drawing.Point(188, 5);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3);
             // 
             // btnAtras
             // 
             this.btnAtras.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAtras.Location = new System.Drawing.Point(125, 477);
+            this.btnAtras.Location = new System.Drawing.Point(106, 477);
             this.btnAtras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // btnSiguiente
             // 
             this.btnSiguiente.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSiguiente.Location = new System.Drawing.Point(333, 477);
+            this.btnSiguiente.Location = new System.Drawing.Point(314, 477);
             this.btnSiguiente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click_1);
             // 
@@ -365,6 +366,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btn_Ver);
             this.groupBox2.Controls.Add(this.txtemail);
             this.groupBox2.Controls.Add(this.txtpassword);
             this.groupBox2.Controls.Add(this.txtPasswordConfirmed);
@@ -442,6 +444,25 @@
             this.Aprobación.ContainerControl = this;
             this.Aprobación.Icon = ((System.Drawing.Icon)(resources.GetObject("Aprobación.Icon")));
             // 
+            // btn_Ver
+            // 
+            this.btn_Ver.FlatAppearance.BorderSize = 0;
+            this.btn_Ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Ver.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.btn_Ver.IconColor = System.Drawing.Color.Black;
+            this.btn_Ver.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_Ver.IconSize = 30;
+            this.btn_Ver.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_Ver.Location = new System.Drawing.Point(274, 57);
+            this.btn_Ver.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Ver.Name = "btn_Ver";
+            this.btn_Ver.Size = new System.Drawing.Size(42, 30);
+            this.btn_Ver.TabIndex = 14;
+            this.btn_Ver.UseVisualStyleBackColor = true;
+            this.btn_Ver.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_Ver_MouseDown);
+            this.btn_Ver.MouseHover += new System.EventHandler(this.btn_Ver_MouseHover);
+            this.btn_Ver.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_Ver_MouseUp);
+            // 
             // FrmCreateAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,5 +523,6 @@
         private System.Windows.Forms.ComboBox cmb_Country;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider Aprobación;
+        private FontAwesome.Sharp.IconButton btn_Ver;
     }
 }

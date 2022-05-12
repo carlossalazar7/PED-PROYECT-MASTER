@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FontAwesome.Sharp;
 
 using GMap.NET;
 using GMap.NET.MapProviders;
@@ -24,10 +25,12 @@ namespace chevere_master
 
         GMarkerGoogle marker, marker2, marker3, marker4, marker5, marker6, marker7;
         GMapOverlay routes;
-        
-        Bitmap bitmap = (Bitmap)Image.FromFile("img/img3.jpg");
 
-        PointLatLng 
+        
+
+        //Bitmap bitmap = (Bitmap)Image.FromFile("img/img3.jpg");
+
+        PointLatLng
             punto1 = new PointLatLng(13.9259486, -89.8411382),
             punto2 = new PointLatLng(13.8683828, -89.8584498),
             punto3 = new PointLatLng(13.8626493, -89.8103242),
@@ -39,7 +42,7 @@ namespace chevere_master
         private void map_OnMarkerClick(GMapMarker item, MouseEventArgs e)
         {
            lbl_name.Text= item.ToolTipText;
-            pictureBox1.Image = bitmap;
+            //pictureBox1.Image = bitmap;
         }
 
         
@@ -48,6 +51,8 @@ namespace chevere_master
         {
             InitializeComponent();
             ini();
+            cbx_Puntuación.SelectedIndex = 0;
+            iniGrid();
         }
 
         private void Info_rutas_Load(object sender, EventArgs e)
@@ -159,6 +164,119 @@ namespace chevere_master
 
             conexion.Cerrar();
 
+        }
+
+        private void btn_Comentar_Click(object sender, EventArgs e)
+        {
+            DialogResult f = MessageBox.Show("Seguro quieres comentar esto?", "Aviso", MessageBoxButtons.OKCancel);
+
+            if (f == DialogResult.OK)
+            {
+                try
+                {
+                    conexion.Conectar();
+                    string insertar;
+                    insertar = "Insert INTO [dbo].[user_routes]([User_id],[Routes_id],[Comment],[assessment])";
+                    insertar += "VALUES (@user_id, @Routes_id, @Comment, @assessment)";
+                    SqlCommand InsertInto = new SqlCommand(insertar, conexion.Conn);
+                    //Parametros para la inserción
+                    InsertInto.Parameters.Add(new SqlParameter("@user_id", SqlDbType.Int));
+                    InsertInto.Parameters["@user_id"].Value = getidUser();
+                    InsertInto.Parameters.Add(new SqlParameter("@Routes_id", SqlDbType.Int));
+                    InsertInto.Parameters["@Routes_id"].Value = 1;
+                    InsertInto.Parameters.Add(new SqlParameter("@Comment", SqlDbType.VarChar, 255));
+                    InsertInto.Parameters["@Comment"].Value = txb_Comentario.Text;
+                    InsertInto.Parameters.Add(new SqlParameter("@assessment", SqlDbType.Int));
+                    InsertInto.Parameters["@assessment"].Value = Convert.ToInt32(cbx_Puntuación.Text);
+                    InsertInto.ExecuteNonQuery();
+                }
+                catch(Exception error)
+                {
+                    MessageBox.Show("Revise si sus datos son validos" +error+"" ,"Error",MessageBoxButtons.OK);
+                }
+                finally
+                {
+                    conexion.Cerrar();
+                    txb_Comentario.Clear();
+                    cbx_Puntuación.SelectedIndex = 0;
+                    actualizarGrid();
+                }
+
+
+
+                
+            }
+
+        }
+
+        private int getidUser()
+        {
+            
+            string sql1 = "SELECT id FROM users WHERE email = @mail";
+            command = new SqlCommand(sql1, conexion.Conn);
+            command.Parameters.AddWithValue("@mail", frmLogIn.user);
+            adapt = new SqlDataAdapter(command);
+            DataTable dit = new DataTable();
+            adapt.Fill(dit);
+
+            int i = Convert.ToInt32(dit.Rows[0][0]);
+            
+
+            return i;
+        }
+
+        private void actualizarGrid()
+        {
+            conexion.Conectar();
+
+            string sql = "SELECT U.first_name, UR.Comment, UR.assessment FROM user_routes UR INNER JOIN users U ON UR.User_id =U.id WHERE U.email = @mail";
+            command = new SqlCommand(sql, conexion.Conn);
+            command.Parameters.AddWithValue("@mail", frmLogIn.user);
+            adapt = new SqlDataAdapter(command);
+            DataTable dit = new DataTable();
+            adapt.Fill(dit);
+                
+
+                int n = dgw_Comentarios.Rows.Add();
+
+                dgw_Comentarios.Rows[n].Cells[0].Value = dit.Rows[0][0].ToString();
+                dgw_Comentarios.Rows[n].Cells[1].Value = dit.Rows[0][1].ToString();
+                dgw_Comentarios.Rows[n].Cells[2].Value = dit.Rows[0][2].ToString();
+
+
+            conexion.Cerrar();
+        }
+
+        private void iniGrid()
+        {
+            conexion.Conectar();
+            string sql = "SELECT * FROM user_routes";
+            command = new SqlCommand(sql, conexion.Conn);
+            adapt = new SqlDataAdapter(command);
+            DataTable dit = new DataTable();
+            adapt.Fill(dit);
+
+            string sql1 = "SELECT COUNT(*) FROM user_routes";
+            SqlCommand Count = new SqlCommand(sql1, conexion.Conn);
+            SqlDataAdapter adaptCount = new SqlDataAdapter(Count);
+            DataTable dc = new DataTable();
+            adaptCount.Fill(dc);
+
+
+            int f = Convert.ToInt32(dc.Rows[0][0]);
+
+            for(int i=0; i > 2; i++)
+            {
+                int n = dgw_Comentarios.Rows.Add();
+
+                dgw_Comentarios.Rows[i].Cells[0].Value = dit.Rows[i][0].ToString();
+                dgw_Comentarios.Rows[i].Cells[1].Value = dit.Rows[i][1].ToString();
+                dgw_Comentarios.Rows[i].Cells[2].Value = dit.Rows[i][2].ToString();
+            }
+
+
+
+            conexion.Cerrar();
         }
     }
 }

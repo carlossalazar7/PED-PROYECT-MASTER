@@ -377,8 +377,7 @@
             this.map.Size = new System.Drawing.Size(610, 740);
             this.map.TabIndex = 8;
             this.map.Zoom = 0D;
-            this.map.MouseClick += new System.Windows.Forms.MouseEventHandler(this.map_MouseClick);
-            // 
+//            this.map.MouseClick += new System.Windows.Forms.MouseEventHandler(this.map_MouseClick);
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";

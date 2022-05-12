@@ -233,8 +233,9 @@ namespace chevere_master
                 lbl_Username.Text = dt.Rows[0][0].ToString();
                 lbl_Country.Text = dt.Rows[0][1].ToString();
             }
-            catch (Exception error)
+            catch
             {
+                MessageBox.Show("Nose ha encontrado datos en la tabla Country, revise la base de datos","Error",MessageBoxButtons.OK);
             }
             finally
             {

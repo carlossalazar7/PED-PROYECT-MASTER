@@ -360,6 +360,7 @@ namespace chevere_master
             }
         }
 
+        //Validaciones para verificar si la contraseña es igual.
         private void txtpassword_Leave(object sender, EventArgs e)
         {
             errorProvider1.Clear();

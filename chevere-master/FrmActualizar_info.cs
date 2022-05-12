@@ -93,5 +93,21 @@ namespace chevere_master
             command.ExecuteNonQuery();
             conexion.Cerrar();
         }
+
+        private void txb_ApellidoNuevo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txb_UsuarioNuevo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

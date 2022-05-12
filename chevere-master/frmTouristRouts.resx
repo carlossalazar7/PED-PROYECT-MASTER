@@ -539,4 +539,13 @@
   <data name="lbl_description.Text" xml:space="preserve">
     <value>Ex sit duis Lorem sit veniam ut et elit laborum. Ad ipsum deserunt occaecat ad adipisicing in veniam sit sint id occaecat adipisicing. Mollit Lorem culpa ipsum consectetur ipsum elit ea enim. Eu ea sit quis mollit esse voluptate nisi excepteur mollit est dolor aliquip. Voluptate enim occaecat aliqua Lorem labore.</value>
   </data>
+  <metadata name="Usuario.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Comentario.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Puntuación.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

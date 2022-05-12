@@ -39,6 +39,8 @@ namespace chevere_master
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_N = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txb_ApellidoNuevo = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.txb_UsuarioNuevo = new System.Windows.Forms.TextBox();
             this.txb_ContraseñaNueva = new System.Windows.Forms.TextBox();
@@ -46,8 +48,6 @@ namespace chevere_master
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_Title = new System.Windows.Forms.Label();
-            this.txb_ApellidoNuevo = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -162,6 +162,24 @@ namespace chevere_master
             this.panel2.Size = new System.Drawing.Size(550, 594);
             this.panel2.TabIndex = 1;
             // 
+            // txb_ApellidoNuevo
+            // 
+            this.txb_ApellidoNuevo.Location = new System.Drawing.Point(61, 421);
+            this.txb_ApellidoNuevo.Name = "txb_ApellidoNuevo";
+            this.txb_ApellidoNuevo.Size = new System.Drawing.Size(215, 20);
+            this.txb_ApellidoNuevo.TabIndex = 10;
+            this.txb_ApellidoNuevo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_ApellidoNuevo_KeyPress);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(58, 378);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(101, 16);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Apellido Nuevo";
+            // 
             // btn_Guardar
             // 
             this.btn_Guardar.Location = new System.Drawing.Point(417, 532);
@@ -178,6 +196,7 @@ namespace chevere_master
             this.txb_UsuarioNuevo.Name = "txb_UsuarioNuevo";
             this.txb_UsuarioNuevo.Size = new System.Drawing.Size(215, 20);
             this.txb_UsuarioNuevo.TabIndex = 5;
+            this.txb_UsuarioNuevo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_UsuarioNuevo_KeyPress);
             // 
             // txb_ContraseñaNueva
             // 
@@ -226,24 +245,7 @@ namespace chevere_master
             this.lbl_Title.TabIndex = 0;
             this.lbl_Title.Text = "Actualizar información";
             // 
-            // txb_ApellidoNuevo
-            // 
-            this.txb_ApellidoNuevo.Location = new System.Drawing.Point(61, 421);
-            this.txb_ApellidoNuevo.Name = "txb_ApellidoNuevo";
-            this.txb_ApellidoNuevo.Size = new System.Drawing.Size(215, 20);
-            this.txb_ApellidoNuevo.TabIndex = 10;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(58, 378);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 16);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Apellido Nuevo";
-            // 
-            // Actualizar_info
+            // FrmActualizar_info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -251,7 +253,7 @@ namespace chevere_master
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Actualizar_info";
+            this.Name = "FrmActualizar_info";
             this.Text = "Actualizar_info";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

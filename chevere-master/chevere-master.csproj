@@ -245,6 +245,8 @@
     <None Include="Resources\Iocno.png" />
     <None Include="Resources\Icon.png" />
     <None Include="Resources\Flags.jpg" />
+    <Content Include="Resources\Para mi amorcito.png" />
+    <None Include="Resources\Para mi amorcito1.png" />
     <Content Include="Resources\script sql\db_ped.sql" />
     <None Include="Resources\this-is-a-graphic-reation-of-a-pad-lock-username-and-password-icon-115534595184fsadfncq6.png" />
     <None Include="Resources\descarga.png" />

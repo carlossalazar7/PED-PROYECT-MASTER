@@ -10,7 +10,7 @@ namespace Clases
     internal class TouristRouts
     {
         public List<CVertice> nodos; //Lists de sitios del grafo rutas turisticas
-
+       
         //Constructor
 
         public TouristRouts()
@@ -25,9 +25,15 @@ namespace Clases
         //Construye un sitio a partir de sus parametros bases y lo agrega a la lista de sitios.
         public CVertice AgregarSitio(Sites valor)
         {
-            CVertice nodo = new CVertice(valor);
-            nodos.Add(nodo);
-            return nodo;
+            try{
+                CVertice nodo = new CVertice(valor);
+                nodos.Add(nodo);
+                return nodo;
+            }catch(Exception ex)
+            {
+                return null;
+            }
+          
 
         }
 
@@ -38,9 +44,15 @@ namespace Clases
         }
 
         //Busca un sitio en la lista de sitios del grafo.
-        public CVertice BuscarVertice(Sites valor)
+        public Sites BuscarVertice(Sites valor)
         {
-            return nodos.Find(v => v.Valor == valor);
+            try
+            {
+                return nodos.Find(v => v.Valor.Name == valor.Name).Valor;
+            }catch(Exception ex)
+            {
+                return null;
+            }
         }
 
         //Crear un Camino a partir de los valores de sitio de origen y sitio de destino

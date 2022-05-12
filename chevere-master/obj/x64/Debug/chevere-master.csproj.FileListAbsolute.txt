@@ -54,3 +54,4 @@ C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyec
 C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\x64\Debug\chevere-master.csproj.CopyComplete
 C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\x64\Debug\chevere-master.exe
 C:\Users\carlos\OneDrive\Escritorio\Programación con Estructura de Datos\proyecto\master\PED-PROYECT-MASTER-V2\PED-PROYECT-MASTER\chevere-master\obj\x64\Debug\chevere-master.pdb
+C:\Users\danie\Downloads\WorkingOn_\AddDataStructure\PED-PROYECT-MASTER\chevere-master\obj\x64\Debug\chevere_master.frmAddRouts.resources

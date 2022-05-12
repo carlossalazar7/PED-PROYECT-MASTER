@@ -187,7 +187,7 @@ namespace chevere_master
 
         private void ini()
         {
-            txtpassword.PasswordChar = txtPasswordConfirmed.PasswordChar = '*';
+            txtpassword.UseSystemPasswordChar = txtPasswordConfirmed.UseSystemPasswordChar = true;
             conexion.Conectar();
             cmb_Country.Items.Clear();
             string info = "select * FROM Country";
@@ -401,6 +401,21 @@ namespace chevere_master
             {
                 errorProvider1.SetError(txtpassword, "Contraseña vacia");
             }
+        }
+
+        private void btn_Ver_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Ver_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtpassword.UseSystemPasswordChar = txtPasswordConfirmed.UseSystemPasswordChar = false;
+        }
+
+        private void btn_Ver_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtpassword.UseSystemPasswordChar = txtPasswordConfirmed.UseSystemPasswordChar = true;
         }
     }
 }

@@ -17,6 +17,7 @@ namespace chevere_master
         private SqlCommand command;
         private SqlDataAdapter adapt;
         private Conexion conexion = new Conexion();
+        string pass = "";
         public FrmActualizar_info()
         {
             InitializeComponent();
@@ -35,7 +36,8 @@ namespace chevere_master
 
         private void ini()
         {
-            txb_ContraseñaNueva.PasswordChar = '*';
+            txb_ContraseñaNueva.UseSystemPasswordChar = true;
+            lbl_ContraseñaActual.Text = "******";
             conexion.Conectar();
             string sql = "select first_name, last_name, password, email FROM users WHERE email=@mail";
             command = new SqlCommand(sql, conexion.Conn);
@@ -47,7 +49,7 @@ namespace chevere_master
 
             lbl_Nombres.Text = dt.Rows[0][0].ToString();
             lbl_Apellidos.Text = dt.Rows[0][1].ToString();
-            lbl_ContraseñaActual.Text = dt.Rows[0][2].ToString();
+            pass = dt.Rows[0][2].ToString();
             lbl_Correo.Text = dt.Rows[0][3].ToString();
             txb_ApellidoNuevo.Text = dt.Rows[0][1].ToString();
             txb_UsuarioNuevo.Text = dt.Rows[0][0].ToString();
@@ -102,7 +104,7 @@ namespace chevere_master
             if (txb_ContraseñaNueva.TextLength >= 6 && txb_UsuarioNuevo.TextLength >= 5 && txb_ApellidoNuevo.TextLength >= 5)
             {
                 usuario.FirstName = txb_UsuarioNuevo.Text;
-                usuario.Password = txb_ContraseñaNueva.Text;
+                usuario.Password = pass = txb_ContraseñaNueva.Text;
                 usuario.LastName = txb_ApellidoNuevo.Text;
                 alter();
                 ini();
@@ -132,6 +134,18 @@ namespace chevere_master
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Ver_MouseDown(object sender, MouseEventArgs e)
+        {
+            txb_ContraseñaNueva.UseSystemPasswordChar = false;
+            lbl_ContraseñaActual.Text = pass;
+        }
+
+        private void btn_Ver_MouseUp(object sender, MouseEventArgs e)
+        {
+            txb_ContraseñaNueva.UseSystemPasswordChar = true;
+            lbl_ContraseñaActual.Text = "******";
         }
     }
 }

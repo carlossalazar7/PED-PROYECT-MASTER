@@ -14,6 +14,7 @@ using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
+using Clases;
 
 namespace chevere_master
 {
@@ -23,21 +24,14 @@ namespace chevere_master
         private SqlDataAdapter adapt;
         private Conexion conexion = new Conexion();
 
-        GMarkerGoogle marker, marker2, marker3, marker4, marker5, marker6, marker7;
-        GMapOverlay routes;
-
-        
-
         //Bitmap bitmap = (Bitmap)Image.FromFile("img/img3.jpg");
+        GMapOverlay routes;
+        //Bitmap bitmap = (Bitmap)Image.FromFile("img/img3.jpg");
+        //Bitmap bitmap2 = (Bitmap)Image.FromFile("img/img3.jpg");
+        //Bitmap bitmap3 = (Bitmap)Image.FromFile("img/img3.jpg");
+        //Bitmap bitmap4 = (Bitmap)Image.FromFile("img/img3.jpg");
+        TouristRouts grafo = new TouristRouts();
 
-        PointLatLng
-            punto1 = new PointLatLng(13.9259486, -89.8411382),
-            punto2 = new PointLatLng(13.8683828, -89.8584498),
-            punto3 = new PointLatLng(13.8626493, -89.8103242),
-            punto4 = new PointLatLng(13.8431922, -89.7535668),
-            punto5 = new PointLatLng(13.8302042, -89.7591162), 
-            punto6 = new PointLatLng(13.7896338, -89.7638154),
-            punto7 = new PointLatLng(13.7804785, -89.7474662);
 
         private void map_OnMarkerClick(GMapMarker item, MouseEventArgs e)
         {
@@ -57,79 +51,88 @@ namespace chevere_master
 
         private void Info_rutas_Load(object sender, EventArgs e)
         {
-            //configuración inicial 
+            var markers = new GMapOverlay("markers");
+            //configuración inicial
             map.DragButton = MouseButtons.Left;
             map.CanDragMap = true;
             map.MapProvider = GMapProviders.GoogleMap;
-            map.Position = punto1;
+            map.Position = new PointLatLng(13.9259486, -89.8411382);
             map.MinZoom = 0;
             map.MaxZoom = 24;
             map.Zoom = 10;
             map.AutoScroll = true;
-
-            //marcadores
-          
-
-            routes = new GMapOverlay("Ruta 1");
-            marker = new GMarkerGoogle(punto1, GMarkerGoogleType.red_pushpin);
-            routes.Markers.Add(marker); //agregamos al mapa
-
-            marker2 = new GMarkerGoogle(punto2, GMarkerGoogleType.red_pushpin);
-            routes.Markers.Add(marker2);
-
-            marker3 = new GMarkerGoogle(punto3, GMarkerGoogleType.red_pushpin);
-            routes.Markers.Add(marker3);
-
-            marker4 = new GMarkerGoogle(punto4, GMarkerGoogleType.red_pushpin);
-            routes.Markers.Add(marker4);
-
-            marker5 = new GMarkerGoogle(punto5, GMarkerGoogleType.red_pushpin);
-            routes.Markers.Add(marker5);
-
-            marker6 = new GMarkerGoogle(punto6, GMarkerGoogleType.red_pushpin);
-            routes.Markers.Add(marker6);
-
-            marker7 = new GMarkerGoogle(punto7, GMarkerGoogleType.red_pushpin);
-            routes.Markers.Add(marker7);
-
-
-            //agregamos un tooltip  de tipo texto a los marcadores
-            marker.ToolTipMode = MarkerTooltipMode.Always;
-            marker.ToolTipText = String.Format("Ahuachapan");
-
-            //agregamos un tooltip  de tipo texto a los marcadores
-            marker2.ToolTipMode = MarkerTooltipMode.Always;
-            marker2.ToolTipText = String.Format("Concepción de Ataco");
-
-            //agregamos un tooltip  de tipo texto a los marcadores
-            marker3.ToolTipMode = MarkerTooltipMode.Always;
-            marker3.ToolTipText = String.Format("Apanhecat");
-
-            //agregamos un tooltip  de tipo texto a los marcadores
-            marker4.ToolTipMode = MarkerTooltipMode.Always;
-            marker4.ToolTipText = String.Format("Juayúa");
-
-            //agregamos un tooltip  de tipo texto a los marcadores
-            marker5.ToolTipMode = MarkerTooltipMode.Always;
-            marker5.ToolTipText = String.Format("Salcoatitán");
-
-            //agregamos un tooltip  de tipo texto a los marcadores
-            marker6.ToolTipMode = MarkerTooltipMode.Always;
-            marker6.ToolTipText = String.Format("Santa Catarina Masahuat");
-
-            //agregamos un tooltip  de tipo texto a los marcadores
-            marker7.ToolTipMode = MarkerTooltipMode.Always;
-            marker7.ToolTipText = String.Format("Nahuizalco");
-
-            //ahora agregamos  el mapa  y el marcador  al map control
+            Sites sitio = new Sites();
             List<PointLatLng> points = new List<PointLatLng>();
-            points.Add(punto1);
-            points.Add(punto2);
-            points.Add(punto3);
-            points.Add(punto4);
-            points.Add(punto5);
-            points.Add(punto6);
-            points.Add(punto7);
+            //cargar todas las rutas en el mapa
+            try
+            {
+                string sql = "select * from sites where routesID = 1 order by id desc";
+                //variables de conexion
+                Conexion conexion = new Conexion();
+                SqlDataAdapter dataAdapter;
+                SqlDataReader dataReader;
+
+
+
+                conexion.Conectar();
+                dataAdapter = new SqlDataAdapter(sql, conexion.Conn);
+                dataReader = dataAdapter.SelectCommand.ExecuteReader();
+                if (dataReader.HasRows)
+                {
+                    while (dataReader.Read())
+                    {
+                        map.Position = new PointLatLng(Convert.ToDouble(dataReader["latitude"].ToString()), Convert.ToDouble(dataReader["longitude"].ToString()));
+                        routes = new GMapOverlay("Ruta 1");
+                        var marker1 = new GMarkerGoogle(new PointLatLng(Convert.ToDouble(dataReader["latitude"].ToString()), Convert.ToDouble(dataReader["longitude"].ToString())), GMarkerGoogleType.arrow);
+                        marker1.ToolTipMode = MarkerTooltipMode.Always;
+                        marker1.ToolTipText = String.Format(dataReader["name"].ToString());
+
+
+
+                        routes.Markers.Add(marker1);
+                        map.Overlays.Add(routes);
+
+
+
+                        //ahora agregamos el mapa y el marcador al map control
+                        points.Add(new PointLatLng(Convert.ToDouble(dataReader["latitude"].ToString()), Convert.ToDouble(dataReader["longitude"].ToString())));
+
+
+
+                        //llenar los vertices del grafo
+                        sitio.Id = (int)dataReader["id"];
+                        sitio.Name = dataReader["name"].ToString();
+                        sitio.Description = dataReader["descripcion"].ToString();
+                        sitio.Assessment = (int)dataReader["assessment"];
+                        sitio.Picture = dataReader["picture"].ToString();
+                        sitio.Latitude = (float)dataReader["latitude"];
+                        sitio.Longitude = (float)dataReader["longitude"];
+                        sitio.Climate_id = (int)dataReader["climate_id"];
+                        sitio.Category_id = (int)dataReader["category_id"];
+                        sitio.Visitado = (int)dataReader["visitado"];
+                        sitio.Etiqueta = (int)dataReader["etiqueta"];
+                        grafo.AgregarSitio(sitio);
+                    }
+
+
+
+                    dataReader.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No hay pedidos que mostrar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataReader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al mostrar los sitios " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+
+            }
+
+
 
             GMapRoute routess = new GMapRoute(points, "Ruta Turística Las Flores")
             {
@@ -137,6 +140,8 @@ namespace chevere_master
             };
             routes.Routes.Add(routess);
             map.Overlays.Add(routes);
+
+
 
             txtdistancia.Text = routess.Distance + " km";
 

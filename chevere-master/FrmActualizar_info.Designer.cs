@@ -53,6 +53,7 @@ namespace chevere_master
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.btn_Ver = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -164,6 +165,7 @@ namespace chevere_master
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btn_Ver);
             this.panel2.Controls.Add(this.btn_Siguiente);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.txb_ApellidoNuevo);
@@ -174,6 +176,7 @@ namespace chevere_master
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(312, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(550, 594);
             this.panel2.TabIndex = 1;
@@ -314,7 +317,7 @@ namespace chevere_master
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(18, 108);
+            this.panel5.Size = new System.Drawing.Size(11, 108);
             this.panel5.TabIndex = 0;
             // 
             // label9
@@ -327,6 +330,23 @@ namespace chevere_master
             this.label9.Size = new System.Drawing.Size(227, 16);
             this.label9.TabIndex = 2;
             this.label9.Text = "Aqui podras ver tu informacion actual";
+            // 
+            // btn_Ver
+            // 
+            this.btn_Ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Ver.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.btn_Ver.IconColor = System.Drawing.Color.Black;
+            this.btn_Ver.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_Ver.IconSize = 30;
+            this.btn_Ver.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_Ver.Location = new System.Drawing.Point(256, 398);
+            this.btn_Ver.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Ver.Name = "btn_Ver";
+            this.btn_Ver.Size = new System.Drawing.Size(42, 30);
+            this.btn_Ver.TabIndex = 13;
+            this.btn_Ver.UseVisualStyleBackColor = true;
+            this.btn_Ver.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_Ver_MouseDown);
+            this.btn_Ver.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_Ver_MouseUp);
             // 
             // FrmActualizar_info
             // 
@@ -376,5 +396,6 @@ namespace chevere_master
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label9;
+        private FontAwesome.Sharp.IconButton btn_Ver;
     }
 }

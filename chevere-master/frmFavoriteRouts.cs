@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Clases;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,16 @@ namespace chevere_master
 {
     public partial class frmFavoriteRouts : frmChildMenu_GUI
     {
+       
+
         public frmFavoriteRouts()
         {
             InitializeComponent();
+        }
+
+        private void frmFavoriteRouts_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

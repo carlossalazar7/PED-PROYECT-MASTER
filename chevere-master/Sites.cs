@@ -26,7 +26,6 @@ namespace Clases
         private String picture;
 
 
-
         // {[()]}
         public List<Routes> ListaAdyacencia; //Lista de adyacencia de cada sitio turistico.
 
@@ -36,14 +35,11 @@ namespace Clases
         //Propiedades
 
 
-
         public int Id
         {
             get { return id; }
             set { id = value; if (id < 0) { throw new Exception("Error, no se ha ingresado el id del sitio"); } }
         }
-
-
 
         public string Name
         {
@@ -92,13 +88,11 @@ namespace Clases
         }
 
 
-
         public string Picture
         {
             get => picture;
             set => picture = value;
         }
-
 
 
         //Methods
@@ -117,8 +111,6 @@ namespace Clases
 
         }
         public Sites() : this("", "", (float)0.0, (float)0.0) { }
-
-
 
 
     }

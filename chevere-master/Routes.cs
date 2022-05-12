@@ -4,59 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using chevere_master;
 
 namespace Clases
 {
     internal class Routes
     {
-        //Variables
-        private  int id;
-        private  string name;
-        private  int assessment;
-        private  double latitud;
-        private  double longitud;
-
-        public Sites nsitio;
-        public float distancia;
-
-
-
+        //Variables}
+        private int peso;
+        public CVertice nDestino; 
 
         //Propiedades
-        public  int Id
-        {
-            get { return id; }
-            set { id = value; if (id < 0) { throw new Exception("Error, no se ha ingresado el id de la ruta"); } }
+
+
+        public int Peso {
+            get => peso;
+            set => peso = value;
         }
 
-        public  string Name
+        public Routes(CVertice destino) : this(destino, 1)
         {
-            get { return name; }
-            set { name = value; if (name == "") { throw new Exception("Error, no se ha ingresado el nombre de la ruta"); } }
+            this.nDestino = destino;
         }
 
-        public  int Assessment
+        public Routes(CVertice destino, int peso)
         {
-            get { return assessment; }
-            set { assessment = value; if (assessment < 0 || assessment > 5) { throw new Exception("Error, la puntuacion no es valida"); } }
-        }
-
-        public  double Latidud
-        {
-            get { return latitud; }
-            set { latitud = value; }
-        }
-        public  double Longitud
-        {
-            get { return longitud; }
-            set { longitud = value; }
-        }
-        
-
-        public Routes(Sites destino, float peso)
-        {
-            this.nsitio = destino;
-            this.distancia = peso;
+            this.nDestino = destino;
+            this.peso = peso;
         }
     }
 }

@@ -157,7 +157,7 @@ namespace chevere_master
         private void btnAddRout_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorsRGB.color5);
-            //OpenChildForm(new frmRout());
+            OpenChildForm(new frmAddRouts());
         }
 
         private void btnCheckUsers_Click(object sender, EventArgs e)

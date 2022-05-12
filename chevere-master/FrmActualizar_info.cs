@@ -30,26 +30,12 @@ namespace chevere_master
         }
 
         private void btn_Guardar_Click(object sender, EventArgs e)
-        {
-
-            if (txb_ContraseñaNueva.TextLength >= 6 && txb_UsuarioNuevo.TextLength>=5 && txb_ApellidoNuevo.TextLength >=5)
-            {
-                usuario.FirstName = txb_UsuarioNuevo.Text;
-                usuario.Password = txb_ContraseñaNueva.Text;
-                usuario.LastName = txb_ApellidoNuevo.Text;
-                alter();
-                ini();
-                MessageBox.Show("Se ha actualizado con exito");
-            }
-            else
-            {
-                MessageBox.Show("Ingresar datos validos: Contraseña de al menos 6 caracteres, nombre y apellidos de al menos 5 letras");
-            }
-            
+        {      
         }
 
         private void ini()
         {
+            txb_ContraseñaNueva.PasswordChar = '*';
             conexion.Conectar();
             string sql = "select first_name, last_name, password, email FROM users WHERE email=@mail";
             command = new SqlCommand(sql, conexion.Conn);
@@ -68,6 +54,7 @@ namespace chevere_master
             txb_ContraseñaNueva.Text = dt.Rows[0][2].ToString();
 
             conexion.Cerrar();
+
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -92,6 +79,59 @@ namespace chevere_master
             command.Parameters.AddWithValue("lastN", usuario.LastName);
             command.ExecuteNonQuery();
             conexion.Cerrar();
+        }
+
+        private void txb_ApellidoNuevo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txb_UsuarioNuevo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btn_Siguiente_Click(object sender, EventArgs e)
+        {
+            if (txb_ContraseñaNueva.TextLength >= 6 && txb_UsuarioNuevo.TextLength >= 5 && txb_ApellidoNuevo.TextLength >= 5)
+            {
+                usuario.FirstName = txb_UsuarioNuevo.Text;
+                usuario.Password = txb_ContraseñaNueva.Text;
+                usuario.LastName = txb_ApellidoNuevo.Text;
+                alter();
+                ini();
+                MessageBox.Show("Se ha actualizado con exito");
+            }
+            else
+            {
+                MessageBox.Show("Ingresar datos validos: Contraseña de al menos 6 caracteres, nombre y apellidos de al menos 5 letras");
+            }
+        }
+
+        private void btn_Siguiente_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_Siguiente_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Siguiente.IconColor = Color.White;
+        }
+
+        private void btn_Siguiente_MouseEnter(object sender, EventArgs e)
+        {
+            btn_Siguiente.IconColor = Color.LightGreen;
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

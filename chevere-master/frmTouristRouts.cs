@@ -97,6 +97,10 @@ namespace chevere_master
                 {
                     while (dataReader.Read())
                     {
+                        sitio = new Sites();
+                        verticeAux = new CVertice();
+
+
                         map.Position = new PointLatLng(Convert.ToDouble(dataReader["latitude"].ToString()),
                             Convert.ToDouble(dataReader["longitude"].ToString()));
                         routes = new GMapOverlay("Ruta 1");
@@ -116,6 +120,8 @@ namespace chevere_master
                         sitio.Picture = dataReader["picture"].ToString();
                         sitio.Latitude = float.Parse(dataReader["latitude"].ToString()); //Este genera error
                         sitio.Longitude = float.Parse(dataReader["longitude"].ToString());
+                       
+                        //insertar vertices en el grafo
                         grafo.AgregarSitio(sitio);
                         verticeAux.Valor = sitio;
                         grafo.AgregarVertice(verticeAux);

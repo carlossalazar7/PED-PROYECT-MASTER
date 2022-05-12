@@ -57,6 +57,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.map = new GMap.NET.WindowsForms.GMapControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picHome)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
@@ -79,6 +81,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.pictureBox20);
             this.panel1.Controls.Add(this.pictureBox10);
             this.panel1.Controls.Add(this.btnImagen);
@@ -92,7 +95,6 @@
             this.panel1.Controls.Add(this.txtnombre);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.tableSitios);
             this.panel1.Controls.Add(this.btnGetRout);
             this.panel1.Controls.Add(this.btnAddPoint);
             this.panel1.Controls.Add(this.btnLoad);
@@ -112,7 +114,7 @@
             // 
             this.pictureBox20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox20.Image = global::chevere_master.Properties.Resources.Para_mi_amorcito;
-            this.pictureBox20.Location = new System.Drawing.Point(422, 68);
+            this.pictureBox20.Location = new System.Drawing.Point(82, 353);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(34, 40);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -121,9 +123,9 @@
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Location = new System.Drawing.Point(400, 146);
+            this.pictureBox10.Location = new System.Drawing.Point(400, 51);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(190, 102);
+            this.pictureBox10.Size = new System.Drawing.Size(190, 242);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 22;
             this.pictureBox10.TabStop = false;
@@ -132,7 +134,7 @@
             // 
             this.btnImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImagen.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnImagen.Location = new System.Drawing.Point(400, 35);
+            this.btnImagen.Location = new System.Drawing.Point(69, 323);
             this.btnImagen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnImagen.Name = "btnImagen";
             this.btnImagen.Size = new System.Drawing.Size(190, 98);
@@ -144,7 +146,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(446, 265);
+            this.label7.Location = new System.Drawing.Point(97, 426);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(104, 20);
             this.label7.TabIndex = 19;
@@ -220,7 +222,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 408);
+            this.label3.Location = new System.Drawing.Point(39, 597);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 20);
             this.label3.TabIndex = 9;
@@ -233,7 +235,7 @@
             this.Nombre,
             this.Latitud,
             this.Longitud});
-            this.tableSitios.Location = new System.Drawing.Point(29, 451);
+            this.tableSitios.Location = new System.Drawing.Point(27, 466);
             this.tableSitios.Name = "tableSitios";
             this.tableSitios.RowHeadersWidth = 62;
             this.tableSitios.RowTemplate.Height = 28;
@@ -264,7 +266,7 @@
             // 
             // btnGetRout
             // 
-            this.btnGetRout.Location = new System.Drawing.Point(220, 318);
+            this.btnGetRout.Location = new System.Drawing.Point(223, 507);
             this.btnGetRout.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnGetRout.Name = "btnGetRout";
             this.btnGetRout.Size = new System.Drawing.Size(84, 29);
@@ -275,7 +277,7 @@
             // 
             // btnAddPoint
             // 
-            this.btnAddPoint.Location = new System.Drawing.Point(360, 318);
+            this.btnAddPoint.Location = new System.Drawing.Point(363, 507);
             this.btnAddPoint.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnAddPoint.Name = "btnAddPoint";
             this.btnAddPoint.Size = new System.Drawing.Size(84, 29);
@@ -286,7 +288,7 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(66, 318);
+            this.btnLoad.Location = new System.Drawing.Point(69, 507);
             this.btnLoad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(84, 29);
@@ -297,7 +299,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(476, 318);
+            this.btnClear.Location = new System.Drawing.Point(479, 507);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(84, 29);
@@ -342,7 +344,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.tableSitios);
             this.panel2.Controls.Add(this.map);
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(606, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -354,12 +358,11 @@
             // 
             this.map.Bearing = 0F;
             this.map.CanDragMap = true;
-            this.map.Dock = System.Windows.Forms.DockStyle.Fill;
             this.map.EmptyTileColor = System.Drawing.Color.Navy;
             this.map.GrayScaleMode = false;
             this.map.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.map.LevelsKeepInMemmory = 5;
-            this.map.Location = new System.Drawing.Point(0, 0);
+            this.map.Location = new System.Drawing.Point(91, 32);
             this.map.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.map.MarkersEnabled = true;
             this.map.MaxZoom = 2;
@@ -374,29 +377,48 @@
             this.map.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.map.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.map.ShowTileGridLines = false;
-            this.map.Size = new System.Drawing.Size(610, 740);
+            this.map.Size = new System.Drawing.Size(450, 414);
             this.map.TabIndex = 8;
             this.map.Zoom = 0D;
-//            this.map.MouseClick += new System.Windows.Forms.MouseEventHandler(this.map_MouseClick);
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(214, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(167, 20);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Sitios Almacenados";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(415, 308);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(163, 20);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Imagen Seleccionada";
             // 
             // frmAddRouts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1216, 740);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "frmAddRouts";
             this.Text = "frmAddRouts";
             this.Load += new System.EventHandler(this.frmAddRouts_Load);
             this.Controls.SetChildIndex(this.picHome, 0);
             this.Controls.SetChildIndex(this.lbl_init_text, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picHome)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -404,6 +426,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableSitios)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -439,5 +462,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox20;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }

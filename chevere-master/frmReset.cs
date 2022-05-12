@@ -82,9 +82,6 @@ namespace chevere_master
 
         }
 
-        private void lblTitleChildForm_Click(object sender, EventArgs e)
-        {
-
-        }
+    
     }
 }

@@ -111,7 +111,7 @@
             // pictureBox20
             // 
             this.pictureBox20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox20.Image = global::chevere_master.Properties.Resources.Para_mi_amorcito;
+            //this.pictureBox20.Image = global::chevere_master.Properties.Resources.Para_mi_amorcito;
             this.pictureBox20.Location = new System.Drawing.Point(422, 68);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(34, 40);
@@ -377,7 +377,7 @@
             this.map.Size = new System.Drawing.Size(610, 740);
             this.map.TabIndex = 8;
             this.map.Zoom = 0D;
-            this.map.MouseClick += new System.Windows.Forms.MouseEventHandler(this.map_MouseClick);
+            //this.map.MouseClick += new System.Windows.Forms.MouseEventHandler(this.map_MouseClick);
             // 
             // openFileDialog1
             // 

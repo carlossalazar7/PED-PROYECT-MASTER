@@ -163,7 +163,7 @@ namespace chevere_master
         private void btnCheckUsers_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, colorsRGB.color6);
-            //OpenChildForm(new frmCheckUsers());
+            OpenChildForm(new frmAdminModiUser());
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

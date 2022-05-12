@@ -88,6 +88,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLista.cs" />
+    <Compile Include="CVertice.cs" />
     <Compile Include="FrmActualizar_info.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +102,12 @@
     </Compile>
     <Compile Include="frmAddRouts.Designer.cs">
       <DependentUpon>frmAddRouts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminModiUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminModiUser.Designer.cs">
+      <DependentUpon>frmAdminModiUser.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCreateAccount.cs">
       <SubType>Form</SubType>
@@ -172,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddRouts.resx">
       <DependentUpon>frmAddRouts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminModiUser.resx">
+      <DependentUpon>frmAdminModiUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCreateAccount.resx">
       <DependentUpon>FrmCreateAccount.cs</DependentUpon>

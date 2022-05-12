@@ -143,6 +143,16 @@ namespace chevere_master.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Para_mi_amorcito {
+            get {
+                object obj = ResourceManager.GetObject("Para mi amorcito", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap this_is_a_graphic_reation_of_a_pad_lock_username_and_password_icon_115534595184fsadfncq6 {
             get {
                 object obj = ResourceManager.GetObject("this-is-a-graphic-reation-of-a-pad-lock-username-and-password-icon-115534595184fs" +

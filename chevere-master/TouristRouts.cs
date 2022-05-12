@@ -1,4 +1,5 @@
-﻿using System;
+﻿using chevere_master;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,13 +9,13 @@ namespace Clases
 {
     internal class TouristRouts
     {
-        public List<Sites> nodos; //Lists de sitios del grafo rutas turisticas
+        public List<CVertice> nodos; //Lists de sitios del grafo rutas turisticas
 
         //Constructor
 
         public TouristRouts()
         {
-            nodos = new List<Sites>();
+            nodos = new List<CVertice>();
 
         }
 
@@ -22,59 +23,80 @@ namespace Clases
         
 
         //Construye un sitio a partir de sus parametros bases y lo agrega a la lista de sitios.
+<<<<<<< HEAD
         public Sites AgregarSitio(string nombre, string descrip, decimal latitud, decimal longitud) //lat y long eran float
+=======
+        public CVertice AgregarSitio(Sites valor)
+>>>>>>> c010fad7fe34f4008083652b671c5eae65f2f663
         {
-            Sites nodo = new Sites(nombre, descrip, latitud,longitud);
+            CVertice nodo = new CVertice(valor);
             nodos.Add(nodo);
             return nodo;
 
         }
 
         //Agrega un sitio a la lista de nodos del grafo.
-        public void AgregarSitio(Sites nuevoSitio)
+        public void AgregarVertice(CVertice nuevoNodo)
         {
-            nodos.Add(nuevoSitio);
+            nodos.Add(nuevoNodo);
         }
 
         //Busca un sitio en la lista de sitios del grafo.
-        public Sites BuscarSitio(int id)
+        public CVertice BuscarVertice(Sites valor)
         {
-            return nodos.Find(sitioID => sitioID.Id == id);
+            return nodos.Find(v => v.Valor == valor);
         }
 
         //Crear un Camino a partir de los valores de sitio de origen y sitio de destino
-        public bool AgregarCamino(int o_IdSite, int f_IdSite, int peso)
+        public bool AgregarArco(Sites origen, Sites nDestino, int peso)
         {
-            Sites vOrigen, vnDestino;
+            CVertice vOrigen, vnDestino;
+            //si alguno de los nodos no existe, se activa una excepcion
+            if ((vOrigen = nodos.Find(v => v.Valor == origen)) == null)
+                throw new Exception("El nodo " + origen + "No existe dentro del grafo");
 
-            //Si alguno de los nodos no existen se activa la axcepcion.
-            if ((vOrigen = nodos.Find(site => site.Id == o_IdSite)) == null)
-                throw new Exception("El sition con id: " + o_IdSite + "No existe");
-            if ((vnDestino = nodos.Find(site => site.Id == f_IdSite)) == null)
-                throw new Exception("El sitio con id: "+f_IdSite+ "No existe" );
+            if ((vnDestino = nodos.Find(v => v.Valor == nDestino)) == null)
+                throw new Exception("El nodo " + origen + "No existe dentro del grafo");
 
-            return AgregarCamino(vOrigen, vnDestino, peso);
-
-            
+            return AgregarArco(vOrigen, vnDestino, peso);
         }
 
-        public bool AgregarCamino(Sites origen, Sites nDestino, int weight)
+        public bool AgregarArco(CVertice origen, CVertice nDestino, int peso)
         {
-            if (origen.ListaAdyacencia.Find(site => site.nsitio == nDestino) == null)
+            if (origen.ListaAdyacencia.Find(v => v.nDestino == nDestino) == null)
             {
-                origen.ListaAdyacencia.Add(new Routes(nDestino, weight));
+                if (nDestino.ListaAdyacencia.Find(v => v.nDestino == origen) != null)
+                {
+                    return false;
+                }
+                origen.ListaAdyacencia.Add(new Routes(nDestino, peso));
                 return true;
             }
-
             return false;
         }
 
-        public void DibujarTouristRoute()
+        public int posicionNodo(Sites Nodo)
         {
-
-            
+            for (int i = 0; i < nodos.Count; i++)
+            {
+                if (String.Compare(nodos[i].Valor.Name, Nodo.Name) == 0)
+                    return i;
+            }
+            return -1;
         }
 
+
+        //funciones que desmarca como visitado todos los nodos del grafo;
+        public void Desmarcar()
+        {
+            foreach (CVertice n in nodos)
+            {
+                n.Visitado = false;
+                n.Padre = null;
+                n.dintancianodo = int.MaxValue;
+                n.pesoasignado = false;
+            }
+        }
 
     }
 }

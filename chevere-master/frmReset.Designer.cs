@@ -47,6 +47,7 @@
             // 
             // panelImagen
             // 
+            this.panelImagen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelImagen.Size = new System.Drawing.Size(411, 576);
             // 
             // panel1
@@ -57,23 +58,27 @@
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.Location = new System.Drawing.Point(681, 12);
+            this.btnClose.Location = new System.Drawing.Point(676, 18);
+            this.btnClose.Padding = new System.Windows.Forms.Padding(12, 0, 22, 0);
             // 
             // btnMaximizise
             // 
             this.btnMaximizise.FlatAppearance.BorderSize = 0;
-            this.btnMaximizise.Location = new System.Drawing.Point(618, 12);
+            this.btnMaximizise.Location = new System.Drawing.Point(612, 18);
+            this.btnMaximizise.Padding = new System.Windows.Forms.Padding(12, 0, 22, 0);
             // 
             // btnMinimize
             // 
             this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.Location = new System.Drawing.Point(559, 12);
+            this.btnMinimize.Location = new System.Drawing.Point(554, 18);
+            this.btnMinimize.Padding = new System.Windows.Forms.Padding(12, 0, 22, 0);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::chevere_master.Properties.Resources.Turismo_en_El_Salvador;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Size = new System.Drawing.Size(411, 576);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             // 
@@ -89,6 +94,7 @@
             this.panel2.Controls.Add(this.lblprincipal);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(411, 70);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Size = new System.Drawing.Size(727, 506);
             this.panel2.Controls.SetChildIndex(this.btnSiguiente, 0);
             this.panel2.Controls.SetChildIndex(this.btnAtras, 0);
@@ -104,23 +110,30 @@
             // 
             // lblTitleChildForm
             // 
-            this.lblTitleChildForm.Location = new System.Drawing.Point(88, 12);
+            this.lblTitleChildForm.Location = new System.Drawing.Point(92, 18);
             this.lblTitleChildForm.Size = new System.Drawing.Size(279, 38);
             this.lblTitleChildForm.Text = "Password Change";
             // 
+            // IconCurrentChildForm
+            // 
+            this.IconCurrentChildForm.Location = new System.Drawing.Point(16, 9);
+            this.IconCurrentChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(386, 7);
+            this.btnHome.Location = new System.Drawing.Point(404, 6);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(95, 427);
+            this.btnAtras.Location = new System.Drawing.Point(-342, 375);
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(378, 316);
+            this.btnSiguiente.Location = new System.Drawing.Point(347, 303);
             this.btnSiguiente.Text = "Guardar Contraseña";
+            this.btnSiguiente.Visible = false;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click_1);
             // 
             // label2
@@ -137,7 +150,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lblPassword.Location = new System.Drawing.Point(92, 224);
+            this.lblPassword.Location = new System.Drawing.Point(92, 221);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(89, 18);
             this.lblPassword.TabIndex = 29;
@@ -146,10 +159,10 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(187, 224);
+            this.txtPassword.Location = new System.Drawing.Point(193, 220);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(288, 22);
+            this.txtPassword.Size = new System.Drawing.Size(257, 22);
             this.txtPassword.TabIndex = 28;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.Visible = false;
@@ -159,7 +172,7 @@
             this.btnCrearCuenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(104)))), ((int)(((byte)(213)))));
             this.btnCrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearCuenta.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCrearCuenta.Location = new System.Drawing.Point(193, 314);
+            this.btnCrearCuenta.Location = new System.Drawing.Point(268, 379);
             this.btnCrearCuenta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCrearCuenta.Name = "btnCrearCuenta";
             this.btnCrearCuenta.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -183,7 +196,7 @@
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(104)))), ((int)(((byte)(213)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBuscar.Location = new System.Drawing.Point(154, 171);
+            this.btnBuscar.Location = new System.Drawing.Point(164, 162);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

@@ -24,26 +24,28 @@ namespace chevere_master
         private SqlDataAdapter adapt;
         private Conexion conexion = new Conexion();
 
-        //Bitmap bitmap = (Bitmap)Image.FromFile("img/img3.jpg");
+
         GMapOverlay routes;
-        //Bitmap bitmap = (Bitmap)Image.FromFile("img/img3.jpg");
-        //Bitmap bitmap2 = (Bitmap)Image.FromFile("img/img3.jpg");
-        //Bitmap bitmap3 = (Bitmap)Image.FromFile("img/img3.jpg");
-        //Bitmap bitmap4 = (Bitmap)Image.FromFile("img/img3.jpg");
+
+        Bitmap bitmap = (Bitmap)Image.FromFile("img/img3.jpg");
+        Bitmap bitmap2 = (Bitmap)Image.FromFile("img/img3.jpg");
+        Bitmap bitmap3 = (Bitmap)Image.FromFile("img/img3.jpg");
+        Bitmap bitmap4 = (Bitmap)Image.FromFile("img/img3.jpg");
         TouristRouts grafo = new TouristRouts();
 
 
         private void map_OnMarkerClick(GMapMarker item, MouseEventArgs e)
         {
-           lbl_name.Text= item.ToolTipText;
-            //pictureBox1.Image = bitmap;
+            lbl_name.Text = item.ToolTipText;
+            pictureBox1.Image = bitmap;
+
         }
 
-        
 
         public frmTouristRouts()
         {
             InitializeComponent();
+
             ini();
             cbx_Puntuación.SelectedIndex = 0;
             iniGrid();
@@ -52,7 +54,9 @@ namespace chevere_master
         private void Info_rutas_Load(object sender, EventArgs e)
         {
             var markers = new GMapOverlay("markers");
+
             //configuración inicial
+
             map.DragButton = MouseButtons.Left;
             map.CanDragMap = true;
             map.MapProvider = GMapProviders.GoogleMap;
@@ -66,13 +70,12 @@ namespace chevere_master
             //cargar todas las rutas en el mapa
             try
             {
-                string sql = "select * from sites where routesID = 1 order by id desc";
+            string sql = "select * from sites where routesID = 1 order by id desc";
+
                 //variables de conexion
                 Conexion conexion = new Conexion();
                 SqlDataAdapter dataAdapter;
                 SqlDataReader dataReader;
-
-
 
                 conexion.Conectar();
                 dataAdapter = new SqlDataAdapter(sql, conexion.Conn);
@@ -88,17 +91,17 @@ namespace chevere_master
                         marker1.ToolTipText = String.Format(dataReader["name"].ToString());
 
 
-
                         routes.Markers.Add(marker1);
                         map.Overlays.Add(routes);
 
-
-
-                        //ahora agregamos el mapa y el marcador al map control
+                        //ahora agregamos  el mapa  y el marcador  al map control
                         points.Add(new PointLatLng(Convert.ToDouble(dataReader["latitude"].ToString()), Convert.ToDouble(dataReader["longitude"].ToString())));
 
 
+<<<<<<< HEAD
                         string clima = dataReader["climate_id"].ToString();
+=======
+>>>>>>> c010fad7fe34f4008083652b671c5eae65f2f663
                         //llenar los vertices del grafo
                         sitio.Id = (int)dataReader["id"];
                         sitio.Name = dataReader["name"].ToString();
@@ -117,8 +120,6 @@ namespace chevere_master
                         grafo.AgregarSitio(sitio);
                     }
 
-
-
                     dataReader.Close();
                 }
                 else
@@ -130,8 +131,6 @@ namespace chevere_master
             catch (Exception ex)
             {
                 MessageBox.Show("Error al mostrar los sitios " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
 
             }
 
@@ -149,6 +148,7 @@ namespace chevere_master
             txtdistancia.Text = routess.Distance + " km";
 
         }
+
 
 
         private void label2_Click(object sender, EventArgs e)

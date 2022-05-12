@@ -11,16 +11,17 @@ namespace Clases
     internal class Sites
     {
         //Atributos
-        private  int id;
-        private  string name;
-        private  string description;
-        private  int assessment;
-        private  float latitude;
-        private  float longitude;
-        private  int climate_id;
-        private  int category_id;
-        private  int visitado; 
-        private  int etiqueta;
+        private int id;
+        private string name;
+        private string description;
+        private int assessment;
+        private float latitude;
+        private float longitude;
+        private int climate_id;
+        private int category_id;
+        private int visitado;
+        private int etiqueta;
+        private String picture;
 
         // {[()]}
         public List<Routes> ListaAdyacencia; //Lista de adyacencia de cada sitio turistico.
@@ -28,38 +29,38 @@ namespace Clases
 
         //Propiedades
 
-        public  int Id
+        public int Id
         {
             get { return id; }
             set { id = value; if (id < 0) { throw new Exception("Error, no se ha ingresado el id del sitio"); } }
         }
 
-        public  string Name
+        public string Name
         {
             get { return name; }
             set { name = value; if (name == "") { throw new Exception("Error, no se ha ingresado el nombre"); } }
         }
-        public  string Description
+        public string Description
         {
             get { return description; }
             set { description = value; }
         }
-        public  int Assessment
+        public int Assessment
         {
             get { return assessment; }
             set { assessment = value; if (assessment < 0 || assessment > 5) { throw new Exception("Error, la puntuacion no es valida"); } }
         }
-        public  float Latitude
+        public float Latitude
         {
             get { return latitude; }
             set { latitude = value; }
         }
-        public  float Longitude
+        public float Longitude
         {
             get { return longitude; }
             set { longitude = value; }
         }
-        public  int Climate_id
+        public int Climate_id
         {
             get { return climate_id; }
             set { climate_id = value; if (climate_id > 0) { throw new Exception("Error, no se ha ingresado el id del clima"); } }
@@ -80,8 +81,14 @@ namespace Clases
             set { etiqueta = value; }
         }
 
+        public string Picture
+        {
+            get => picture;
+            set => picture = value;
+        }
+
         //Methods
-        public Sites(string nombre,  string _description, float _latitude, float _longitude)
+        public Sites(string nombre, string _description, float _latitude, float _longitude)
         {
 
             this.name = nombre;
@@ -91,7 +98,7 @@ namespace Clases
             this.longitude = _longitude;
 
         }
-        public Sites() : this("", "",(float)0.0,(float)0.0) { }
+        public Sites() : this("", "", (float)0.0, (float)0.0) { }
 
 
     }
